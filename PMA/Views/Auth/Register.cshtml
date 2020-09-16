@@ -1,0 +1,203 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="colorlib.com">
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="icon" href="~/assets/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="~/assets/register/fonts/material-design-iconic-font/css/material-design-iconic-font.css">
+    <link rel="stylesheet" href="~/assets/register/vendor/date-picker/css/datepicker.min.css">
+
+    <link href="~/assets/register/css/style.css" rel="stylesheet">
+    <link href="~/assets/register/css/register.css" rel="stylesheet" />
+    <link href="~/assets/js/bundles/waitme/waitMe.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+    </script>
+    <script src="~/Angular/Auth/Register.js"></script>
+</head>
+<body>
+    <div class="wrapper" ng-app="PMA" ng-controller="Auth">
+        <div class="preloader-wrapper">
+            <div class="preloader">
+                <div class="m-t-30">
+                    PMA
+                </div>
+                <p>Please wait...</p>
+            </div>
+        </div>
+        <h4></h4>
+        <section id="user-section">
+            <form onclick="event.preventDefault()" name="registerForm" id="wizard">
+                <h3>User profile</h3>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">
+                            First Name
+                        </label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-account-o"></i>
+                            <input type="text" class="form-control" name="firstName" ng-model="registerUser.firstName" required>
+                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.firstName.$touched && registerForm.firstName.$error.required">* Firstname is required.</span>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">
+                            Last Name
+                        </label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-edit"></i>
+                            <input type="text" class="form-control" name="lastName" ng-model="registerUser.lastName" required>
+                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.lastName.$touched && registerForm.lastName.$error.required">* Lastname is required.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">
+                            Email ID
+                        </label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-email"></i>
+                            <input type="email" class="form-control" name="email" ng-model="registerUser.email" required>
+                            <span class="text-danger mb-0 pb-1" ng-show="registerForm.email.$touched && registerForm.email.$error.required">* Email is required.</span>
+                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.email.$touched && registerForm.email.$invalid">* Email is invalid</span>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">
+                            Phone Number
+                        </label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-smartphone-android"></i>
+                            <input type="text" class="form-control" name="mobileNumber" placeholder="1XXXXXXXXXX" ng-model="registerUser.mobileNumber" required>
+                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.mobileNumber.$touched && registerForm.mobileNumber.$error.required">* MobileNumber is required.</span>
+                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.mobileNumber.$touched && registerForm.mobileNumber.$invalid">* Please match requested format.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col">
+                        <label for="">
+                            Password
+                        </label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-eye-off password-icon pointer"></i>
+                            <input type="password" class="form-control" name="password" ng-model="registerUser.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            <span class="text-danger mb-0 pb-1" ng-show="registerForm.password.$touched && registerForm.password.$error.required">* Password is required.</span>
+                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.password.$touched && registerForm.password.$invalid">* Password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters.</span>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <label for="">
+                            Confirm Password
+                        </label>
+                        <div class="form-holder">
+                            <i class="zmdi zmdi-eye-off password-icon pointer"></i>
+                            <input type="password" class="form-control" ng-model="registerUser.confirmPassword" name="confirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            <span class="text-danger mb-0 pb-1" ng-show="registerForm.confirmPassword.$touched && registerForm.confirmPassword.$error.required">* Confirmation is required.</span>
+                            <span class="text-danger mb-0 pb-0" ng-if="registerForm.confirmPassword.$touched && registerUser.password !== registerUser.confirmPassword">* Password and Confirm Password didn't match</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-col w-100" ng-if="usernameExists">
+                        <span class="text-danger">* Email already exists, Please try other or <a href="~/Auth/Login">login</a>  with provided email</span>
+                    </div>
+                    <div class="form-col">
+
+                    </div>
+                    <div class="form-col">
+                        <button class="btn forward" style="float:right" ng-click="forward()" ng-disabled="registerForm.$invalid || registerUser.password !== registerUser.confirmPassword">Forward</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <h4></h4>
+        <section id="account-section" style="display:none;">
+            <h3>Account Information</h3>
+
+            <div id="createAccountTab">
+                <form name="createAccountForm">
+                    <div class="form-row">
+                        <div class="form-col w-100">
+                            <label for=""> Account Name </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin"></i>
+                                <input type="text" class="form-control" name="accountName" ng-model="account.accountName" required>
+                                <span class="text-danger mb-0 pb-0" ng-show="createAccountForm.accountName.$touched && createAccountForm.accountName.$error.required">* Firstname is required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <label for="">
+                                Account Unique Code
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-home"></i>
+                                <input type="text" class="form-control" name="accountCode" ng-model="account.accountCode" required>
+                                <span class="text-danger mb-0 pb-0" ng-show="createAccountForm.accountCode.$touched && createAccountForm.accountCode.$error.required">* Account Code is required.</span>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <label for="">
+                                Account PIN
+                            </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-pin-drop"></i>
+                                <input type="text" class="form-control" name="secretKey" ng-model="account.secretKey" required>
+                                <span class="text-danger mb-0 pb-0" ng-show="createAccountForm.secretKey.$touched && createAccountForm.secretKey.$error.required">* Secret Key is required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <a role="button" class="backward pointer" ng-click="backward()"> <i class="zmdi zmdi-arrow-left"></i> Back</a>
+                        </div>
+                        <div class="form-col">
+                            <button class="btn" style="float: right" ng-disabled="createAccountForm.$invalid" ng-click="createAccount()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+    </div>
+    <script src="~/assets/js/bundles/waitme/waitMe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha256-KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function ($) {
+            $('.preloader-wrapper').fadeOut();
+            $('.password-icon').click(function () {
+                var input = $(this).next();
+                if (input.attr('type') == 'text') {
+                    $(input).attr('type', 'password');
+                    $(this).addClass('zmdi-eye-off').removeClass('zmdi-eye');
+                }
+                else {
+                    $(input).attr('type', 'text');
+                    $(this).addClass('zmdi-eye').removeClass('zmdi-eye-off');
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
+
+

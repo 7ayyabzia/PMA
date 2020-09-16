@@ -1,0 +1,76 @@
+﻿body {
+    background: #1C2631;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+section {
+    padding: 25px;
+    background: #ffffff;
+}
+
+.btn {
+    border: none;
+    display: inline-flex;
+    height: 42px;
+    width: 112px;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    background: #3377c0;
+    text-transform: uppercase;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+
+.toggle {
+    margin: 0 0 1.5rem;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.toggle div {
+    width: 50%;
+    height: 43px;
+    left: -9999px;
+    text-align: center;
+    border: 1px solid #3377c0;
+    cursor: pointer;
+    color: #333;
+}
+
+.text-dark {
+    color: black;
+}
+
+.toggle .selected {
+    color: white;
+    background: #3377c0;
+}
+
+.toggle .create-account-btn {
+    float: left;
+    padding: 10px;
+}
+
+.toggle .join-account-btn {
+    float: right;
+    padding: 10px;
+}
+
+.zmdi {
+    top: 20px !important;
+}
+
+.text-danger {
+    position: relative;
+    color: red;
+    font-size: 12px;
+}

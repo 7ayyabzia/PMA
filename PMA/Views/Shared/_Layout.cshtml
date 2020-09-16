@@ -1,0 +1,195 @@
+﻿@using Microsoft.AspNetCore.Identity
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1, minimum-scale=1, shrink-to-fit=no" name="viewport" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>PMA - USA</title>
+    <!-- Favicon-->
+    <link rel="icon" href="~/assets/images/favicon.png" type="image/x-icon">
+    <!-- Plugins Core Css -->
+    <link href="~/assets/css/app.min.css" rel="stylesheet">
+    <!-- Custom Css -->
+    <link href="~/assets/css/style.css" rel="stylesheet" />
+    <!-- You can choose a theme from css/styles instead of get all themes -->
+    <link href="~/assets/css/styles/all-themes.css" rel="stylesheet" />
+    <link href="~/assets/js/bundles/waitme/waitMe.css" rel="stylesheet" />
+    <link href="~/assets/js/bundles/sweetalert/sweetalert2.min.css" rel="stylesheet" />
+
+    @RenderSection("css", false)
+
+    <!--Angular Scripts-->
+    <script src="~/assets/js/bundles/angular/angular.js"></script>
+    <script>
+        var App = angular.module('PMA', [])
+        App.directive('convertToNumber', function () {
+            return {
+                require: 'ngModel',
+                link: function (scope, element, attrs, ngModel) {
+                    ngModel.$parsers.push(function (val) {
+                        return val != null ? parseInt(val, 10) : null;
+                    });
+                    ngModel.$formatters.push(function (val) {
+                        return val != null ? '' + val : null;
+                    });
+                }
+            };
+        });
+        App.controller("UserInfoCtrl", function ($scope) {
+
+            $scope.getUserInfo = function () {
+                JsonCall("Account", "GetCurrentUserInfo");
+                $scope.user = list;
+            }
+
+        });
+    </script>
+    <script src="~/utility/utility.js"></script>
+    @RenderSection("angular", false)
+
+    <style type="text/css">
+        #containerNoScroll {
+            overflow-x: hidden;
+            overflow-y: hidden;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="menu_dark light" ng-app="PMA">
+    <!-- Page Loader -->
+    <div class="customMenuBG page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t--10">
+                <h3>PMA - USA</h3>
+                @*<img src="~/assets/images/logo.png" alt="Please wait" width="200" height="70" />*@
+            </div>
+            <p class="text-white">Loading please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="customMenuBG container-fluid">
+            <div class="customMenuBG navbar-header">
+                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                   aria-expanded="false"></a>
+                <a href="#" onClick="return false;" class="bars"></a>
+                <a class="navbar-brand ml-0" href="~/Conversations">
+                    PMA - USA
+                    @*<img src="~/assets/images/logo.png" alt="" width="120" height="40" />*@
+                    <!--<i class="fa fa-inbox text-white"></i>
+                    <span class="logo-name">One40 Connect</span>-->
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="pull-left">
+                    <li>
+                        <a href="#" onClick="return false;" class="sidemenu-collapse">
+                            <i class="material-icons">reorder</i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Full Screen Button -->
+                    <li class="fullscreen">
+                        <a href="javascript:;" class="fullscreen-btn">
+                            <i class="fas fa-expand"></i>
+                        </a>
+                    </li>
+                    <!-- #END# Full Screen Button -->
+                    <!-- #START# Notifications-->
+                    <!-- #END# Notifications-->
+                    <li class="dropdown user_profile">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="fa fa-user-alt pt-2"></i>
+                        </a>
+                        <ul class="dropdown-menu pullDown">
+                            <li class="body">
+                                <ul class="user_dw_menu">
+                                    <li>
+                                        <a href="~/Account/UpdateProfile">
+                                            <i class="material-icons">person</i>Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Auth/ChangePassword">
+                                            <i class="fas fa-eye-slash"></i>Change Password
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="~/Auth/Logout">
+                                            <i class="material-icons">power_settings_new</i>Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Tasks -->
+                    <li class="pull-right">
+                        <a href="#" onClick="return false;" class="js-right-sidebar" data-close="true">
+                            <i class="fas fa-cog"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <div>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- Menu -->
+            <div class="text-center text-white m-t-10" ng-controller="UserInfoCtrl" ng-init="getUserInfo()">
+                <h6>{{user.accountName}}</h6>
+                <p>{{user.name}}</p>
+            </div>
+            <div class="menu">
+
+                <ul class="list m-t-10">
+                    <li class="active">
+                        <a href="~/Projects">
+                            <i class="fas fa-inbox"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar" ng-controller="UserInfoCtrl" ng-init="getUserInfo()">
+            <div class="company-info">
+                <h3 class="company-name">{{user.accountName}}</h3>
+                <p class="active-did">{{user.activeDID}}</p>
+            </div>
+            <ul class="user-info">
+                <li><a href="~/Account/UpdateProfile">{{user.name}}</a></li>
+                <li>{{user.role}}</li>
+            </ul>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </div>
+    <section class="content">
+        <div id="containerNoScroll">
+            @RenderBody()
+        </div>
+    </section>
+    <script src="~/assets/js/app.min.js"></script>
+    <!-- Custom Js -->
+    <script src="~/assets/js/admin.js"></script>
+    <script src="~/assets/js/bundles/waitme/waitMe.js"></script>
+
+    <script src="~/assets/js/bundles/sweetalert/sweetalert2.min.js"></script>
+
+    @RenderSection("scripts", false)
+
+</body>
+
+</html>

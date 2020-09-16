@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/assets/js/bundles/angularjs-datetime-picker/angularjs-datetime-picker.css" />
+}
+@section angular{
+    <script src="~/Angular/Projects/Projects.js"></script>
+    <script src="~/assets/js/bundles/angularjs-datetime-picker/angularjs-datetime-picker.js"></script>
+}
+
+<div class="container-fluid" ng-controller="ProjectsCtrl">
+    <!-- Basic Examples -->
+    <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>
+                            <strong>Projects</strong>
+                        </h2>
+                    </div>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li>
+                                    <a href="#" onClick="return false;" ng-click="addProject()">Add Project</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-apply">
+                                <div class="m-b-20">
+                                    <div class="contact-grid">
+                                        <div class="profile-header bg-dark">
+                                            <div class="user-name">John Smith</div>
+                                            <div class="name-center">Cook</div>
+                                        </div>
+                                        <p>
+                                            456, Estern evenue, Courtage area,
+                                            <br />New York
+                                        </p>
+                                        <div>
+                                            <span class="phone">
+                                                <i class="material-icons">phone</i>264-625-2583
+                                            </span>
+                                        </div>
+                                        <div class="profile-userbuttons">
+                                            <button type="button" class="btn btn-info btn-border-radius waves-effect">
+                                                Read
+                                                More
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/assets/js/form.min.js"></script>
+    <script src="~/assets/js/pages/ui/collapse.js"></script>
+}
+
+
