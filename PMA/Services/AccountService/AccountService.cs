@@ -17,6 +17,7 @@ namespace PMA.Services.AccountService
         Task UpdateAccount(Account account);
         Task<Account> GetAccount(int id);
         Task<int> GetCurrentAccountId();
+        Task ActivateProject(string userId, int ProjectToActiveId);
     }
     public class AccountService : IAccountService
     {
@@ -68,6 +69,14 @@ namespace PMA.Services.AccountService
             acc.SecretKey = account.SecretKey;
 
             _context.Update(acc);
+            await _context.SaveChangesAsync();
+        }
+        public async Task ActivateProject(string userId, int ProjectToActiveId)
+        {
+            var userProjects = await _context.UserProjects.Where(s => s.Id == userId).ToListAsync();
+            userProjects.ForEach(s => s.IsActive = false);
+            userProjects.Where(s => s.ProjectId == ProjectToActiveId).SingleOrDefault().IsActive = true;
+            _context.UpdateRange(userProjects);
             await _context.SaveChangesAsync();
         }
     }

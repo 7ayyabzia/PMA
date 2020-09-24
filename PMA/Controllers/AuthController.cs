@@ -11,6 +11,7 @@ using PMA.Dto.User;
 using PMA.Models;
 using PMA.Models.ApplicationUser;
 using PMA.Services.AccountService;
+using PMA.Services.ProjectService;
 
 namespace PMA.Controllers
 {
@@ -20,18 +21,21 @@ namespace PMA.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IAccountService _accountService;
+        private readonly IProjectService _projectService;
 
         public AuthController(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager,
             RoleManager<IdentityRole> roleManager,
-            IAccountService accountService
+            IAccountService accountService,
+            IProjectService projectService
         )
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _accountService = accountService;
+            _projectService = projectService;
         }
 
         public async Task<JsonResult> IsUsernameValid(string username)
@@ -60,6 +64,7 @@ namespace PMA.Controllers
             {
                 var registerDto = JsonConvert.DeserializeObject<RegisterDto>(form["registerDto"]);
                 var account = JsonConvert.DeserializeObject<Account>(form["account"]);
+                var project = JsonConvert.DeserializeObject<Project>(form["project"]);
 
                 AppUser user = await _userManager.FindByNameAsync(registerDto.Email);
                 if (user != null)
@@ -78,25 +83,32 @@ namespace PMA.Controllers
 
                 //Add Account of the User
                 await _accountService.CreateAccount(account);
-                registerDto.RoleName = "Manager";
 
                 //Assigning Account to User
                 user.AccountId = account.AccountId;
-                string errors = "";
                 IdentityResult result = await _userManager.CreateAsync(user, registerDto.Password);
+                if (!result.Succeeded)
+                    return Json(result.Errors.Select(s => s.Description).ToString());
 
-                if (result.Succeeded)
+                var roleResult = await _userManager.AddToRoleAsync(user, "Manager");
+                if (!roleResult.Succeeded)
+                    return Json(roleResult.Errors.Select(s => s.Description).ToString());
+
+                //Create Project
+                project.AccountId = account.AccountId;
+                project.StartingDate = DateTime.Now;
+                await _projectService.AddProject(project);
+
+                //Create User Project
+                var userProject = new UserProject
                 {
-                    var roleResult = await _userManager.AddToRoleAsync(user, registerDto.RoleName);
-                    if (roleResult.Succeeded)
-                    {
-                        return Json("Success");
-                    }
-                    errors = string.Join(", ", result.Errors.Select(s => s.Description));
-                    return Json(errors);
-                }
-                errors = string.Join(", ", result.Errors.Select(s => s.Description));
-                return Json(errors);
+                    Id = user.Id,
+                    ProjectId = project.ProjectId,
+                    IsActive = true
+                };
+                await _projectService.AssignResources(userProject);
+
+                return Json("Success");
             }
             catch (Exception ex)
             {
@@ -131,7 +143,7 @@ namespace PMA.Controllers
                 return View();
             }
 
-            return RedirectToAction("Index", "Conversations");
+            return RedirectToAction("Index", "Home");
         }
 
         public async Task<IActionResult> Logout()

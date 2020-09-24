@@ -14,5 +14,6 @@ namespace PMA.Models.ApplicationUser
         public string MobileNumber { get; set; }
         public bool Blocked { get; set; }
         public bool Deleted { get; set; }
+        public IEnumerable<UserProject> UserProjects { get; set; }
     }
 }

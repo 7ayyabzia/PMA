@@ -126,7 +126,6 @@
             </form>
         </section>
 
-        <h4></h4>
         <section id="account-section" style="display:none;">
             <h3>Account Information</h3>
 
@@ -169,7 +168,45 @@
                             <a role="button" class="backward pointer" ng-click="backward()"> <i class="zmdi zmdi-arrow-left"></i> Back</a>
                         </div>
                         <div class="form-col">
-                            <button class="btn" style="float: right" ng-disabled="createAccountForm.$invalid" ng-click="createAccount()">Submit</button>
+                            <button class="btn" style="float: right" ng-disabled="createAccountForm.$invalid" ng-click="forwardToProject()">Next</button>
+                            @*<button class="btn" style="float: right" ng-disabled="createAccountForm.$invalid" ng-click="createAccount()">Submit</button>*@
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+        <section id="project-section" style="display:none;">
+            <h3>Project Information</h3>
+
+            <div id="ProjectTab">
+                <form name="projectForm">
+                    <div class="form-row">
+                        <div class="form-col w-100">
+                            <label>Project Name </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-account-o"></i>
+                                <input type="text" class="form-control" name="projectName" ng-model="project.projectName" required>
+                                <span class="text-danger mb-0 pb-0" ng-show="projectForm.projectName.$touched && projectForm.projectName.$error.required">* Firstname is required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col w-100">
+                            <label>Project Description </label>
+                            <div class="form-holder">
+                                <i class="zmdi zmdi-account-o"></i>
+                                <textarea class="form-control" name="projectDescription" ng-model="project.projectDescription" required></textarea>
+                                <span class="text-danger mb-0 pb-0" ng-show="projectForm.projectDescription.$touched && projectForm.projectDescription.$error.required">* Firstname is required.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <a role="button" class="backward pointer" ng-click="backwardToAccount()"> <i class="zmdi zmdi-arrow-left"></i> Back</a>
+                        </div>
+                        <div class="form-col">
+                            <button class="btn" style="float: right" ng-disabled="projectForm.$invalid" ng-click="createAccount()">Submit</button>
                         </div>
                     </div>
                 </form>

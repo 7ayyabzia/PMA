@@ -17,6 +17,7 @@ namespace PMA.Services.ProjectService
         Task EditProject(Project project);
         Task DeleteProject(int id);
         Task AssignResources(UserProject userProject);
+        Task UnAssignUser(int id);
     }
     public class ProjectService : IProjectService
     {
@@ -29,9 +30,9 @@ namespace PMA.Services.ProjectService
         }
         public async Task AddProject(Project project)
         {
-            var accountId = await _currentContext.GetCurrentAccountId();
-            project.AccountId = accountId;
-
+            project.IsCompleted = false;
+            project.ProjectType = "Software";
+            project.CurrentStatus = "Requirement Phase";
             await _dbcontext.AddAsync(project);
             await _dbcontext.SaveChangesAsync();
         }
@@ -45,9 +46,14 @@ namespace PMA.Services.ProjectService
 
         public async Task AssignResources(UserProject userProject)
         {
-            userProject.IsActive = true;
-
             await _dbcontext.UserProjects.AddAsync(userProject);
+            await _dbcontext.SaveChangesAsync();
+        }
+
+        public async Task UnAssignUser(int id)
+        {
+            var userProject = await _dbcontext.UserProjects.FindAsync(id);
+            _dbcontext.Remove(userProject);
             await _dbcontext.SaveChangesAsync();
         }
 

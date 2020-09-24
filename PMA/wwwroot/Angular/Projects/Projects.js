@@ -1,16 +1,24 @@
 ﻿App.requires = ['angularjs-datetime-picker'];
 App.controller("ProjectsCtrl", function ($scope, $rootScope, $compile) {
 
+    $scope.getProjects = function () {
+        JsonCall("Projects", "GetProjects");
+        $scope.projects = list;
+    }
+
     $scope.addProject = function () {
         showProjectDialogue();
-        //$scope.project = angular.copy(project);
+    }
+    $scope.editProject = function (i) {
+        $scope.project = angular.copy($scope.projects[i]);
     }
 
     $scope.saveProject = function () {
-        JsonCallParam("Projects", "AddProject", { "Project": JSON.stringify($scope.project)})
+        JsonCallParam("Projects", "AddProject", { "Project": JSON.stringify($scope.project) });
+        $('#projectDialogue').modal('hide');
     }
 
-    function showProjectDialogue() {
+    function showProjectDialogue(i) {
         $('#projectDialogue').remove();
         let content = ' <div class="modal fade" id="projectDialogue" role="dialog"> ' +
             '<div class="modal-dialog modal-dialog-centered" role="document">' +

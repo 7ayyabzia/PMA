@@ -37,7 +37,7 @@ App.controller("Auth", function ($scope, $http) {
             }
         });
     }
-
+    $scope.project = { projectName: "", projectDescription: "" };
     $scope.registerUser = {
         fullName: "", firstName: "", lastName: "", email: "",
         userName: "", password: "", mobileNumber: "", accountId: 0
@@ -54,7 +54,8 @@ App.controller("Auth", function ($scope, $http) {
     $scope.register = function () {
         JsonCallParam("Auth", "Register", {
             "registerDto": JSON.stringify($scope.registerUser),
-            "account": JSON.stringify($scope.account)
+            "account": JSON.stringify($scope.account),
+            "project": JSON.stringify($scope.project)
         });
         $('#account-section').waitMe({
             effect: "ios",
@@ -93,7 +94,7 @@ App.controller("Auth", function ($scope, $http) {
         $("#account-section").slideToggle();
     }
 
-    $scope.createAccount = function () {
+    $scope.forwardToProject = function () {
         //Validate Account Code
         JsonCallParam("Account", "IsCodeExist", { code: $scope.account.accountCode });
         if (list === true) {
@@ -101,11 +102,21 @@ App.controller("Auth", function ($scope, $http) {
             return;
         }
         //Validate Phonenumber
-        JsonCallParam("Account", "IsPhoneNumberExist", { phonenumber: $scope.account.accountPhonenumber});
+        JsonCallParam("Account", "IsPhoneNumberExist", { phonenumber: $scope.account.accountPhonenumber });
         if (list === true) {
             swal("Error", "Phone number already Exist! Please try different", "error");
             return;
         }
+        $("#account-section").slideToggle();
+        $("#project-section").slideToggle();
+    }
+
+    $scope.backwardToAccount = function () {
+        $("#account-section").slideToggle();
+        $("#project-section").slideToggle();
+    }
+
+    $scope.createAccount = function () {
         //Register User
         $scope.register();
     }

@@ -1,0 +1,321 @@
+﻿@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section angular{
+    <script src="~/Angular/Account/AccountCtrl.js"></script>
+}
+@section css{
+    <style>
+        .tab-all a.active {
+            background: #2194F0 !important;
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(33, 30, 99, 0.6)
+        }
+
+        .userForm .col-6 {
+            padding: 0 5px 0 0
+        }
+
+        .profile-tab-box .active {
+            border-radius: 0 !important
+        }
+
+        @@media only screen and (min-width: 600px) {
+            .users-table-wrapper {
+                overflow: auto;
+            }
+        }
+
+        @@media only screen and (min-width: 768px) {
+            .users-table-wrapper {
+                overflow: hidden;
+            }
+        }
+    </style>
+}
+
+<div class="container-fluid" ng-controller="AccountCtrl">
+    <!-- Basic Examples -->
+    <div class="row clearfix">
+
+        <div class="col-12">
+            <div class="card m-b-0">
+                <div class="profile-tab-box">
+                    <div>
+                        <ul class="nav">
+                            <li class="nav-item tab-all">
+                                <a class="nav-link active show text-dark" href="#account" data-toggle="tab">Account</a>
+                            </li>
+                            <li class="nav-item tab-all p-l-20">
+                                <a class="nav-link text-dark" href="#users" data-toggle="tab">Users</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="account" aria-expanded="true">
+                    <div class="row">
+                        <div class="col-12">
+                            <form class="mb-2" name="accountForm" ng-init="getAccount()">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 mb-0">
+                                        <div class="form-group">
+                                            <label>Account Name</label>
+                                            <input type="text" class="form-control" name="accountName" placeholder="Microsoft Inc." ng-model="account.accountName" required>
+                                            <span class="text-danger mb-0 pb-1" ng-show="accountForm.accountName.$touched && accountForm.accountName.$error.required">* Account Name is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mb-0">
+                                        <div class="form-group">
+                                            <label>Account Code</label>
+                                            <input type="text" class="form-control" name="accountCode" placeholder="Account Code" ng-model="account.accountCode" required>
+                                            <span class="text-danger mb-0 pb-1" ng-show="accountForm.accountCode.$touched && accountForm.accountCode.$error.required">* Account Name is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-12 mb-0">
+                                        <div class="form-group">
+                                            <label>Account Key</label>
+                                            <input type="text" class="form-control" name="secretKey" placeholder="SecretKey" ng-model="account.secretKey" required>
+                                            <span class="text-danger mb-0 pb-1" ng-show="accountForm.secretKey.$touched && accountForm.secretKey.$error.required">* Secret Key is required.</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <p class="text-danger">{{error}}</p>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 pr-2">
+                                        <button class="btn btn-primary float-right"
+                                                ng-disabled="accountForm.$invalid" ng-click="saveAccount()">
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="users" aria-expanded="false" ng-init="getProjects()">
+                    <div class="row">
+                        <div class="col-12 p-l-20 p-r-20">
+                            <h5 class="header m-t-0 m-b-40">
+                                Agents List
+                                <button class="btn btn-primary float-right" ng-click="userform(-1)">Add User</button>
+                            </h5>
+                            <div class="modal fade bd-example-modal-lg userForm" role="dialog"
+                                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="formModal">Add User</h5>
+                                            <button type="button" class="close" onclick="$('.userForm').modal('hide')">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form name="registerForm">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label>First Name</label>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="firstName" ng-model="registerUser.firstName" placeholder="Harry" required>
+                                                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.firstName.$touched && registerForm.firstName.$error.required">* Firstname is required.</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label>Last Name</label>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="lastName" ng-model="registerUser.lastName" placeholder="Potter" required>
+                                                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.lastName.$touched && registerForm.lastName.$error.required">* Lastname is required.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <label>Email</label>
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" name="email" ng-model="registerUser.email" placeholder="Enter Email" required>
+                                                            <span class="text-danger mb-0 pb-1" ng-show="registerForm.email.$touched && registerForm.email.$error.required">* Email is required.</span>
+                                                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.email.$touched && registerForm.email.$invalid">* Email is invalid</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 padding-0">
+                                                        <label>Phone Number</label>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="mobileNumber" pattern="[1]+[0-9]{10}" placeholder="12121212121" ng-model="registerUser.mobileNumber">
+                                                            <span class="text-danger mb-0 pb-0" ng-show="registerForm.mobileNumber.$touched && registerForm.mobileNumber.$invalid">* Please match requested format.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" ng-if="registerUser.Id === ''">
+                                                    <div class="col-6">
+                                                        <label>Password</label>
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" name="password" ng-model="registerUser.password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                            <span class="input-group-addon-custom">
+                                                                <i class="fas fa-eye-slash password-icon pointer"></i>
+                                                            </span>
+                                                        </div>
+                                                        <span class="text-danger mb-0 pb-1" ng-show="registerForm.password.$touched && registerForm.password.$error.required">* Password is required.</span>
+                                                        <span class="text-danger mb-0 pb-0" ng-show="registerForm.password.$touched && registerForm.password.$invalid">* Password must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters.</span>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <label>Confirm Password</label>
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" ng-model="registerUser.confirmPassword" name="confirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                            <span class="input-group-addon-custom">
+                                                                <i class="fas fa-eye-slash password-icon pointer"></i>
+                                                            </span>
+                                                        </div>
+                                                        <span class="text-danger mb-0 pb-1" ng-show="registerForm.confirmPassword.$touched && registerForm.confirmPassword.$error.required">* Confirmation is required.</span>
+                                                        <span class="text-danger mb-0 pb-0" ng-if="registerForm.confirmPassword.$touched && registerUser.password !== registerUser.confirmPassword">* Password and Confirm Password didn't match</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row" ng-if="registerUser.Id === ''">
+                                                    <div class="col-12 padding-0">
+                                                        <h5>Assign DID</h5>
+                                                    </div>
+                                                </div>
+                                                <div class="row" ng-if="registerUser.Id === ''">
+                                                    <div class="col-11 p-l-0 p-r-0 p-t-10">
+                                                        <select class="form-control" ng-model="assignUserProject.projectId" convert-to-number required>
+                                                            <option hidden value="0">Select DID</option>
+                                                            <option ng-repeat="project in chooseProjects" value="{{project.projectId}}">{{project.projectName}}</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-1 p-l-0 p-r-0 p-t-10 text-center">
+                                                        <label>
+                                                            <input type="checkbox" ng-model="assignUserProject.isActive" disabled />
+                                                            <span style="padding:0"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row m-t-40">
+                                                    <div class="col-12" ng-if="usernameExists">
+                                                        <span class="text-danger">* Email already exists, Please try other!</span>
+                                                    </div>
+                                                    <div class="col-12 padding-0 text-right">
+                                                        <button class="btn btn-primary" ng-click="saveUser()" ng-if="registerUser.Id === ''"
+                                                                ng-disabled="registerForm.$invalid || registerUser.password !== registerUser.confirmPassword || assignUserDID.didId === 0">
+                                                            Save
+                                                        </button>
+                                                        <button class="btn btn-primary" ng-click="updateUser()" ng-if="registerUser.Id !== ''"
+                                                                ng-disabled="registerForm.$invalid">
+                                                            Save
+                                                        </button>
+                                                        <button class="btn btn-danger" onclick="$('.userForm').modal('hide')">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade bd-example-modal-lg userProjects" role="dialog"
+                                 aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button class="btn btn-primary" onclick="$('#addUserProject').slideToggle()">Assign Project</button>
+                                            <button type="button" class="close" data-dismiss="modal">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body" style="padding:15px !important">
+                                            <div class="row" id="addUserProject" style="display:none">
+                                                <div class="col-10">
+                                                    <select class="form-control" ng-model="assignUserProject.projectId" convert-to-number required>
+                                                        <option hidden value="0">Select Project</option>
+                                                        <option ng-repeat="project in chooseProjects" value="{{project.projectId}}">{{project.projectName}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-2 text-center">
+                                                    <button class="btn tblActnBtn" ng-disabled="assignUserProject.projectId === 0" ng-click="assignProjectToUser()">
+                                                        <i class="material-icons">save</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="table-responsive overflow-hidden m-t-25">
+                                                <table class="table table-bordered table-striped table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">Remove</th>
+                                                            <th>Title</th>
+                                                            <th>Status</th>
+                                                            <th class="text-center">Active</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="project in assignedUserProjects">
+                                                            <td class="text-center">
+                                                                <div class="tooltip-custom">
+                                                                    <span class="tooltiptext" ng-if="project.isActive">Please deactivate first to unassign this project!</span>
+                                                                    <button class="btn tblActnBtn" ng-disabled="project.isActive" ng-click="deleteUserProject(project.userProjectId)">
+                                                                        <i class="material-icons">delete</i>
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                            <td>{{project.project.projectName}}</td>
+                                                            <td>{{project.project.currentStatus}}</td>
+                                                            <td class="text-center">
+                                                                <label class="m-r-25">
+                                                                    <input ng-disabled="assignedUserProjects.length === 1 || project.isActive" type="checkbox" ng-model="project.isActive"
+                                                                           ng-click="unSelectActiveProject($index)" />
+                                                                    <span style="padding:0"></span>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive users-table-wrapper">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Mobile Number</th>
+                                            <th>Email</th>
+                                            <th>Status</th>
+                                            <th class="text-center">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody ng-init="getUsers()" class="users-table">
+                                        <tr class="pointer" ng-repeat="user in users" data-id="{{user.id}}">
+                                            <td>{{user.firstName}} {{user.lastName}}</td>
+                                            <td>{{user.mobileNumber}}</td>
+                                            <td>{{user.email}}</td>
+                                            <th>
+                                                <span ng-if="!user.blocked" class="badge badge-success text-white">active</span>
+                                                <span ng-if="user.blocked" class="badge badge-danger text-white">blocked</span>
+                                            </th>
+                                            <td class="text-center">
+                                                <button class="btn tblActnBtn" ng-click="userform($index)"> <i class="material-icons">edit</i> </button>
+                                                <button class="btn tblActnBtn" ng-click="assignedProjects(user.id, user.userProjects)"> <i class="material-icons">code</i> </button>
+                                                <button class="btn tblActnBtn" ng-click="deleteUser(user.id, user.firstName)"> <i class="material-icons">delete</i> </button>
+                                                <button class="btn tblActnBtn" ng-if="!user.blocked" ng-click="blockUser(user.id, user.firstName)">
+                                                    <i class="fas fa-user-slash" style="font-size:18px"></i>
+                                                </button>
+                                                <button class="btn tblActnBtn" ng-if="user.blocked" ng-click="unblockUser(user.id, user.firstName)">
+                                                    <i class="fas fa-user-check" style="font-size:18px"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/assets/js/table.min.js"></script>
+    <script src="~/assets/js/pages/tables/jquery-datatable.js"></script>
+}

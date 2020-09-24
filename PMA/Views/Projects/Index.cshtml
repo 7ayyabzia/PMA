@@ -36,30 +36,27 @@
                         </li>
                     </ul>
                 </div>
-                <div class="body">
+                <div class="body" ng-init="getProjects()">
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-4" ng-repeat="project in projects">
                             <div class="card border-apply">
                                 <div class="m-b-20">
                                     <div class="contact-grid">
                                         <div class="profile-header bg-dark">
-                                            <div class="user-name">John Smith</div>
-                                            <div class="name-center">Cook</div>
+                                            <div class="user-name">{{project.projectName}}</div>
+                                            <div class="name-center">{{project.projectType}}</div>
                                         </div>
-                                        <p>
-                                            456, Estern evenue, Courtage area,
-                                            <br />New York
+                                        <p class="m-t-10">
+                                            {{project.projectDescription}}
                                         </p>
-                                        <div>
+                                        <span class="badge text-white text-center" ng-class="{'bg-warning': project.currentStatus === 'Requirement Phase', 'bg-success': project.currentStatus === 'Development Phase'}">{{project.currentStatus}}</span>
+                                        <div class="m-t-5">
                                             <span class="phone">
-                                                <i class="material-icons">phone</i>264-625-2583
+                                                <i class="material-icons">date_range</i>{{project.startingDate | date:'EEE MM/dd/yyyy h:mm a'}}
                                             </span>
                                         </div>
                                         <div class="profile-userbuttons">
-                                            <button type="button" class="btn btn-info btn-border-radius waves-effect">
-                                                Read
-                                                More
-                                            </button>
+                                            <button type="button" class="btn btn-info btn-border-radius waves-effect">Read More</button>
                                         </div>
                                     </div>
                                 </div>

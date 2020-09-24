@@ -45,6 +45,13 @@ namespace PMA
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            services.ConfigureApplicationCookie(
+                options => options.LoginPath = "/Auth/Login"
+            );
+            services.ConfigureApplicationCookie(
+               options => options.AccessDeniedPath = "/Access/Denied"
+            );
+
             services.AddTransient<CurrentContext>();
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IAccountService, AccountService>();
