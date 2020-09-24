@@ -60,15 +60,15 @@ namespace PMA.Services._CurrentContext
         public async Task<UserInfo> GetCurrentUserInfo()
         {
             var id = await GetUserId();
-            var user = await _userManager.Users.SingleOrDefaultAsync(s => s.Id == id);
+            var user = await _userManager.Users.Include(s=>s.UserProjects).ThenInclude(s=>s.Project).SingleOrDefaultAsync(s => s.Id == id);
             var roles = await _userManager.GetRolesAsync(user);
             var userRoles = string.Join(',', roles.ToArray());
             var userInfo = new UserInfo
             {
                 Name = user.FirstName + " " + user.LastName,
                 AccountName = _dbContext.Accounts.Find(user.AccountId).AccountName,
-                //activeDID = user.UserDIDs.SingleOrDefault(s => s.IsActive == true).DID.Phonenumber,
-                //assignedDIDs = user.UserDIDs.Where(s => s.IsActive == false).ToList(),
+                Project = user.UserProjects.SingleOrDefault(s => s.IsActive == true).Project.ProjectName,
+                AssignedProjects = user.UserProjects.Where(s => s.IsActive == false).ToList(),
                 Role = userRoles
             };
             return userInfo;

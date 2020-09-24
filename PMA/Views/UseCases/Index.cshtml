@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "UseCases";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <style>
+        .filter .text {
+            padding-left: 25px !important;
+        }
+
+        .filter label {
+            padding-right: 15px !important;
+        }
+        .panel-collapse div.col-3 {
+            font-weight: 600;
+        }
+        .panel-collapse .row{
+            width:80%;
+            margin:auto;
+        }
+        .panel-collapse div.col-3, div.col-9 {
+            border: 1px solid #757575;
+            padding: 8px 5px 8px 5px;
+        }
+    </style>
+}
+@section angular{
+    <script src="~/Angular/UseCases/UseCases.js"></script>
+}
+
+<div class="container-fluid" ng-controller="UseCasesCtrl">
+    <!-- Basic Examples -->
+    <div class="row clearfix" ng-init="getFormat()">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2>
+                        <strong>Projects</strong>
+                        <button class="btn btn-primary float-right" ng-click="addUsecase()">Add Use Case</button>
+                    </h2>
+                    <div class="filter m-t-30">
+                        <div class="filter-body">
+                            <span>
+                                <label>
+                                    <input name="DJ_status" type="radio" ng-model="useCaseFormat.format"
+                                           value="FullyDressed" ng-click="updateFormat('FullyDressed')" checked="checked" />
+                                    <span class="text">Fully Dressed Format</span>
+                                </label>
+                            </span>
+                            <span>
+                                <label>
+                                    <input name="DJ_status" type="radio" ng-model="useCaseFormat.format"
+                                           value="Brief" ng-click="updateFormat('Brief')" />
+                                    <span class="text">Brief Format</span>
+                                </label>
+                            </span>
+                            <span>
+                                <label>
+                                    <input name="DJ_status" type="radio" ng-model="useCaseFormat.format"
+                                           value="Casual" ng-click="updateFormat('Casual')" />
+                                    <span class="text">Casual Format</span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="panel-group" id="accordion_1" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-primary" ng-repeat="usecase in usecases">
+                            <div class="panel-heading pointer" role="tab" id="heading-{{usecase.useCaseId}}">
+                                <h4 class="panel-title">
+                                    <a role="button" ng-click="showUsecase(usecase.useCaseId)">
+                                        UC-{{usecase.useCaseNumber}} {{usecase.title}}
+                                        <i class="material-icons float-right" ng-click="editUsecase($index)">edit</i>
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="{{usecase.useCaseId}}" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="heading-{{usecase.useCaseId}}">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'"><strong>Title</strong></div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.title}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Description</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.description}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Scope</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.scope}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Level</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.level}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Actor</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.actor}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Stakeholders Interest</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.stakeholdersInterest | breakFilter"></span></div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Pre-Conditions</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.preConditions}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Post-Conditions</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"> {{usecase.postConditions}}</div>
+
+                                        <div class="col-3">Main Success Scenario</div>
+                                        <div class="col-9"> <span ng-bind-html="usecase.mainSuccessScenario | breakFilter"></span></div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed' || useCaseFormat.format === 'Casual'">Extensions</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed' || useCaseFormat.format === 'Casual'"><span ng-bind-html="usecase.extensions | breakFilter"></span></div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Special Requirements</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.specialRequirements | breakFilter"></span></div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Technology</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.technology}}</div>
+
+                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">OpenIssues</div>
+                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.openIssues | breakFilter"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/assets/js/form.min.js"></script>
+    <script src="~/assets/js/pages/ui/collapse.js"></script>
+}

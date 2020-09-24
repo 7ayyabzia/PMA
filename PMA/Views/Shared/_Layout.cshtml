@@ -21,9 +21,11 @@
     @RenderSection("css", false)
 
     <!--Angular Scripts-->
-    <script src="~/assets/js/bundles/angular/angular.js"></script>
+    @*<script src="~/assets/js/bundles/angular/angular.js"></script>*@
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
     <script>
-        var App = angular.module('PMA', [])
+        var App = angular.module('PMA', ['ngSanitize'])
         App.directive('convertToNumber', function () {
             return {
                 require: 'ngModel',
@@ -154,14 +156,26 @@
                 <ul class="list m-t-10">
                     <li class="active">
                         <a href="~/Projects">
-                            <i class="fas fa-inbox"></i>
+                            <i class="fa fa-tasks"></i>
                             <span>Projects</span>
                         </a>
                     </li>
                     <li class="">
+                        <a href="~/UseCases">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Use Cases</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="~/Account/UpdateProfile">
+                            <i class="fas fa-user-alt"></i>
+                            <span>My Profile</span>
+                        </a>
+                    </li>
+                    <li class="">
                         <a href="~/Account/Update">
-                            <i class="fas fa-inbox"></i>
-                            <span>Account</span>
+                            <i class="fas fa fa-industry"></i>
+                            <span>Company</span>
                         </a>
                     </li>
                 </ul>
@@ -173,7 +187,7 @@
         <aside id="rightsidebar" class="right-sidebar" ng-controller="UserInfoCtrl" ng-init="getUserInfo()">
             <div class="company-info">
                 <h3 class="company-name">{{user.accountName}}</h3>
-                <p class="active-did">{{user.activeDID}}</p>
+                <p class="active-did">{{user.project}}</p>
             </div>
             <ul class="user-info">
                 <li><a href="~/Account/UpdateProfile">{{user.name}}</a></li>

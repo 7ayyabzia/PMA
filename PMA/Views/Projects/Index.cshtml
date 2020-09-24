@@ -1,6 +1,5 @@
-﻿
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewData["Title"] = "Projects";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @section css{
@@ -20,21 +19,9 @@
                     <div class="col-xs-12 col-sm-6">
                         <h2>
                             <strong>Projects</strong>
+                            <button class="btn btn-primary float-right" ng-click="addProject()">Start new Project</button>
                         </h2>
                     </div>
-                    <ul class="header-dropdown m-r--5">
-                        <li class="dropdown">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li>
-                                    <a href="#" onClick="return false;" ng-click="addProject()">Add Project</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
                 <div class="body" ng-init="getProjects()">
                     <div class="row">

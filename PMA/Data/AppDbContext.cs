@@ -10,12 +10,12 @@ namespace PMA.Data
 {
     public class AppDbContext : IdentityDbContext<AppUser>
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<UserProject> UserProjects { get; set; }
+        public DbSet<UseCaseFormat> UseCaseFormats { get; set; }
+        public DbSet<UseCase> UseCases { get; set; }
     }
 }
