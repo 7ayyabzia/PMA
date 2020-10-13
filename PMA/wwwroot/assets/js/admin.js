@@ -24,8 +24,8 @@ $(function () {
     let currentLocation = window.location.pathname;
     let active = $('#leftsidebar li a[href="' + currentLocation + '"]')[0];
     if (active !== undefined) {
-        $('#leftsidebar li').attr('class', '')
-        $(active).parent().attr('class', 'active')
+        $('#leftsidebar li').removeClass('active')
+        $(active).parent().addClass('active')
     }
 
     //Month Picker
@@ -601,90 +601,91 @@ function activateNotificationAndTasksScroll() {
     });
 }
 //Dark Light Sidebar ======================================================================================
-$(".rightSetting .btn-sidebar-light").on("click", function () {
-    $("body").removeClass("menu_dark logo-black");
-     $("body").addClass("menu_light logo-white");
-    var menu_option = "menu_light";
-    localStorage.setItem("choose_logoheader", "logo-white");
-    localStorage.setItem("menu_option", menu_option);
-}), $(".rightSetting .btn-sidebar-dark").on("click", function () {
-    $("body").removeClass("menu_light logo-white");
-    $("body").addClass("menu_dark logo-black");
-    var menu_option = "menu_dark";
-    localStorage.setItem("choose_logoheader", "logo-black");
-    localStorage.setItem("menu_option", menu_option);
-});
+//$(".rightSetting .btn-sidebar-light").on("click", function () {
+//    $("body").removeClass("menu_dark logo-black");
+//     $("body").addClass("menu_light logo-white");
+//    var menu_option = "menu_light";
+//    localStorage.setItem("choose_logoheader", "logo-white");
+//    localStorage.setItem("menu_option", menu_option);
+//}),
+//$(".rightSetting .btn-sidebar-dark").on("click", function () {
+//    $("body").removeClass("menu_light logo-white");
+//    $("body").addClass("menu_dark logo-black");
+//    var menu_option = "menu_dark";
+//    localStorage.setItem("choose_logoheader", "logo-black");
+//    localStorage.setItem("menu_option", menu_option);
+//});
 
-// change theme dark/light on button click
+ //change theme dark/light on button click
 $(".rightSetting .btn-theme-light").on("click", function () {
     $("body").removeClass("dark submenu-closed menu_dark logo-black");
     $("body").addClass("light submenu-closed menu_light logo-white");
     var theme = "light";
     var menu_option = "menu_light";
-    localStorage.setItem("choose_logoheader", "logo-white");
-    localStorage.setItem("choose_skin", "theme-black");
-    localStorage.setItem("theme", theme);
-    localStorage.setItem("menu_option", menu_option);
-}), $(".rightSetting .btn-theme-dark").on("click", function () {
+    //localStorage.setItem("choose_logoheader", "logo-white");
+    //localStorage.setItem("choose_skin", "theme-black");
+    //localStorage.setItem("theme", theme);
+    //localStorage.setItem("menu_option", menu_option);
+}),
+$(".rightSetting .btn-theme-dark").on("click", function () {
     $("body").removeClass("light submenu-closed menu_light logo-white");
     $("body").addClass("dark submenu-closed menu_dark logo-black");
 
     var theme = "dark";
     var menu_option = "menu_dark";
-    localStorage.setItem("choose_logoheader", "logo-black");
-    localStorage.setItem("choose_skin", "theme-black");
-    localStorage.setItem("theme", theme);
-    localStorage.setItem("menu_option", menu_option);
+    //localStorage.setItem("choose_logoheader", "logo-black");
+    //localStorage.setItem("choose_skin", "theme-black");
+    //localStorage.setItem("theme", theme);
+    //localStorage.setItem("menu_option", menu_option);
 });
 
 //set theme on startup
-if (localStorage.getItem("theme")) {
-    $("body").removeClass("dark light");
-    jQuery("body").addClass(localStorage.getItem("theme"));
-}
+//if (localStorage.getItem("theme")) {
+//    $("body").removeClass("dark light");
+//    jQuery("body").addClass(localStorage.getItem("theme"));
+//}
 
+ //set dark sidebar menu on startup
+//if (localStorage.getItem("menu_option")) {
+//    jQuery("body").addClass(localStorage.getItem("menu_option"));
+//}
+ //set header color on startup
+//if (localStorage.getItem("choose_skin")) {
+//    jQuery("body").addClass(localStorage.getItem("choose_skin"));
+//} else {
+//    jQuery("body").addClass("theme-black");
 
-// set dark sidebar menu on startup
-if (localStorage.getItem("menu_option")) {
-    jQuery("body").addClass(localStorage.getItem("menu_option"));
-}
-// set header color on startup
-if (localStorage.getItem("choose_skin")) {
-    jQuery("body").addClass(localStorage.getItem("choose_skin"));
-} else {
-    jQuery("body").addClass("theme-black");
+//}
+//if (localStorage.getItem("choose_skin_active")) {
+//    $(".right-sidebar .demo-choose-skin li").each(function (index) {
+//        jQuery(this).removeClass("actived");
+//        if (jQuery(this).attr('data-theme') == localStorage.getItem("choose_skin_active")) {
+//            jQuery(this).addClass("actived");
+//        }
+//    });
+//}
+ //set logo color on startup
+//if (localStorage.getItem("choose_logoheader")) {
+//    jQuery("body").addClass(localStorage.getItem("choose_logoheader"));
+//} else {
+//    jQuery("body").addClass("logo-white");
+//}
+//if (localStorage.getItem("choose_logoheader_active")) {
+//    $(".right-sidebar .demo-choose-logoheader li").each(function (index) {
+//        jQuery(this).removeClass("actived");
+//        if (jQuery(this).attr('data-theme') == localStorage.getItem("choose_logoheader_active")) {
+//            jQuery(this).addClass("actived");
+//        }
+//    });
+//}
 
-}
-if (localStorage.getItem("choose_skin_active")) {
-    $(".right-sidebar .demo-choose-skin li").each(function (index) {
-        jQuery(this).removeClass("actived");
-        if (jQuery(this).attr('data-theme') == localStorage.getItem("choose_skin_active")) {
-            jQuery(this).addClass("actived");
-        }
-    });
-}
-// set logo color on startup
-if (localStorage.getItem("choose_logoheader")) {
-    jQuery("body").addClass(localStorage.getItem("choose_logoheader"));
-} else {
-    jQuery("body").addClass("logo-white");
-}
-if (localStorage.getItem("choose_logoheader_active")) {
-    $(".right-sidebar .demo-choose-logoheader li").each(function (index) {
-        jQuery(this).removeClass("actived");
-        if (jQuery(this).attr('data-theme') == localStorage.getItem("choose_logoheader_active")) {
-            jQuery(this).addClass("actived");
-        }
-    });
-}
-
-$(window).on("scroll", function () {
-    if ($(window).scrollTop() > 50) {
-        $(".navbar").addClass("active");
-    } else {
-        $(".navbar").removeClass("active");
-    }
-});
+//$(window).on("scroll", function () {
+//    if ($(window).scrollTop() > 50) {
+//        $(".navbar").addClass("active");
+//    } else {
+//        $(".navbar").removeClass("active");
+//    }
+//});
 
 /************* collapse button in panel***************8*/
 $(document).on('click', '.card .tools .t-collapse', function () {

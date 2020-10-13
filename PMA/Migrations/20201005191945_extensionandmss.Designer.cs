@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PMA.Data;
 
 namespace PMA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201005191945_extensionandmss")]
+    partial class extensionandmss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -485,6 +487,9 @@ namespace PMA.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Extensions")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Level")
                         .HasColumnType("nvarchar(max)");
 
@@ -695,7 +700,7 @@ namespace PMA.Migrations
             modelBuilder.Entity("PMA.Models.Extension", b =>
                 {
                     b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("Extensions")
+                        .WithMany("Extension")
                         .HasForeignKey("UseCaseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

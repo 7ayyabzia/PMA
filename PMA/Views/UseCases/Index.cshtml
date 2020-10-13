@@ -11,16 +11,33 @@
         .filter label {
             padding-right: 15px !important;
         }
+
         .panel-collapse div.col-3 {
             font-weight: 600;
         }
-        .panel-collapse .row{
-            width:80%;
-            margin:auto;
+
+        .panel-collapse .row {
+            width: 80%;
+            margin: auto;
         }
+
         .panel-collapse div.col-3, div.col-9 {
             border: 1px solid #757575;
             padding: 8px 5px 8px 5px;
+        }
+        #useCaseAddForm {
+            width: 80%;
+            margin: auto;
+            background: #F5F5F5;
+            padding: 20px
+        }
+        .factors td{
+            padding: 5px 10px;
+        }
+        .extension-solution {
+            width: 83%;
+            font-size: 10px;
+            margin-left: 68px;
         }
     </style>
 }
@@ -64,60 +81,240 @@
                         </div>
                     </div>
                 </div>
-                <div class="body">
-                    <div class="panel-group" id="accordion_1" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-primary" ng-repeat="usecase in usecases">
-                            <div class="panel-heading pointer" role="tab" id="heading-{{usecase.useCaseId}}">
-                                <h4 class="panel-title">
-                                    <a role="button" ng-click="showUsecase(usecase.useCaseId)">
-                                        UC-{{usecase.useCaseNumber}} {{usecase.title}}
-                                        <i class="material-icons float-right" ng-click="editUsecase($index)">edit</i>
-                                    </a>
-                                </h4>
+                <div id="useCaseAddForm" style="display:none">
+                    <form name="usecaseform">
+                        <div class="row">
+                            <div class="col-6">
+                                <label>UseCaseNumber</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="#1" name="useCaseNumber" ng-model="usecase.useCaseNumber" required />
+                                </div>
                             </div>
-                            <div id="{{usecase.useCaseId}}" class="panel-collapse collapse in" role="tabpanel"
-                                 aria-labelledby="heading-{{usecase.useCaseId}}">
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'"><strong>Title</strong></div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.title}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Description</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.description}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Scope</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.scope}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Level</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.level}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Actor</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.actor}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Stakeholders Interest</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.stakeholdersInterest | breakFilter"></span></div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Pre-Conditions</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.preConditions}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Post-Conditions</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"> {{usecase.postConditions}}</div>
-
-                                        <div class="col-3">Main Success Scenario</div>
-                                        <div class="col-9"> <span ng-bind-html="usecase.mainSuccessScenario | breakFilter"></span></div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed' || useCaseFormat.format === 'Casual'">Extensions</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed' || useCaseFormat.format === 'Casual'"><span ng-bind-html="usecase.extensions | breakFilter"></span></div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Special Requirements</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.specialRequirements | breakFilter"></span></div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Technology</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.technology}}</div>
-
-                                        <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">OpenIssues</div>
-                                        <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.openIssues | breakFilter"></span></div>
+                            <div class="col-6">
+                                <label>Title</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Create User" name="title" ng-model="usecase.title" required />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Description</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="This is used for x purpose" name="description" ng-model="usecase.description" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Scope</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Point of Sale System" name="scope" ng-model="usecase.scope" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Level</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="User Goal" name="level" ng-model="usecase.level" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Actors</label>
+                                <div class="row">
+                                    <div class="col-6 p-l-0">
+                                        <div class="form-group">
+                                            <label>Primary Actor</label>
+                                            <input type="text" class="form-control" ng-model="usecase.actorsObj[0]" placeholder="Manager, CEO" />
+                                        </div>
                                     </div>
+                                    <div class="col-6 p-r-0">
+                                        <div class="form-group">
+                                            <label>Secondary Actor</label>
+                                            <input type="text" class="form-control" ng-model="usecase.actorsObj[1]" placeholder="System" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Stakeholders Interest</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Salesmen, Manager, CEO e.t.c." name="stakeholdersInterest" ng-model="usecase.stakeholdersInterest" /></textarea>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Pre Conditions</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="PreConditions" name="preConditions" ng-model="usecase.preConditions" />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label>Post Conditions</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="PostConditions" name="postConditions" ng-model="usecase.postConditions" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="w-100">Main Success Scenario <i class="material-icons pointer float-right" ng-click="addMainSuccessScenario()">add</i></label>
+                                <div class="form-group">
+                                    <div class="row" ng-repeat="mss in usecase.mainSuccessScenario track by $index">
+                                        <span class="col-1 p-t-15">{{mss.number}} -</span>
+                                        <input class="form-control col-10" ng-model="usecase.mainSuccessScenario[$index].value" placeholder="Enter Success Scenarios" />
+                                        <span class="col-1 p-t-15 p-r-5 pointer text-right"><i class="fas fa-expand-arrows-alt" ng-click="addExtension(mss.number)"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="w-100">Extensions</label>
+                                <div class="form-group">
+                                    <div ng-repeat="ext in usecase.extensions track by $index">
+                                        <div class="row">
+                                            <span class="col-1 p-t-15">{{ext.number}} -</span>
+                                            <input class="form-control col-10" ng-model="usecase.extensions[$index].value" placeholder="Enter Success Scenarios" />
+                                            <span class="col-1"> <i class="material-icons pointer" ng-click="addExtensionSolution($index)">add</i></span>
+                                        </div>
+                                        <span ng-repeat="solution in ext.extensionSolutionsObj track by $index">
+                                            <input type="text" ng-model="ext.extensionSolutionsObj[$index]" class="form-control" style="width: 83%; font-size: 10px; margin-left: 68px;" placeholder="Enter Extension Solution" />
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Special Requirements</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Machineries" name="specialRequirements" ng-model="usecase.specialRequirements"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Technology</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Technology" name="technology" ng-model="usecase.technology" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label>Open Issues</label>
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Open Issues" name="openIssues" ng-model="usecase.openIssues"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row factors" ng-init="getFactors()">
+                            <div class="col-6">
+                                <h5 class="header padding-0">Technical Factors</h5>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th width="20%">Factor</th>
+                                        <th width="60%">Description</th>
+                                        <th width="20%" class="text-center">Active</th>
+                                    </tr>
+                                    <tr ng-repeat="factor in usecase.technicalFactors">
+                                        <td>{{factor.technicalFactor.factor}}</td>
+                                        <td>{{factor.technicalFactor.description}}</td>
+                                        <td class="text-center">
+                                            <label class="m-r-25">
+                                                <input type="checkbox" value="{{factor.technicalFactorId}}" ng-model="factor.isChecked" />
+                                                <span style="padding:0"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-6">
+                                <h5 class="header padding-0">Environmental Factors</h5>
+                                <table class="table table-striped">
+                                    <tr>
+                                        <th width="20%">Factor</th>
+                                        <th width="60%">Description</th>
+                                        <th width="20%" class="text-center">Active</th>
+                                    </tr>
+                                    <tr ng-repeat="factor in usecase.environmentalFactors">
+                                        <td>{{factor.environmentalFactor.factor}}</td>
+                                        <td>{{factor.environmentalFactor.description}}</td>
+                                        <td class="text-center">
+                                            <label class="m-r-25">
+                                                <input type="checkbox" value="{{factor.environmentalFactorId}}" ng-model="factor.isChecked" />
+                                                <span style="padding:0"></span>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="form-group text-right pt-5">
+                            <button class="btn btn-primary" ng-disabled="usecaseform.$invalid" ng-click="saveUsecase()">Save</button>
+                            <button class="btn btn-danger" onclick="$('#useCaseAddForm').slideToggle()">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="body">
+                <div class="panel-group" id="accordion_1" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-primary" ng-repeat="usecase in usecases">
+                        <div class="panel-heading pointer" role="tab" id="heading-{{usecase.useCaseId}}">
+                            <h4 class="panel-title">
+                                <a role="button" ng-click="showUsecase(usecase.useCaseId)">
+                                    UC-{{usecase.useCaseNumber}} {{usecase.title}}
+                                    <i class="material-icons float-right" ng-click="editUsecase($index)">edit</i>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="{{usecase.useCaseId}}" class="panel-collapse collapse in" role="tabpanel"
+                             aria-labelledby="heading-{{usecase.useCaseId}}">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'"><strong>Title</strong></div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.title}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Description</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.description}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Scope</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.scope}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Level</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.level}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Actor</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">Primary Actor: {{usecase.actor.split("|")[0]}} <br /> Secondary Actor: {{usecase.actor.split("|")[1]}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Stakeholders Interest</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.stakeholdersInterest | breakFilter"></span></div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Pre-Conditions</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.preConditions}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Post-Conditions</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"> {{usecase.postConditions}}</div>
+
+                                    <div class="col-3">Main Success Scenario</div>
+                                    <div class="col-9"> 
+                                        <span ng-repeat="scenario in usecase.mainSuccessScenario"> {{scenario.number}}- {{scenario.value}} <br /> </span>
+                                    </div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed' || useCaseFormat.format === 'Casual'">Extensions</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed' || useCaseFormat.format === 'Casual'">
+                                        <span ng-repeat="extension in usecase.extensions track by $index">
+                                            {{extension.number}}- {{extension.value}} <br />
+                                            <span style="font-size:11px; padding-left:15px" ng-repeat="solution in extension.extensionSolutions.split('|') track by $index">{{solution}} <br /></span>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Special Requirements</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.specialRequirements | breakFilter"></span></div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">Technology</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'">{{usecase.technology}}</div>
+
+                                    <div class="col-3" ng-if="useCaseFormat.format === 'FullyDressed'">OpenIssues</div>
+                                    <div class="col-9" ng-if="useCaseFormat.format === 'FullyDressed'"><span ng-bind-html="usecase.openIssues | breakFilter"></span></div>
                                 </div>
                             </div>
                         </div>
@@ -126,6 +323,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @section scripts{

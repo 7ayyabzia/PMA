@@ -4,7 +4,7 @@
     };
 });
 App.controller("UseCasesCtrl", function ($scope, $compile) {
-
+    $scope.usecase = { useCaseId: 0, mainSuccessScenario: "" };
     $scope.getFormat = function () {
         JsonCall("UseCases", "GetFormat");
         if (list === null) {
@@ -15,27 +15,88 @@ App.controller("UseCasesCtrl", function ($scope, $compile) {
 
         $scope.getUsecases();
     }
-
+    
     $scope.getUsecases = function () {
         JsonCall("UseCases", "GetUseCases");
         $scope.usecases = list;
     }
 
+    $scope.getFactors = function() {
+        JsonCall("UseCases", "GetFactors");
+        $scope.factors = list;
+    }
+    function useCaseFactors() {
+        let techFactors = angular.copy($scope.factors.technicalFactors);
+        let envFactors = angular.copy($scope.factors.environmentalFactors);
+        $scope.usecase.technicalFactors = techFactors.map(function (obj) {
+            return {
+                technicalFactorId: obj.technicalFactorId,
+                technicalFactor: obj
+            }
+        });
+        $scope.usecase.environmentalFactors = envFactors.map(function (obj) {
+            return {
+                environmentalFactorId: obj.environmentalFactorId,
+                environmentalFactor: obj
+            }
+        });
+    }
+
     $scope.addUsecase = function () {
-        showUseCaseDialogue();
+        $scope.usecase = { useCaseId: 0, mainSuccessScenario: [{ number: 1, value: "" }], extensions: []};
+        $scope.usecase.actorsObj = ["", ""];
+        useCaseFactors();
+
+        $('#useCaseAddForm').slideToggle();
     }
     $scope.editUsecase = function (i) {
         $scope.usecase = angular.copy($scope.usecases[i]);
-        showUseCaseDialogue();
+
+        useCaseFactors();
+        $scope.usecase.technicalFactors.map(function (obj) {
+            let index = $scope.usecases[i].technicalFactors.findIndex(s => s.technicalFactorId === obj.technicalFactorId);
+            if (index > -1)
+                obj.isChecked = true;
+            else
+                obj.isChecked = false;
+        })
+
+        $scope.usecase.environmentalFactors.map(function (obj) {
+            let index = $scope.usecases[i].environmentalFactors.findIndex(s => s.environmentalFactorId === obj.environmentalFactorId);
+            if (index > -1)
+                obj.isChecked = true;
+            else
+                obj.isChecked = false;
+        })
+        $scope.usecase.extensions.map(function (obj) {
+            obj.extensionSolutionsObj = obj.extensionSolutions.split("|");
+        })
+        $scope.usecase.actorsObj = $scope.usecase.actor.split("|");
+
+        $('#useCaseAddForm').slideToggle();
     }
 
     $scope.saveUsecase = function () {
+        $scope.usecase.extensions.map(function (obj) {
+            obj.extensionSolutions = obj.extensionSolutionsObj.join("|");
+        })
+        $scope.usecase.actor = $scope.usecase.actorsObj.join("|");
+
+        $scope.usecase.technicalFactors = $scope.usecase.technicalFactors.filter(s => s.isChecked === true)
+        $scope.usecase.technicalFactors.map(function (obj) {
+            obj.technicalFactor = null;
+        });
+        $scope.usecase.environmentalFactors = $scope.usecase.environmentalFactors.filter(s => s.isChecked === true)
+        $scope.usecase.environmentalFactors.map(function (obj) {
+            obj.environmentalFactor = null;
+        });
+
         if ($scope.usecase.useCaseId === 0)
             JsonCallParam("Usecases", "AddUsecase", { "usecase": JSON.stringify($scope.usecase) });
         else
             JsonCallParam("Usecases", "EditUseCase", { "usecase": JSON.stringify($scope.usecase) });
 
-        $('#useCaseDialogue').modal('hide');
+        $('#useCaseAddForm').slideToggle();
         $scope.getUsecases();
     }
 
@@ -46,87 +107,18 @@ App.controller("UseCasesCtrl", function ($scope, $compile) {
     $scope.updateFormat = function (val) {
         JsonCallParam("UseCases", "AddOrUpdateFormat", { format: val });
     }
-
-    function showUseCaseDialogue() {
-        $('#useCaseDialogue').remove();
-        let content = ' <div class="modal fade" id="useCaseDialogue" role="dialog"> ' +
-            '<div class="modal-dialog modal-lg modal-dialog-centered" role="document">' +
-            '   <div class="modal-content">' +
-            '       <div class="modal-header br-btm">' +
-            '           <h5 class="modal-title">Use Case</h5>' +
-            '           <button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
-            '               <span aria-hidden="true">&times;</span>' +
-            '           </button>' +
-            '       </div>' +
-            '       <div class="modal-body br-btm">' +
-            '           <form name="usecaseform"> ' +
-            '               <label>UseCaseNumber</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="#1" name="useCaseNumber" ng-model="usecase.useCaseNumber"/> ' +
-            '               </div> ' +
-            '               <label>Title</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="Create User" name="title" ng-model="usecase.title"/> ' +
-            '               </div> ' +
-            '               <label>Description</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="This is used for x purpose" name="description" ng-model="usecase.description"/> ' +
-            '               </div> ' +
-            '               <label>Scope</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="Point of Sale System" name="scope" ng-model="usecase.scope"/> ' +
-            '               </div> ' +
-            '               <label>Level</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="User Goal" name="level" ng-model="usecase.level"/> ' +
-            '               </div> ' +
-            '               <label>Actor</label>' +
-            '               <div class="form-group">' +
-            '                   <textarea class="form-control" placeholder="Primary Actor & Secondary Actors" name="actor" ng-model="usecase.actor"/></textarea> ' +
-            '               </div> ' +
-            '               <label>Stakeholders Interest</label>' +
-            '               <div class="form-group">' +
-            '                   <textarea class="form-control" placeholder="Salesmen, Manager, CEO e.t.c." name="stakeholdersInterest" ng-model="usecase.stakeholdersInterest"/></textarea> ' +
-            '               </div> ' +
-            '               <label>Pre Conditions</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="PreConditions" name="preConditions" ng-model="usecase.preConditions"/> ' +
-            '               </div> ' +
-            '               <label>Post Conditions</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="PostConditions" name="postConditions" ng-model="usecase.postConditions"/> ' +
-            '               </div> ' +
-            '               <label>Main Success Scenario</label>' +
-            '               <div class="form-group">' +
-            '                   <textarea type="text" class="form-control" placeholder="Main Success Scenario" name="mainSuccessScenario" ng-model="usecase.mainSuccessScenario" required/></textarea> ' +
-            '                   <span ng-show="projectForm.projectName.$touched && projectForm.projectName.$error.required" class="text-danger pt-2">* Main Success Scenario is necessary </span >' +
-            '               </div> ' +
-            '               <label>Extensions</label>' +
-            '               <div class="form-group">' +
-            '                   <textarea class="form-control" placeholder="Extensions" name="extensions" ng-model="usecase.extensions"/></textarea> ' +
-            '               </div> ' +
-            '               <label>Special Requirements</label>' +
-            '               <div class="form-group">' +
-            '                   <textarea class="form-control" placeholder="Machineries" name="specialRequirements" ng-model="usecase.specialRequirements" /></textarea> ' +
-            '               </div> ' +
-            '               <label>Technology</label>' +
-            '               <div class="form-group">' +
-            '                   <input type="text" class="form-control" placeholder="Technology" name="technology" ng-model="usecase.technology"/> ' +
-            '               </div> ' +
-            '               <label>Open Issues</label>' +
-            '               <div class="form-group">' +
-            '                   <textarea class="form-control" placeholder="Open Issues" name="openIssues" ng-model="usecase.openIssues" /></textarea> ' +
-            '               </div> ' +
-            '               <div class="form-group text-right pt-5">' +
-            '                   <button class="btn btn-primary" ng-disabled="usecaseform.$invalid" ng-click="saveUsecase()">Save</button> ' +
-            '                   <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button> ' +
-            '               </div> ' +
-            '           </form> ' +
-            '       </div>' +
-            '   </div>' +
-            '</div>' +
-            '</div>';
-        angular.element(document.body).append($compile(content)($scope));
-        $('#useCaseDialogue').modal();
+    $scope.addMainSuccessScenario = function () {
+        $scope.usecase.mainSuccessScenario.push({ number: $scope.usecase.mainSuccessScenario.length + 1, value: "" });
+    }
+    $scope.addExtension = function (i) {
+        $scope.usecase.extensions.push({
+            extensionOf: i,
+            number: i + "" + digitToChar($scope.usecase.extensions.filter(s => s.extensionOf === i).length + 1),
+            value: "",
+            extensionSolutionsObj: [""]
+        });
+    }
+    $scope.addExtensionSolution = function (i) {
+        $scope.usecase.extensions[i].extensionSolutionsObj.push("");
     }
 });

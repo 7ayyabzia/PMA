@@ -11,6 +11,7 @@ namespace PMA.Services.UseCaseService
 {
     public interface IUseCaseService
     {
+        Task<object> GetFactors();
         Task<UseCaseFormat> GetFormat();
         Task AddOrUpdateFormat(string format);
 
@@ -89,7 +90,19 @@ namespace PMA.Services.UseCaseService
         public async Task<IEnumerable<UseCase>> GetUseCases()
         {
             var formatId = await GetFormatId();
-            var useCases = await _dbContext.UseCases.Where(s => s.UseCaseFormatId == formatId).ToListAsync();
+            var useCases = await _dbContext.UseCases
+                .Include(s=>s.TechnicalFactors)
+                .Include(s=>s.EnvironmentalFactors)
+                .Include(s=>s.MainSuccessScenario)
+                .Include(s=>s.Extensions)
+                .Where(s => s.UseCaseFormatId == formatId).ToListAsync();
+            useCases.ForEach(s => 
+            { 
+                s.TechnicalFactors.ToList().ForEach(s => s.UseCase = null);
+                s.EnvironmentalFactors.ToList().ForEach(s => s.UseCase = null);
+                s.Extensions.ToList().ForEach(s => s.UseCase = null);
+                s.MainSuccessScenario.ToList().ForEach(s => s.UseCase = null);
+            });
             return useCases;
         }
 
@@ -112,12 +125,25 @@ namespace PMA.Services.UseCaseService
             _useCase.Title = useCase.Title;
             _useCase.UseCaseNumber = useCase.UseCaseNumber;
 
+            _useCase.EnvironmentalFactors = useCase.EnvironmentalFactors;
+            _useCase.TechnicalFactors = useCase.TechnicalFactors;
+
             _dbContext.UseCases.Update(_useCase);
             await _dbContext.SaveChangesAsync();
 
         }
 
-        #endregion 
+        public async Task<object> GetFactors()
+        {
+            var factors = new
+            {
+                TechnicalFactors = await _dbContext.TechnicalFactors.ToListAsync(),
+                EnvironmentalFactors = await _dbContext.EnvironmentalFactors.ToListAsync()
+            };
+            return factors;
+        }
+
+        #endregion
     }
 
 }

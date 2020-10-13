@@ -4,6 +4,19 @@
 }
 @section css{
     <link rel="stylesheet" href="~/assets/js/bundles/angularjs-datetime-picker/angularjs-datetime-picker.css" />
+    <style>
+        .project-card{
+            min-height:225px;
+        }
+        .desc {
+            padding: 0 10px;
+            height: 85px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+    </style>
 }
 @section angular{
     <script src="~/Angular/Projects/Projects.js"></script>
@@ -11,41 +24,42 @@
 }
 
 <div class="container-fluid" ng-controller="ProjectsCtrl">
-    <!-- Basic Examples -->
-    <div class="row clearfix">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="card">
-                <div class="header">
-                    <div class="col-xs-12 col-sm-6">
-                        <h2>
-                            <strong>Projects</strong>
-                            <button class="btn btn-primary float-right" ng-click="addProject()">Start new Project</button>
-                        </h2>
-                    </div>
-                </div>
-                <div class="body" ng-init="getProjects()">
-                    <div class="row">
-                        <div class="col-md-4" ng-repeat="project in projects">
-                            <div class="card border-apply">
-                                <div class="m-b-20">
-                                    <div class="contact-grid">
-                                        <div class="profile-header bg-dark">
-                                            <div class="user-name">{{project.projectName}}</div>
-                                            <div class="name-center">{{project.projectType}}</div>
-                                        </div>
-                                        <p class="m-t-10">
-                                            {{project.projectDescription}}
-                                        </p>
-                                        <span class="badge text-white text-center" ng-class="{'bg-warning': project.currentStatus === 'Requirement Phase', 'bg-success': project.currentStatus === 'Development Phase'}">{{project.currentStatus}}</span>
-                                        <div class="m-t-5">
-                                            <span class="phone">
-                                                <i class="material-icons">date_range</i>{{project.startingDate | date:'EEE MM/dd/yyyy h:mm a'}}
-                                            </span>
-                                        </div>
-                                        <div class="profile-userbuttons">
-                                            <button type="button" class="btn btn-info btn-border-radius waves-effect">Read More</button>
-                                        </div>
-                                    </div>
+    <div class="card">
+        <div class="header">
+            <h2>
+                <strong>Projects</strong>
+                <button class="btn btn-primary float-right" ng-click="addProject()">Start new Project</button>
+            </h2>
+        </div>
+        <div class="body" ng-init="getProjects()">
+            <div class="row">
+                <div class="col-md-4" ng-repeat="project in projects">
+                    <div class="card border-apply project-card">
+                        <div class="m-b-20">
+                            <div class="contact-grid">
+                                <div class="profile-header bg-dark">
+                                    <div class="user-name">{{project.projectName}}</div>
+                                    <div class="name-center">{{project.projectType}}</div>
+                                </div>
+                                <p class="m-t-10 desc">
+                                    {{project.projectDescription}}
+                                </p>
+                                <span class="badge text-white text-center" ng-class="{'bg-warning': project.currentStatus === 'Requirement Phase', 'bg-success': project.currentStatus === 'Development Phase'}">{{project.currentStatus}}</span>
+                                <div class="m-t-5">
+                                    <span class="phone">
+                                        <i class="material-icons">date_range</i>{{project.startingDate | date:'EEE MM/dd/yyyy h:mm a'}}
+                                    </span>
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn tblActnBtn">
+                                        <i class="material-icons">edit</i>
+                                    </button>
+                                    <button type="button" class="btn tblActnBtn">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                    <button type="button" class="btn tblActnBtn">
+                                        <i class="material-icons">block</i>
+                                    </button>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,80 @@
+﻿@model PMA.Dto.User.UpdateProfileDto
+
+@{
+    ViewData["Title"] = "UpdateProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="container-fluid">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    <strong>Profile Details</strong>
+                </h2>
+            </div>
+            <div class="body">
+                <form asp-controller="Account" asp-action="UpdateProfile">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-12 mb-0">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" placeholder="Mathew" name="firstName" asp-for="firstName" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-0">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" placeholder="Perry" name="lastName" asp-for="lastName" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-0">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control" placeholder="Email" name="email" asp-for="email" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-0">
+                            <div class="form-group">
+                                <label>Mobile Number</label>
+                                <input type="text" class="form-control" pattern="[1]+[0-9]{10}" placeholder="1XXXXXXXXXX" name="mobileNumber" asp-for="mobileNumber" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 mb-0">
+                            <p class="text-danger">@ViewBag.Error</p>
+                        </div>
+                        <div class="col-lg-12 col-md-12 pr-2 mb-0">
+                            <button class="btn btn-primary float-right">Save</button>
+                        </div>
+                    </div>
+                </form>
+                <h5 class="header padding-0">User Projects</h5>
+                <table class="table table-striped">
+                    <tr>
+                        <th width="80%">Project Name</th>
+                        <th width="20%" class="text-center">Active</th>
+                    </tr>
+                    @foreach (var project in Model.userProjects)
+                    {
+                        <tr>
+                            <td>@project.Project.ProjectName - @project.Project.CurrentStatus</td>
+                            <td class="text-center">
+                                <label class="m-r-25">
+                                    <input @(project.IsActive == true ? "checked = 'checked'" : "") type="checkbox" onclick="activateProject(@project.ProjectId, '@Model.id')" />
+                                    <span style="padding:0"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+            </div>
+        </div>
+    </div>
+@section scripts{
+    <script>
+        function activateProject(projectId, uid) {
+            JsonCallParam("Account", "ActivateProject", { id: projectId, userid: uid });
+            window.location.reload();
+        }
+    </script>
+}

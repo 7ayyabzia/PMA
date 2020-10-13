@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PMA.Data;
 
 namespace PMA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201001190843_added-domain-model")]
+    partial class addeddomainmodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -329,76 +331,6 @@ namespace PMA.Migrations
                     b.ToTable("DomainModelConcepts");
                 });
 
-            modelBuilder.Entity("PMA.Models.EnvironmentalFactor", b =>
-                {
-                    b.Property<int>("EnvironmentalFactorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Factor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Weight")
-                        .HasColumnType("float");
-
-                    b.HasKey("EnvironmentalFactorId");
-
-                    b.ToTable("EnvironmentalFactors");
-                });
-
-            modelBuilder.Entity("PMA.Models.Extension", b =>
-                {
-                    b.Property<int>("ExtensionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ExtensionSolutions")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Number")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UseCaseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ExtensionId");
-
-                    b.HasIndex("UseCaseId");
-
-                    b.ToTable("Extensions");
-                });
-
-            modelBuilder.Entity("PMA.Models.MainSuccessScenario", b =>
-                {
-                    b.Property<int>("MainSuccessScenarioId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UseCaseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MainSuccessScenarioId");
-
-                    b.HasIndex("UseCaseId");
-
-                    b.ToTable("MainSuccessScenarios");
-                });
-
             modelBuilder.Entity("PMA.Models.PDM", b =>
                 {
                     b.Property<int>("PDMId")
@@ -451,27 +383,6 @@ namespace PMA.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("PMA.Models.TechnicalFactor", b =>
-                {
-                    b.Property<int>("TechnicalFactorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Factor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("Weight")
-                        .HasColumnType("float");
-
-                    b.HasKey("TechnicalFactorId");
-
-                    b.ToTable("TechnicalFactors");
-                });
-
             modelBuilder.Entity("PMA.Models.UseCase", b =>
                 {
                     b.Property<int>("UseCaseId")
@@ -485,7 +396,13 @@ namespace PMA.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Extensions")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Level")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MainSuccessScenario")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OpenIssues")
@@ -525,28 +442,6 @@ namespace PMA.Migrations
                     b.ToTable("UseCases");
                 });
 
-            modelBuilder.Entity("PMA.Models.UseCaseEnvironmentalFactor", b =>
-                {
-                    b.Property<int>("UseCaseEnvironmentalFactorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("EnvironmentalFactorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UseCaseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UseCaseEnvironmentalFactorId");
-
-                    b.HasIndex("EnvironmentalFactorId");
-
-                    b.HasIndex("UseCaseId");
-
-                    b.ToTable("UseCaseEnvironmentalFactors");
-                });
-
             modelBuilder.Entity("PMA.Models.UseCaseFormat", b =>
                 {
                     b.Property<int>("UseCaseFormatId")
@@ -565,28 +460,6 @@ namespace PMA.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("UseCaseFormats");
-                });
-
-            modelBuilder.Entity("PMA.Models.UseCaseTechnicalFactor", b =>
-                {
-                    b.Property<int>("UseCaseTechnicalFactorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("TechnicalFactorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UseCaseId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UseCaseTechnicalFactorId");
-
-                    b.HasIndex("TechnicalFactorId");
-
-                    b.HasIndex("UseCaseId");
-
-                    b.ToTable("UseCaseTechnicalFactors");
                 });
 
             modelBuilder.Entity("PMA.Models.UserProject", b =>
@@ -692,24 +565,6 @@ namespace PMA.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PMA.Models.Extension", b =>
-                {
-                    b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("Extensions")
-                        .HasForeignKey("UseCaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PMA.Models.MainSuccessScenario", b =>
-                {
-                    b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("MainSuccessScenario")
-                        .HasForeignKey("UseCaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("PMA.Models.PDM", b =>
                 {
                     b.HasOne("PMA.Models.UseCase", "UseCase")
@@ -737,41 +592,11 @@ namespace PMA.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PMA.Models.UseCaseEnvironmentalFactor", b =>
-                {
-                    b.HasOne("PMA.Models.EnvironmentalFactor", "EnvironmentalFactor")
-                        .WithMany()
-                        .HasForeignKey("EnvironmentalFactorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("EnvironmentalFactors")
-                        .HasForeignKey("UseCaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("PMA.Models.UseCaseFormat", b =>
                 {
                     b.HasOne("PMA.Models.Project", "Project")
                         .WithMany()
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PMA.Models.UseCaseTechnicalFactor", b =>
-                {
-                    b.HasOne("PMA.Models.TechnicalFactor", "TechnicalFactor")
-                        .WithMany()
-                        .HasForeignKey("TechnicalFactorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("TechnicalFactors")
-                        .HasForeignKey("UseCaseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

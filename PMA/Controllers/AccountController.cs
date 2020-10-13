@@ -67,7 +67,47 @@ namespace PMA.Controllers
             var account = JsonConvert.DeserializeObject<Account>(Request.Form["account"]);
             await _accountService.UpdateAccount(account);
         }
+        [Authorize]
+        public async Task<IActionResult> UpdateProfile()
+        {
+            var userId = await _currentContext.GetUserId();
+            var user = await _userManager.Users.Include(s => s.UserProjects)
+                .ThenInclude(s => s.Project).SingleOrDefaultAsync(s => s.Id == userId);
 
+            UpdateProfileDto profile = new UpdateProfileDto
+            {
+                email = user.Email,
+                mobileNumber = user.MobileNumber,
+                firstName = user.FirstName,
+                lastName = user.LastName,
+                id = user.Id,
+                userProjects = user.UserProjects
+            };
+            return View(profile);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> UpdateProfile(UpdateProfileDto updateProfileDto)
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            user.FirstName = updateProfileDto.firstName;
+            user.LastName = updateProfileDto.lastName;
+            user.MobileNumber = updateProfileDto.mobileNumber;
+            user.Email = updateProfileDto.email;
+            user.UserName = updateProfileDto.email;
+
+            var result = await _userManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+            {
+                result.Errors.ToList().ForEach(s => ViewBag.Error += s.Description);
+                return View(updateProfileDto);
+            }
+
+            return RedirectToAction("UpdateProfile");
+        }
 
 
         #region "Users"

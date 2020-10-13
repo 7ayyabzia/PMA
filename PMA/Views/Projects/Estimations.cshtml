@@ -1,0 +1,143 @@
+﻿@{
+    ViewData["Title"] = "Project Estimations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <style>
+        .filter .text {
+            padding-left: 25px !important;
+        }
+
+        .filter label {
+            padding-right: 15px !important;
+        }
+
+        .panel-collapse div.col-3 {
+            font-weight: 600;
+        }
+
+        .panel-collapse .row {
+            width: 80%;
+            margin: auto;
+        }
+
+        .panel-collapse div.col-3, div.col-9 {
+            border: 1px solid #757575;
+            padding: 8px 5px 8px 5px;
+        }
+    </style>
+}
+@section angular{
+    <script src="~/Angular/Estimations/Estimations.js"></script>
+}
+
+<div class="container-fluid" ng-controller="EstimationsCtrl">
+    <!-- Basic Examples -->
+    <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="header">
+                    <h2> <strong>Project Estimations</strong> </h2>
+                </div>
+                <div class="body p-b-50">
+                    <div class="p-b-10">
+                        <p>
+                            According to our estimates,
+                            this project with take about <label> {{estimated.minWeek}} weeks</label> to <label> {{estimated.maxWeek}} week</label>
+                            with atleast ten developer (programmers, testers, DBAs, designers, etc.).
+                        </p>
+                        <p>Note: These estimations are find by "Use Case Points" cost estimation method. 
+                        Below are some tables of calculations.</p>
+                        <br /><hr />
+                    </div>
+                    <div class="row" ng-init="getEstimations()">
+
+                        <div class="col-12 padding-0">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="header p-b-10">Unadjusted Use Case Weight</h5>
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th width="70%">Use Case Complexity</th>
+                                            <th width="30%">No. Of Use Case</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Simple</td>
+                                            <td>{{UUCW.simple.noOfUC}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Average</td>
+                                            <td>{{UUCW.average.noOfUC}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Complex</td>
+                                            <td>{{UUCW.complex.noOfUC}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="header p-b-10">Unadjusted Actor Weight</h5>
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th width="70%">Actor Type</th>
+                                            <th width="30%">No. Of Actors</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Simple</td>
+                                            <td>{{UAW.simple.noOfActors}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Average</td>
+                                            <td>{{UAW.average.noOfActors}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Complex</td>
+                                            <td>{{UAW.complex.noOfActors}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 p-t-20">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="header p-b-10">Technical Factor</h5>
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th width="70%">Factor</th>
+                                            <th width="30%">Assessment</th>
+                                        </tr>
+                                        <tr ng-repeat="factor in TechFactors">
+                                            <td>{{factor.description}}</td>
+                                            <td>{{factor.assessment}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="col-6">
+                                    <h5 class="header p-b-10">Environmental Factors</h5>
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th width="70%">Factor</th>
+                                            <th width="30%">Assessment</th>
+                                        </tr>
+                                        <tr ng-repeat="factor in EnvFactors">
+                                            <td>{{factor.description}}</td>
+                                            <td>{{factor.assessment}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/assets/js/form.min.js"></script>
+    <script src="~/assets/js/pages/ui/collapse.js"></script>
+}

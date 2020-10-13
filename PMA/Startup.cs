@@ -18,6 +18,7 @@ using PMA.Services.AccountService;
 using PMA.Models.ApplicationUser;
 using PMA.Services.ProjectService;
 using PMA.Services.UseCaseService;
+using PMA.Services.DomainModelService;
 
 namespace PMA
 {
@@ -58,6 +59,7 @@ namespace PMA
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IProjectService, ProjectService>();
             services.AddTransient<IUseCaseService, UseCaseService>();
+            services.AddTransient<IDomainModelService, DomainModelService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

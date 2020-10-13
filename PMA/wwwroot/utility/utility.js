@@ -144,3 +144,32 @@ function cronParser(expression) {
 function minTwoDigits(n) {
     return (n.length === 1 ? '0' : '') + n;
 }
+
+function digitToChar(dig) {
+    if (dig === 1) return "a";
+    if (dig === 2) return "b";
+    if (dig === 3) return "c";
+    if (dig === 4) return "d";
+    if (dig === 5) return "e";
+    if (dig === 6) return "f";
+    if (dig === 7) return "g";
+    if (dig === 8) return "h";
+    if (dig === 9) return "i";
+    if (dig === 10) return "j";
+    if (dig === 11) return "k";
+    if (dig === 12) return "l";
+    if (dig === 13) return "m";
+    if (dig === 14) return "n";
+    if (dig === 15) return "o";
+    if (dig === 16) return "p";
+    if (dig === 17) return "q";
+    if (dig === 18) return "r";
+    if (dig === 19) return "s";
+    if (dig === 20) return "t";
+    if (dig === 21) return "u";
+    if (dig === 22) return "v";
+    if (dig === 23) return "w";
+    if (dig === 24) return "x";
+    if (dig === 25) return "y";
+    if (dig === 26) return "z";
+}

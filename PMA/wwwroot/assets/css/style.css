@@ -1887,7 +1887,7 @@
     }
 
 .l-bg-green {
-    background: linear-gradient(45deg, #9ce89d, #cdfa7e) !important;
+    background: linear-gradient(45deg,#9ce89d,#cdfa7e) !important;
     color: #fff
 }
 
@@ -1896,7 +1896,7 @@
     }
 
 .l-bg-orange {
-    background: linear-gradient(135deg, #ffc480, #ff763b) !important;
+    background: linear-gradient(135deg,#ffc480,#ff763b) !important;
     color: #fff
 }
 
@@ -1905,7 +1905,7 @@
     }
 
 .l-bg-cyan {
-    background: linear-gradient(45deg, #72c2ff, #86f0ff) !important;
+    background: linear-gradient(45deg,#72c2ff,#86f0ff) !important;
     color: #fff
 }
 
@@ -1914,7 +1914,7 @@
     }
 
 .l-bg-red {
-    background: linear-gradient(316deg, #fc5286, #fbaaa2) !important;
+    background: linear-gradient(316deg,#fc5286,#fbaaa2) !important;
     color: #fff
 }
 
@@ -1923,7 +1923,7 @@
     }
 
 .l-bg-purple {
-    background: linear-gradient(230deg, #759bff, #843cf6) !important;
+    background: linear-gradient(230deg,#759bff,#843cf6) !important;
     color: #fff
 }
 
@@ -1932,7 +1932,7 @@
     }
 
 .l-bg-purple-dark {
-    background: linear-gradient(45deg, #a52dd8, #e29bf1) !important;
+    background: linear-gradient(45deg,#a52dd8,#e29bf1) !important;
     color: #fff
 }
 
@@ -2529,32 +2529,32 @@
         -moz-transition: all .5s ease-out;
         -o-transition: all .5s ease-out;
         transition: all .5s ease-out;
-        -webkit-transition-property: -webkit-transform, opacity;
-        -moz-transition-property: -moz-transform, opacity;
-        -o-transition-property: -o-transform, opacity;
-        transition-property: transform, opacity;
-        -webkit-transform: scale(0) translate(0, 0);
-        -moz-transform: scale(0) translate(0, 0);
-        -ms-transform: scale(0) translate(0, 0);
-        -o-transform: scale(0) translate(0, 0);
-        transform: scale(0) translate(0, 0);
+        -webkit-transition-property: -webkit-transform,opacity;
+        -moz-transition-property: -moz-transform,opacity;
+        -o-transition-property: -o-transform,opacity;
+        transition-property: transform,opacity;
+        -webkit-transform: scale(0) translate(0,0);
+        -moz-transform: scale(0) translate(0,0);
+        -ms-transform: scale(0) translate(0,0);
+        -o-transform: scale(0) translate(0,0);
+        transform: scale(0) translate(0,0);
         pointer-events: none
     }
 
     .waves-effect.waves-light .waves-ripple {
-        background: rgba(255, 255, 255, 0.4);
-        background: -webkit-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-        background: -o-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-        background: -moz-radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%);
-        background: radial-gradient(rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 70%)
+        background: rgba(255,255,255,0.4);
+        background: -webkit-radial-gradient(rgba(255,255,255,0.2) 0,rgba(255,255,255,0.3) 40%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 70%);
+        background: -o-radial-gradient(rgba(255,255,255,0.2) 0,rgba(255,255,255,0.3) 40%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 70%);
+        background: -moz-radial-gradient(rgba(255,255,255,0.2) 0,rgba(255,255,255,0.3) 40%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 70%);
+        background: radial-gradient(rgba(255,255,255,0.2) 0,rgba(255,255,255,0.3) 40%,rgba(255,255,255,0.4) 50%,rgba(255,255,255,0.5) 60%,rgba(255,255,255,0) 70%)
     }
 
     .waves-effect.waves-classic .waves-ripple {
-        background: rgba(0, 0, 0, 0.2)
+        background: rgba(0,0,0,0.2)
     }
 
     .waves-effect.waves-classic.waves-light .waves-ripple {
-        background: rgba(255, 255, 255, 0.4)
+        background: rgba(255,255,255,0.4)
     }
 
 .waves-notransition {
@@ -2570,7 +2570,7 @@
     -ms-transform: translateZ(0);
     -o-transform: translateZ(0);
     transform: translateZ(0);
-    -webkit-mask-image: -webkit-radial-gradient(circle, #fff 100%, #000 100%)
+    -webkit-mask-image: -webkit-radial-gradient(circle,#fff 100%,#000 100%)
 }
 
     .waves-button, .waves-button:hover, .waves-button:visited, .waves-button-input {
@@ -2624,8 +2624,8 @@
 
 .waves-float {
     -webkit-mask-image: none;
-    -webkit-box-shadow: 0 1px 1.5px 1px rgba(0, 0, 0, 0.12);
-    box-shadow: 0 1px 1.5px 1px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 1px 1.5px 1px rgba(0,0,0,0.12);
+    box-shadow: 0 1px 1.5px 1px rgba(0,0,0,0.12);
     -webkit-transition: all 300ms;
     -moz-transition: all 300ms;
     -o-transition: all 300ms;
@@ -2633,8 +2633,8 @@
 }
 
     .waves-float:active {
-        -webkit-box-shadow: 0 8px 20px 1px rgba(0, 0, 0, 0.3);
-        box-shadow: 0 8px 20px 1px rgba(0, 0, 0, 0.3)
+        -webkit-box-shadow: 0 8px 20px 1px rgba(0,0,0,0.3);
+        box-shadow: 0 8px 20px 1px rgba(0,0,0,0.3)
     }
 
 .waves-block {
@@ -4001,7 +4001,7 @@
     }
 
     .demo-choose-skin .blue-theme, .demo-choose-logoheader .blue-theme {
-        background-color: #117EC3
+        background-color: #03a9f3
     }
 
     .demo-choose-skin .cyan-theme, .demo-choose-logoheader .cyan-theme {
@@ -4132,7 +4132,7 @@
     font-style: normal;
     font-weight: 400;
     src: url("../fonts/poppins/poppins-v5-latin-regular.eot");
-    src: local("Poppins Regular"), local("Poppins-Regular"), url("../fonts/poppins/poppins-v5-latin-regulard41d.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-regular.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-regular.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-regular.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-regular.svg#Poppins") format("svg")
+    src: local("Poppins Regular"),local("Poppins-Regular"),url("../fonts/poppins/poppins-v5-latin-regulard41d.eot?#iefix") format("embedded-opentype"),url("../fonts/poppins/poppins-v5-latin-regular.woff2") format("woff2"),url("../fonts/poppins/poppins-v5-latin-regular.woff") format("woff"),url("../fonts/poppins/poppins-v5-latin-regular.ttf") format("truetype"),url("../fonts/poppins/poppins-v5-latin-regular.svg#Poppins") format("svg")
 }
 
 body, html {
@@ -4142,9 +4142,7 @@ body, html {
     -webkit-transition: all .5s;
     transition: all .5s;
     font-family: "Poppins";
-    font-size: 13px;
-    /*Adam added for testing*/
-    background-color: #ffffff;
+    font-size: 13px
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -4186,13 +4184,12 @@ img {
 }
 
 section.content {
-    margin: 70px 15px 0 276px;
+    min-height: 605px;
+    margin: 61px 0 0 245px;
     -moz-transition: .5s;
     -o-transition: .5s;
     -webkit-transition: .5s;
-    transition: .5s;
-    /*Adam added for testing*/
-    margin: 70px 0px 0px 245px;
+    transition: .5s
 }
 
     section.content::before {
@@ -4211,11 +4208,12 @@ section.content {
 }
 
 .pull-left {
-    float: left !important
+    float: left !important;
+    margin-left:17px;
 }
 
 .pull-right {
-    float: right !important;
+    float: right !important
 }
 
 .jqvmap-zoomin, .jqvmap-zoomout {
@@ -4243,8 +4241,8 @@ table .checkbox [type="checkbox"] + label {
 }
 
 .shadow-style {
-    -webkit-box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15)
+    -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15)
 }
 
 .review-img {
@@ -4255,7 +4253,7 @@ table .checkbox [type="checkbox"] + label {
     .review-img img {
         border-radius: 50%;
         border: 2px solid #fff;
-        box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2)
+        box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2)
     }
 
 .horizontal-layout .sidebar, .horizontal-layout .nav-left-menu {
@@ -4280,15 +4278,13 @@ table .checkbox [type="checkbox"] + label {
     background: #eee;
     color: black;
     font-size: 14px;
-    font-family: sans-serif, Verdana;
+    font-family: sans-serif,Verdana;
     padding: 10px;
     pointer-events: none
 }
 
 .logo-white .navbar-toggle, .logo-white .bars:before, .logo-white .bars:after {
-    color: #000 !important;
-    /*Adam added for testing*/
-    color: #fff !important
+    color: #000 !important
 }
 
 .logo-black .navbar-toggle, .logo-black .bars:before, .logo-black .bars:after {
@@ -4304,15 +4300,15 @@ table .checkbox [type="checkbox"] + label {
 }
 
 .light .sidemenu-collapse i {
-    color: #fff
+    color: #0d091d
 }
 
 .light .nav > li > a {
-    color: #fff
+    color: #0d091d
 }
 
 .border-apply {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2) !important
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important
 }
 
 @media screen and (max-width:1169px) {
@@ -4358,7 +4354,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
     section.content {
-        margin: 83px 15px 0 0;
+        margin: 83px 15px 0 0
     }
 
     .search-box {
@@ -4373,6 +4369,9 @@ table .checkbox [type="checkbox"] + label {
 
     .navbar .nav > li > a {
         padding: 10px 10px
+    }
+    .pull-left{
+        margin-left:0;
     }
 }
 
@@ -4389,7 +4388,6 @@ table .checkbox [type="checkbox"] + label {
 
         .navbar-collapse.collapse {
             display: block !important;
-            height: auto !important;
             padding-bottom: 0;
             overflow: visible !important
         }
@@ -4398,23 +4396,17 @@ table .checkbox [type="checkbox"] + label {
         display: none
     }
 
-    .navbar-nav {
-        float: left;
-        margin: 0
-    }
+    
 
         .navbar-nav > li {
             float: left
         }
 
-            .navbar-nav > li > a {
-                padding-top: 15px;
-                padding-bottom: 15px
-            }
+            
 
     .container > .navbar-header {
         margin-right: 0;
-        margin-left: 0
+        margin-left: 0;
     }
 
     .container > .navbar-collapse {
@@ -4437,16 +4429,13 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .navbar > .container-fluid .navbar-brand {
-        margin-left: -15px
+        padding-left: 45px;
     }
 }
 
 .container > .navbar-header {
     margin-right: -15px;
-    margin-left: -15px;
-    /*Adam added for testing*/
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-left: -15px
 }
 
 .container > .navbar-collapse {
@@ -4456,17 +4445,16 @@ table .checkbox [type="checkbox"] + label {
 
 .container-fluid > .navbar-header {
     margin-right: -15px;
-    margin-left: -15px;
-    /*Adam added for testing*/
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-left: -15px
 }
 
 .container-fluid > .navbar-collapse {
     margin-right: -15px;
-    margin-left: -15px;
+    margin-left: -15px
 }
-
+.navbar .navbar-nav li a i{
+    padding-top:3px
+}
 @media(max-width:767px) {
     .navbar {
         height: auto
@@ -4479,7 +4467,7 @@ table .checkbox [type="checkbox"] + label {
         }
 
         .navbar .navbar-toggle {
-            float: right;
+            float: right
         }
 
         .navbar .nav-left-menu {
@@ -4508,26 +4496,22 @@ table .checkbox [type="checkbox"] + label {
                     padding: 9px 8px 8px 15px
                 }
 
-        .navbar .nav .user_profile .dropdown-toggle {
-            padding: 7px 0 9px 10px
-        }
+    .navbar .navbar-nav {
+        margin-bottom: 1px;
+        margin-left: -7px
+    }
 
-        .navbar .navbar-nav {
-            margin-bottom: 1px;
-            margin-left: -7px
-        }
+    .navbar-right .navbar-nav .open .dropdown-menu {
+        background-color: #fff;
+        position: absolute
+    }
 
-            .navbar .navbar-nav .open .dropdown-menu {
-                background-color: #fff;
-                position: absolute
-            }
-
-        .navbar .dropdown-menu {
+        .navbar-right .dropdown-menu {
             margin-left: -50px
         }
 
         .navbar .js-right-sidebar {
-            margin-top: 15px;
+            margin-top: 15px
         }
 
     .dt-buttons {
@@ -4564,24 +4548,24 @@ table .checkbox [type="checkbox"] + label {
 }
 
 @media(max-width:500px) {
-    .navbar-nav.nav .dropdown-menu {
+    .navbar-right.nav .dropdown-menu {
         width: 245px;
         right: -80px
     }
 
-        .navbar-nav.nav .dropdown-menu::before {
+        .navbar-right.nav .dropdown-menu::before {
             right: 95px
         }
 
-        .navbar-nav.nav .dropdown-menu::after {
+        .navbar-right.nav .dropdown-menu::after {
             right: 96px
         }
 
-    .navbar-nav.nav .user_profile .dropdown-menu::before {
+    .navbar-right.nav .user_profile .dropdown-menu::before {
         right: 19px
     }
 
-    .navbar-nav.nav .user_profile .dropdown-menu::after {
+    .navbar-right.nav .user_profile .dropdown-menu::after {
         right: 20px
     }
 
@@ -4615,7 +4599,7 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .navbar .nav .user_profile .dropdown-toggle {
-        padding: 7px 0 9px 10px
+        padding: 7px 0 10px 10px
     }
 
     .navbar > .container-fluid .navbar-brand {
@@ -4640,7 +4624,7 @@ table .checkbox [type="checkbox"] + label {
     font-style: normal;
     font-weight: 400;
     src: url(../fonts/iconfont/MaterialIcons-Regular.eot);
-    src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/iconfont/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/iconfont/MaterialIcons-Regular.woff) format("woff"), url(../fonts/iconfont/MaterialIcons-Regular.ttf) format("truetype")
+    src: local("Material Icons"),local("MaterialIcons-Regular"),url(../fonts/iconfont/MaterialIcons-Regular.woff2) format("woff2"),url(../fonts/iconfont/MaterialIcons-Regular.woff) format("woff"),url(../fonts/iconfont/MaterialIcons-Regular.ttf) format("truetype")
 }
 
 .material-icons {
@@ -4695,6 +4679,7 @@ table .checkbox [type="checkbox"] + label {
  * Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+
 .fa, .fas, .far, .fal, .fab {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -4839,17 +4824,17 @@ table .checkbox [type="checkbox"] + label {
 
 .fa-flip-horizontal {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-    transform: scale(-1, 1)
+    transform: scale(-1,1)
 }
 
 .fa-flip-vertical {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-    transform: scale(1, -1)
+    transform: scale(1,-1)
 }
 
 .fa-flip-horizontal.fa-flip-vertical {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-    transform: scale(-1, -1)
+    transform: scale(-1,-1)
 }
 
 :root .fa-rotate-90, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-flip-horizontal, :root .fa-flip-vertical {
@@ -9671,12 +9656,13 @@ table .checkbox [type="checkbox"] + label {
  * Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+
 @font-face {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;
     font-weight: 400;
     src: url("../fonts/fontawesome/fa-regular-400.eot");
-    src: url("../fonts/fontawesome/fa-regular-400d41d.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fa-regular-400.woff2") format("woff2"), url("../fonts/fontawesome/fa-regular-400.woff") format("woff"), url("../fonts/fontawesome/fa-regular-400.ttf") format("truetype"), url("../fonts/fontawesome/fa-regular-400.svg#fontawesome") format("svg")
+    src: url("../fonts/fontawesome/fa-regular-400d41d.eot?#iefix") format("embedded-opentype"),url("../fonts/fontawesome/fa-regular-400.woff2") format("woff2"),url("../fonts/fontawesome/fa-regular-400.woff") format("woff"),url("../fonts/fontawesome/fa-regular-400.ttf") format("truetype"),url("../fonts/fontawesome/fa-regular-400.svg#fontawesome") format("svg")
 }
 
 .far {
@@ -9687,12 +9673,13 @@ table .checkbox [type="checkbox"] + label {
  * Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+
 @font-face {
     font-family: 'Font Awesome 5 Free';
     font-style: normal;
     font-weight: 900;
     src: url("../fonts/fontawesome/fa-solid-900.eot");
-    src: url("../fonts/fontawesome/fa-solid-900d41d.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fa-solid-900.woff2") format("woff2"), url("../fonts/fontawesome/fa-solid-900.woff") format("woff"), url("../fonts/fontawesome/fa-solid-900.ttf") format("truetype"), url("../fonts/fontawesome/fa-solid-900.svg#fontawesome") format("svg")
+    src: url("../fonts/fontawesome/fa-solid-900d41d.eot?#iefix") format("embedded-opentype"),url("../fonts/fontawesome/fa-solid-900.woff2") format("woff2"),url("../fonts/fontawesome/fa-solid-900.woff") format("woff"),url("../fonts/fontawesome/fa-solid-900.ttf") format("truetype"),url("../fonts/fontawesome/fa-solid-900.svg#fontawesome") format("svg")
 }
 
 .fa, .fas {
@@ -9703,12 +9690,13 @@ table .checkbox [type="checkbox"] + label {
  * Font Awesome Free 5.3.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
+
 @font-face {
     font-family: 'Font Awesome 5 Brands';
     font-style: normal;
     font-weight: normal;
     src: url("../fonts/fontawesome/fa-brands-400.eot");
-    src: url("../fonts/fontawesome/fa-brands-400d41d.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fa-brands-400.woff2") format("woff2"), url("../fonts/fontawesome/fa-brands-400.woff") format("woff"), url("../fonts/fontawesome/fa-brands-400.ttf") format("truetype"), url("../fonts/fontawesome/fa-brands-400.svg#fontawesome") format("svg")
+    src: url("../fonts/fontawesome/fa-brands-400d41d.eot?#iefix") format("embedded-opentype"),url("../fonts/fontawesome/fa-brands-400.woff2") format("woff2"),url("../fonts/fontawesome/fa-brands-400.woff") format("woff"),url("../fonts/fontawesome/fa-brands-400.ttf") format("truetype"),url("../fonts/fontawesome/fa-brands-400.svg#fontawesome") format("svg")
 }
 
 .fab {
@@ -9759,7 +9747,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
         .bootstrap-select .bs-searchbox:after {
-            content: "?";
+            content: "";
             font-family: Material Icons;
             position: absolute;
             top: 0;
@@ -11244,8 +11232,8 @@ table .checkbox [type="checkbox"] + label {
     border-radius: 0;
     margin-top: -35px !important;
     margin-left: -15px;
-    -webkit-box-shadow: 0 5px 15px 2px rgba(64, 70, 74, 0.2) !important;
-    box-shadow: 0 5px 15px 2px rgba(64, 70, 74, 0.2) !important;
+    -webkit-box-shadow: 0 5px 15px 2px rgba(64,70,74,0.2) !important;
+    box-shadow: 0 5px 15px 2px rgba(64,70,74,0.2) !important;
     border-radius: 0;
     border: 0;
     padding: 0
@@ -11408,7 +11396,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
         .dropdown-menu > li > a:hover {
-            background-color: rgba(0, 0, 0, 0.075)
+            background-color: rgba(0,0,0,0.075)
         }
 
         .dropdown-menu > li > a i.material-icons {
@@ -11634,7 +11622,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
 .info-box {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     height: 80px;
     display: flex;
     cursor: default;
@@ -11647,7 +11635,7 @@ table .checkbox [type="checkbox"] + label {
     .info-box .icon {
         display: inline-block;
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.12);
+        background-color: rgba(0,0,0,0.12);
         width: 80px
     }
 
@@ -11723,7 +11711,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .info-box.hover-expand-effect:after {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0,0,0,0.05);
         content: ".";
         position: absolute;
         left: 80px;
@@ -11742,7 +11730,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
 .info-box-2 {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     height: 80px;
     display: flex;
     cursor: default;
@@ -11830,7 +11818,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .info-box-2.hover-expand-effect:after {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0,0,0,0.05);
         content: ".";
         position: absolute;
         left: 0;
@@ -11849,7 +11837,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
 .info-box-3 {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     height: 80px;
     display: flex;
     cursor: default;
@@ -11867,7 +11855,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
         .info-box-3 .icon i {
-            color: rgba(0, 0, 0, 0.15);
+            color: rgba(0,0,0,0.15);
             font-size: 60px
         }
 
@@ -11937,7 +11925,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .info-box-3.hover-expand-effect:after {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0,0,0,0.05);
         content: ".";
         position: absolute;
         left: 0;
@@ -11956,7 +11944,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
 .info-box-4 {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     height: 80px;
     display: flex;
     cursor: default;
@@ -11974,7 +11962,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
         .info-box-4 .icon i {
-            color: rgba(0, 0, 0, 0.15);
+            color: rgba(0,0,0,0.15);
             font-size: 60px
         }
 
@@ -12044,7 +12032,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .info-box-4.hover-expand-effect:after {
-        background-color: rgba(0, 0, 0, 0.05);
+        background-color: rgba(0,0,0,0.05);
         content: ".";
         position: absolute;
         left: 0;
@@ -12108,7 +12096,7 @@ table .checkbox [type="checkbox"] + label {
 
 .info-box5 {
     width: 100%;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
     margin-bottom: 25px;
     padding: 0 20px 0 20px;
     border-radius: 25px;
@@ -12125,7 +12113,7 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .info-box5 .progress {
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0,0,0,0.2);
         margin: 5px -10px 5px 0;
         height: 8px;
         background: #e3e3e3;
@@ -12177,7 +12165,7 @@ table .checkbox [type="checkbox"] + label {
     font-size: 13px;
     line-height: 1.42857;
     color: #414244;
-    font-weight: 400
+    font-weight: 600
 }
 
 .input-group {
@@ -12519,7 +12507,7 @@ table .checkbox [type="checkbox"] + label {
 
             .form-check .form-check-input:checked + .form-check-sign .check:before {
                 color: #fff;
-                box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0 0 20px, 0 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px;
+                box-shadow: 0 0 0 10px,10px -10px 0 10px,32px 0 0 20px,0 32px 0 20px,-5px 5px 0 10px,20px -12px 0 11px;
                 animation: checkboxOn .3s forwards
             }
 
@@ -12537,7 +12525,7 @@ table .checkbox [type="checkbox"] + label {
             position: absolute;
             left: 0;
             content: "";
-            background-color: rgba(0, 0, 0, 0.84);
+            background-color: rgba(0,0,0,0.84);
             height: 20px;
             width: 20px;
             border-radius: 100%;
@@ -12545,7 +12533,7 @@ table .checkbox [type="checkbox"] + label {
             opacity: 0;
             margin: 0;
             top: 0;
-            transform: scale3d(2.3, 2.3, 1)
+            transform: scale3d(2.3,2.3,1)
         }
 
         .form-check .form-check-sign .check {
@@ -12553,7 +12541,7 @@ table .checkbox [type="checkbox"] + label {
             display: inline-block;
             width: 20px;
             height: 20px;
-            border: 1px solid rgba(0, 0, 0, 0.54);
+            border: 1px solid rgba(0,0,0,0.54);
             overflow: hidden;
             z-index: 1;
             border-radius: 3px
@@ -12569,7 +12557,7 @@ table .checkbox [type="checkbox"] + label {
                 width: 0;
                 color: #fff;
                 height: 0;
-                box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0 inset;
+                box-shadow: 0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0,0 0 0 0 inset;
                 animation: checkboxOff .3s forwards
             }
 
@@ -12607,7 +12595,7 @@ table .checkbox [type="checkbox"] + label {
 }
 
 .label-info {
-    background-color: #117EC3
+    background-color: #00b0e4
 }
 
 .label-warning {
@@ -12667,11 +12655,11 @@ table .checkbox [type="checkbox"] + label {
     }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-red:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(244, 67, 54, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(244,67,54,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-red {
-        background-color: rgba(244, 67, 54, 0.5)
+        background-color: rgba(244,67,54,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-red:after {
@@ -12679,11 +12667,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-pink:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(233, 30, 99, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(233,30,99,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-pink {
-        background-color: rgba(233, 30, 99, 0.5)
+        background-color: rgba(233,30,99,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-pink:after {
@@ -12691,11 +12679,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-purple:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(156, 39, 176, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(156,39,176,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-purple {
-        background-color: rgba(156, 39, 176, 0.5)
+        background-color: rgba(156,39,176,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-purple:after {
@@ -12703,11 +12691,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-deep-purple:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(103, 58, 183, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(103,58,183,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-deep-purple {
-        background-color: rgba(103, 58, 183, 0.5)
+        background-color: rgba(103,58,183,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-deep-purple:after {
@@ -12715,11 +12703,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-indigo:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(63, 81, 181, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(63,81,181,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-indigo {
-        background-color: rgba(63, 81, 181, 0.5)
+        background-color: rgba(63,81,181,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-indigo:after {
@@ -12727,11 +12715,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-blue:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(33, 150, 243, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(33,150,243,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-blue {
-        background-color: rgba(33, 150, 243, 0.5)
+        background-color: rgba(33,150,243,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-blue:after {
@@ -12739,11 +12727,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-light-blue:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(3, 169, 244, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(3,169,244,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-light-blue {
-        background-color: rgba(3, 169, 244, 0.5)
+        background-color: rgba(3,169,244,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-light-blue:after {
@@ -12751,11 +12739,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-cyan:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 188, 212, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(0,188,212,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-cyan {
-        background-color: rgba(0, 188, 212, 0.5)
+        background-color: rgba(0,188,212,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-cyan:after {
@@ -12763,11 +12751,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-teal:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 150, 136, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(0,150,136,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-teal {
-        background-color: rgba(0, 150, 136, 0.5)
+        background-color: rgba(0,150,136,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-teal:after {
@@ -12775,11 +12763,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-green:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(76, 175, 80, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(76,175,80,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-green {
-        background-color: rgba(76, 175, 80, 0.5)
+        background-color: rgba(76,175,80,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-green:after {
@@ -12787,11 +12775,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-light-green:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(139, 195, 74, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(139,195,74,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-light-green {
-        background-color: rgba(139, 195, 74, 0.5)
+        background-color: rgba(139,195,74,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-light-green:after {
@@ -12799,11 +12787,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-lime:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(205, 220, 57, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(205,220,57,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-lime {
-        background-color: rgba(205, 220, 57, 0.5)
+        background-color: rgba(205,220,57,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-lime:after {
@@ -12811,11 +12799,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-yellow:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(255, 232, 33, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(255,232,33,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-yellow {
-        background-color: rgba(255, 232, 33, 0.5)
+        background-color: rgba(255,232,33,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-yellow:after {
@@ -12823,11 +12811,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-amber:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(255, 193, 7, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(255,193,7,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-amber {
-        background-color: rgba(255, 193, 7, 0.5)
+        background-color: rgba(255,193,7,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-amber:after {
@@ -12835,11 +12823,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-orange:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(255, 152, 0, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(255,152,0,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-orange {
-        background-color: rgba(255, 152, 0, 0.5)
+        background-color: rgba(255,152,0,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-orange:after {
@@ -12847,11 +12835,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-deep-orange:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(255, 87, 34, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(255,87,34,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-deep-orange {
-        background-color: rgba(255, 87, 34, 0.5)
+        background-color: rgba(255,87,34,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-deep-orange:after {
@@ -12859,11 +12847,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-brown:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(121, 85, 72, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(121,85,72,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-brown {
-        background-color: rgba(121, 85, 72, 0.5)
+        background-color: rgba(121,85,72,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-brown:after {
@@ -12871,11 +12859,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-grey:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(158, 158, 158, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(158,158,158,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-grey {
-        background-color: rgba(158, 158, 158, 0.5)
+        background-color: rgba(158,158,158,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-grey:after {
@@ -12883,11 +12871,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-blue-grey:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(96, 125, 139, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(96,125,139,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-blue-grey {
-        background-color: rgba(96, 125, 139, 0.5)
+        background-color: rgba(96,125,139,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-blue-grey:after {
@@ -12895,11 +12883,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-black:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(0, 0, 0, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(0,0,0,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-black {
-        background-color: rgba(0, 0, 0, 0.5)
+        background-color: rgba(0,0,0,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-black:after {
@@ -12907,11 +12895,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-white:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(255, 255, 255, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(255,255,255,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-white {
-        background-color: rgba(255, 255, 255, 0.5)
+        background-color: rgba(255,255,255,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-white:after {
@@ -12919,11 +12907,11 @@ table .checkbox [type="checkbox"] + label {
         }
 
     .switch label input[type=checkbox]:checked:not(:disabled) ~ .lever.switch-col-dark-gray:active:after {
-        box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(136, 136, 136, 0.1)
+        box-shadow: 0 1px 3px 1px rgba(0,0,0,0.4),0 0 0 15px rgba(136,136,136,0.1)
     }
 
     .switch label input[type=checkbox]:checked + .lever.switch-col-dark-gray {
-        background-color: rgba(136, 136, 136, 0.5)
+        background-color: rgba(136,136,136,0.5)
     }
 
         .switch label input[type=checkbox]:checked + .lever.switch-col-dark-gray:after {
@@ -12966,7 +12954,7 @@ table .checkbox [type="checkbox"] + label {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     display: none;
     z-index: 10
 }
@@ -12976,10 +12964,6 @@ table .checkbox [type="checkbox"] + label {
     z-index: 99999999
 }
 
-.customMenuBG {
-    background: #1C2631 !important;
-}
-
 .sidebar {
     -moz-transition: all .5s;
     -o-transition: all .5s;
@@ -12987,7 +12971,7 @@ table .checkbox [type="checkbox"] + label {
     transition: all .5s;
     font-family: "Poppins";
     background: #fff;
-    width: 260px;
+    width: 245px;
     overflow: hidden;
     display: inline-block;
     height: calc(100vh - 60px);
@@ -12995,8 +12979,7 @@ table .checkbox [type="checkbox"] + label {
     top: 60px;
     left: 0;
     z-index: 1030 !important;
-    /*Adam added for testing*/
-    width: 245px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
 }
 
     .sidebar .user-info {
@@ -13088,19 +13071,19 @@ table .checkbox [type="checkbox"] + label {
             }
 
             .sidebar .menu .list i.fas {
-                font-size: 15px
+                font-size: 14px
             }
 
             .sidebar .menu .list i.far {
-                font-size: 15px
+                font-size: 14px
             }
 
             .sidebar .menu .list i.fab {
-                font-size: 15px
+                font-size: 14px
             }
 
             .sidebar .menu .list i.fa {
-                font-size: 15px
+                font-size: 14px
             }
 
             .sidebar .menu .list .tooltips .sidebarQuickIcon {
@@ -13109,7 +13092,7 @@ table .checkbox [type="checkbox"] + label {
             }
 
             .sidebar .menu .list .active .menu-toggle {
-                background: rgba(146, 144, 144, 0.28)
+                background: rgba(146,144,144,0.28)
             }
 
             .sidebar .menu .list .menu-toggle:after, .sidebar .menu .list .menu-toggle:before {
@@ -13163,20 +13146,20 @@ table .checkbox [type="checkbox"] + label {
             }
 
             .sidebar .menu .list a {
-                color: #000;
+                /*color: #000;*/
                 position: relative;
                 font-size: 14px;
                 display: block;
                 overflow: hidden;
                 line-height: 2rem;
                 padding: 9px 9px 9px 18px;
-                margin: 8px 13px 0 13px;
-                border-radius: 3rem
+                margin: 1px 13px 0 13px;
+                border-radius: 2px;
             }
 
                 .sidebar .menu .list a:hover, .sidebar .menu .list a:active, .sidebar .menu .list a:focus {
                     text-decoration: none !important;
-                    background-color: rgba(0, 0, 0, 0.03)
+                    background-color: #EBECF0;
                 }
 
                 .sidebar .menu .list a small {
@@ -13187,8 +13170,7 @@ table .checkbox [type="checkbox"] + label {
 
                 .sidebar .menu .list a span {
                     margin: 7px 0 7px 12px;
-                    color: #333;
-                    font-size: 14px;
+                    font-size: 13px;
                     overflow: hidden
                 }
 
@@ -13228,11 +13210,11 @@ table .checkbox [type="checkbox"] + label {
                     position: absolute;
                     left: 18%;
                     top: 50%;
-                    -webkit-transform: translate(-10px, -50%);
-                    -moz-transform: translate(-10px, -50%);
-                    -ms-transform: translate(-10px, -50%);
-                    -o-transform: translate(-10px, -50%);
-                    transform: translate(-10px, -50%);
+                    -webkit-transform: translate(-10px,-50%);
+                    -moz-transform: translate(-10px,-50%);
+                    -ms-transform: translate(-10px,-50%);
+                    -o-transform: translate(-10px,-50%);
+                    transform: translate(-10px,-50%);
                     opacity: 1;
                     -webkit-transition: all .2s ease;
                     -o-transition: all .2s ease;
@@ -13256,10 +13238,10 @@ table .checkbox [type="checkbox"] + label {
     top: 60px;
     background: #fdfdfd;
     z-index: 1030 !important;
-    -webkit-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+    -ms-box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
+    box-shadow: -2px 2px 5px rgba(0,0,0,0.1);
     overflow: hidden;
     -moz-transition: .5s;
     -o-transition: .5s;
@@ -13314,10 +13296,10 @@ table .checkbox [type="checkbox"] + label {
     z-index: 9;
     top: 60px;
     background-color: #fff;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3)
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    -ms-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3)
 }
 
     .top-sidebar ul.horizontal-list {
@@ -13346,10 +13328,10 @@ table .checkbox [type="checkbox"] + label {
                 background-color: #fff;
                 border-radius: 5px;
                 z-index: 9;
-                -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-                -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-                -ms-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3)
+                -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+                -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+                -ms-box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+                box-shadow: 0 1px 5px rgba(0,0,0,0.3)
             }
 
                 .top-sidebar ul.horizontal-list li:hover > ul:after {
@@ -13363,7 +13345,7 @@ table .checkbox [type="checkbox"] + label {
                     pointer-events: none;
                     border: solid transparent;
                     border-width: 9px;
-                    border-color: rgba(136, 183, 213, 0);
+                    border-color: rgba(136,183,213,0);
                     border-bottom-color: #fff
                 }
 
@@ -13378,7 +13360,7 @@ table .checkbox [type="checkbox"] + label {
                     pointer-events: none;
                     border: solid transparent;
                     border-width: 9px;
-                    border-color: rgba(136, 183, 213, 0);
+                    border-color: rgba(136,183,213,0);
                     border-bottom-color: #ad5454
                 }
 
@@ -13427,38 +13409,7 @@ table .checkbox [type="checkbox"] + label {
         overflow: visible !important
     }
 
-.menu_dark .sidebar {
-    background: #1C2631;
-    font-weight: 500
-}
 
-    .menu_dark .sidebar .menu .list a {
-        color: #e6e6e6
-    }
-
-        .menu_dark .sidebar .menu .list a span {
-            color: #e6e6e6
-        }
-
-        .menu_dark .sidebar .menu .list a:hover {
-            background-color: rgba(0, 0, 0, 0.2)
-        }
-
-    .menu_dark .sidebar .menu .list .header {
-        font-size: 12px;
-        font-weight: 600;
-        padding: 15px 16px 5px;
-        background: transparent;
-        color: rgba(255, 255, 255, 0.7)
-    }
-
-    .menu_dark .sidebar .menu .list .active .menu-toggle {
-        background-color: #212529
-    }
-
-.menu_dark .sidebar-userpic-name {
-    color: #e6e6e6
-}
 
 .user-panel {
     float: left;
@@ -13481,9 +13432,9 @@ table .checkbox [type="checkbox"] + label {
     background: #fff;
     z-index: 1000;
     position: inherit;
-    border: 1px solid rgba(52, 73, 94, 0.44);
+    border: 1px solid rgba(52,73,94,0.44);
     padding: 2px;
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2)
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2)
 }
 
 .img-circle {
@@ -13531,6 +13482,9 @@ table .checkbox [type="checkbox"] + label {
     z-index: 1030;
     width: 100%;
     padding: 0;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
 
     .navbar .navbar-brand {
@@ -13547,7 +13501,6 @@ table .checkbox [type="checkbox"] + label {
 
     .navbar .navbar-toggle {
         text-decoration: none;
-        color: #fff;
         width: 20px;
         height: 20px;
         margin-top: -4px;
@@ -13586,8 +13539,6 @@ table .checkbox [type="checkbox"] + label {
 
 .ls-closed section.content {
     margin-left: 15px;
-    /*Adam added for testing. Not sure this helps*/
-    margin-left: 0px;
 }
 
 .ls-closed .bars:after, .ls-closed .bars:before {
@@ -13652,19 +13603,16 @@ table .checkbox [type="checkbox"] + label {
 
 .navbar-header {
     padding: 8px 7px;
-    background-color: #000;
     width: 260px;
     -moz-transition: all .5s;
     -o-transition: all .5s;
     -webkit-transition: all .5s;
-    transition: all .5s;
-    /*Adam added for testing*/
-    width: 245px;
+    transition: all .5s
 }
 
     .navbar-header .bars {
         float: left;
-        text-decoration: none;
+        text-decoration: none
     }
 
 .logo-name {
@@ -13673,11 +13621,7 @@ table .checkbox [type="checkbox"] + label {
     font-weight: 400
 }
 
-.navbar-nav > li > a {
-    padding: 7px 7px 2px 7px;
-    margin-top: 12px;
-    margin-left: 5px
-}
+
 
     .navbar-nav > li > a.js-right-sidebar {
         margin-right: 20px
@@ -13691,31 +13635,44 @@ table .checkbox [type="checkbox"] + label {
 .navbar-nav .dropdown-menu {
     margin-top: 60px !important;
     width: 325px;
-    right: 0;
+    /*right: 0;*/
     left: auto;
     position: absolute !important;
     top: 0;
     padding: 0;
     border-radius: 5px
 }
+.pull-left .dropdown-menu {
+    left: 26px;
+}
+.pull-left .dropdown-menu::before {
+    left: 30px;
+}
+.pull-left .dropdown-menu::after {
+    left: 31px;
+}
+.navbar-right .dropdown-menu::before {
+    right: 19px;
+}
+.navbar-right .dropdown-menu::after {
+    right: 20px;
+}
 
-    .navbar-nav .dropdown-menu::before {
-        content: "";
-        position: absolute;
-        top: -7px;
-        right: 19px;
-        display: inline-block !important;
-        border-right: 7px solid transparent;
-        border-bottom: 7px solid #eee;
-        border-left: 7px solid transparent;
-        border-bottom-color: rgba(0, 0, 0, 0.2)
-    }
+.navbar-nav .dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    display: inline-block !important;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #eee;
+    border-left: 7px solid transparent;
+    border-bottom-color: rgba(0,0,0,0.2)
+}
 
     .navbar-nav .dropdown-menu::after {
         content: "";
         position: absolute;
         top: -6px;
-        right: 20px;
         display: inline-block !important;
         border-right: 6px solid transparent;
         border-bottom: 6px solid #fff;
@@ -13744,37 +13701,45 @@ table .checkbox [type="checkbox"] + label {
     height: 24px
 }
 
-.navbar-nav .fas {
+.navbar-right .fas {
     line-height: 1;
     height: 24px;
     font-size: 18px
 }
 
-.navbar-nav .far {
+.navbar-right .far {
     line-height: 1;
     height: 24px;
     font-size: 18px
 }
 
-.navbar-nav .fab {
+.navbar-right .fab {
     line-height: 1;
     height: 24px;
     font-size: 18px
 }
 
-.navbar-nav .fa {
+.navbar-right .fa {
     line-height: 1;
     height: 24px;
     font-size: 18px
 }
-
-.navbar-nav .user_profile .dropdown-toggle {
-    padding: 3px 5px 13px 10px
+.navbar .dropdown-menu li a {
+    display: flex;
 }
-
-    .navbar-nav .user_profile .dropdown-toggle img {
-        border-radius: 50%
-    }
+.navbar .user_dw_menu li i {
+    padding-top:0;
+}
+.navbar-left-custom {
+    position: relative;
+    left: 40px;
+}
+/*.navbar-nav .user_profile .dropdown-toggle {
+    padding: 5px 10px 5px 10px;
+}*/
+.navbar-nav .user_profile .dropdown-toggle img {
+    border-radius: 50%
+}
 
 .navbar-nav .user_profile .user_dw_menu li {
     width: 100%;
@@ -13832,26 +13797,21 @@ table .checkbox [type="checkbox"] + label {
     }
 
 .navbar-collapse {
+    height:61px;
     padding-right: 15px;
     padding-left: 15px;
     overflow-x: visible;
     border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1)
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.1)
 }
 
 .collapse {
     display: none
 }
 
-.navbar-nav {
-    margin: 0 -15px
-}
 
-    .navbar-nav > li > a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        line-height: 20px
-    }
+
+    
 
 .nav {
     padding-left: 0;
@@ -13864,11 +13824,11 @@ table .checkbox [type="checkbox"] + label {
         display: block
     }
 
-        .nav > li > a {
-            position: relative;
-            display: block;
-            padding: 10px 11px
-        }
+    .nav .navbar-right li a {
+        position: relative;
+        display: block;
+        padding: 10px 11px
+    }
 
 nav.navbar {
     min-height: 60px
@@ -13879,7 +13839,7 @@ nav.navbar {
 }
 
 .col-red .navbar .nav > li > a:hover, .col-red .navbar .nav > li > a:focus, .col-red .navbar .nav .open > a, .col-red .navbar .nav .open > a:hover, .col-red .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-red .navbar .nav > li > a {
@@ -13897,7 +13857,7 @@ nav.navbar {
 }
 
     .col-red .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-pink .navbar .navbar-brand, .col-pink .navbar .navbar-brand:hover, .col-pink .navbar .navbar-brand:active, .col-pink .navbar .navbar-brand:focus {
@@ -13905,7 +13865,7 @@ nav.navbar {
 }
 
 .col-pink .navbar .nav > li > a:hover, .col-pink .navbar .nav > li > a:focus, .col-pink .navbar .nav .open > a, .col-pink .navbar .nav .open > a:hover, .col-pink .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-pink .navbar .nav > li > a {
@@ -13923,7 +13883,7 @@ nav.navbar {
 }
 
     .col-pink .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-purple .navbar .navbar-brand, .col-purple .navbar .navbar-brand:hover, .col-purple .navbar .navbar-brand:active, .col-purple .navbar .navbar-brand:focus {
@@ -13931,7 +13891,7 @@ nav.navbar {
 }
 
 .col-purple .navbar .nav > li > a:hover, .col-purple .navbar .nav > li > a:focus, .col-purple .navbar .nav .open > a, .col-purple .navbar .nav .open > a:hover, .col-purple .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-purple .navbar .nav > li > a {
@@ -13949,7 +13909,7 @@ nav.navbar {
 }
 
     .col-purple .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-deep-purple .navbar .navbar-brand, .col-deep-purple .navbar .navbar-brand:hover, .col-deep-purple .navbar .navbar-brand:active, .col-deep-purple .navbar .navbar-brand:focus {
@@ -13957,7 +13917,7 @@ nav.navbar {
 }
 
 .col-deep-purple .navbar .nav > li > a:hover, .col-deep-purple .navbar .nav > li > a:focus, .col-deep-purple .navbar .nav .open > a, .col-deep-purple .navbar .nav .open > a:hover, .col-deep-purple .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-deep-purple .navbar .nav > li > a {
@@ -13975,7 +13935,7 @@ nav.navbar {
 }
 
     .col-deep-purple .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-indigo .navbar .navbar-brand, .col-indigo .navbar .navbar-brand:hover, .col-indigo .navbar .navbar-brand:active, .col-indigo .navbar .navbar-brand:focus {
@@ -13983,7 +13943,7 @@ nav.navbar {
 }
 
 .col-indigo .navbar .nav > li > a:hover, .col-indigo .navbar .nav > li > a:focus, .col-indigo .navbar .nav .open > a, .col-indigo .navbar .nav .open > a:hover, .col-indigo .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-indigo .navbar .nav > li > a {
@@ -14001,7 +13961,7 @@ nav.navbar {
 }
 
     .col-indigo .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-blue .navbar .navbar-brand, .col-blue .navbar .navbar-brand:hover, .col-blue .navbar .navbar-brand:active, .col-blue .navbar .navbar-brand:focus {
@@ -14009,7 +13969,7 @@ nav.navbar {
 }
 
 .col-blue .navbar .nav > li > a:hover, .col-blue .navbar .nav > li > a:focus, .col-blue .navbar .nav .open > a, .col-blue .navbar .nav .open > a:hover, .col-blue .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-blue .navbar .nav > li > a {
@@ -14027,7 +13987,7 @@ nav.navbar {
 }
 
     .col-blue .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-light-blue .navbar .navbar-brand, .col-light-blue .navbar .navbar-brand:hover, .col-light-blue .navbar .navbar-brand:active, .col-light-blue .navbar .navbar-brand:focus {
@@ -14035,7 +13995,7 @@ nav.navbar {
 }
 
 .col-light-blue .navbar .nav > li > a:hover, .col-light-blue .navbar .nav > li > a:focus, .col-light-blue .navbar .nav .open > a, .col-light-blue .navbar .nav .open > a:hover, .col-light-blue .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-light-blue .navbar .nav > li > a {
@@ -14053,7 +14013,7 @@ nav.navbar {
 }
 
     .col-light-blue .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-cyan .navbar .navbar-brand, .col-cyan .navbar .navbar-brand:hover, .col-cyan .navbar .navbar-brand:active, .col-cyan .navbar .navbar-brand:focus {
@@ -14061,7 +14021,7 @@ nav.navbar {
 }
 
 .col-cyan .navbar .nav > li > a:hover, .col-cyan .navbar .nav > li > a:focus, .col-cyan .navbar .nav .open > a, .col-cyan .navbar .nav .open > a:hover, .col-cyan .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-cyan .navbar .nav > li > a {
@@ -14079,7 +14039,7 @@ nav.navbar {
 }
 
     .col-cyan .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-teal .navbar .navbar-brand, .col-teal .navbar .navbar-brand:hover, .col-teal .navbar .navbar-brand:active, .col-teal .navbar .navbar-brand:focus {
@@ -14087,7 +14047,7 @@ nav.navbar {
 }
 
 .col-teal .navbar .nav > li > a:hover, .col-teal .navbar .nav > li > a:focus, .col-teal .navbar .nav .open > a, .col-teal .navbar .nav .open > a:hover, .col-teal .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-teal .navbar .nav > li > a {
@@ -14105,7 +14065,7 @@ nav.navbar {
 }
 
     .col-teal .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-green .navbar .navbar-brand, .col-green .navbar .navbar-brand:hover, .col-green .navbar .navbar-brand:active, .col-green .navbar .navbar-brand:focus {
@@ -14113,7 +14073,7 @@ nav.navbar {
 }
 
 .col-green .navbar .nav > li > a:hover, .col-green .navbar .nav > li > a:focus, .col-green .navbar .nav .open > a, .col-green .navbar .nav .open > a:hover, .col-green .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-green .navbar .nav > li > a {
@@ -14131,7 +14091,7 @@ nav.navbar {
 }
 
     .col-green .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-light-green .navbar .navbar-brand, .col-light-green .navbar .navbar-brand:hover, .col-light-green .navbar .navbar-brand:active, .col-light-green .navbar .navbar-brand:focus {
@@ -14139,7 +14099,7 @@ nav.navbar {
 }
 
 .col-light-green .navbar .nav > li > a:hover, .col-light-green .navbar .nav > li > a:focus, .col-light-green .navbar .nav .open > a, .col-light-green .navbar .nav .open > a:hover, .col-light-green .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-light-green .navbar .nav > li > a {
@@ -14157,7 +14117,7 @@ nav.navbar {
 }
 
     .col-light-green .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-lime .navbar .navbar-brand, .col-lime .navbar .navbar-brand:hover, .col-lime .navbar .navbar-brand:active, .col-lime .navbar .navbar-brand:focus {
@@ -14165,7 +14125,7 @@ nav.navbar {
 }
 
 .col-lime .navbar .nav > li > a:hover, .col-lime .navbar .nav > li > a:focus, .col-lime .navbar .nav .open > a, .col-lime .navbar .nav .open > a:hover, .col-lime .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-lime .navbar .nav > li > a {
@@ -14183,7 +14143,7 @@ nav.navbar {
 }
 
     .col-lime .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-yellow .navbar .navbar-brand, .col-yellow .navbar .navbar-brand:hover, .col-yellow .navbar .navbar-brand:active, .col-yellow .navbar .navbar-brand:focus {
@@ -14191,7 +14151,7 @@ nav.navbar {
 }
 
 .col-yellow .navbar .nav > li > a:hover, .col-yellow .navbar .nav > li > a:focus, .col-yellow .navbar .nav .open > a, .col-yellow .navbar .nav .open > a:hover, .col-yellow .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-yellow .navbar .nav > li > a {
@@ -14209,7 +14169,7 @@ nav.navbar {
 }
 
     .col-yellow .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-amber .navbar .navbar-brand, .col-amber .navbar .navbar-brand:hover, .col-amber .navbar .navbar-brand:active, .col-amber .navbar .navbar-brand:focus {
@@ -14217,7 +14177,7 @@ nav.navbar {
 }
 
 .col-amber .navbar .nav > li > a:hover, .col-amber .navbar .nav > li > a:focus, .col-amber .navbar .nav .open > a, .col-amber .navbar .nav .open > a:hover, .col-amber .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-amber .navbar .nav > li > a {
@@ -14235,7 +14195,7 @@ nav.navbar {
 }
 
     .col-amber .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-orange .navbar .navbar-brand, .col-orange .navbar .navbar-brand:hover, .col-orange .navbar .navbar-brand:active, .col-orange .navbar .navbar-brand:focus {
@@ -14243,7 +14203,7 @@ nav.navbar {
 }
 
 .col-orange .navbar .nav > li > a:hover, .col-orange .navbar .nav > li > a:focus, .col-orange .navbar .nav .open > a, .col-orange .navbar .nav .open > a:hover, .col-orange .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-orange .navbar .nav > li > a {
@@ -14261,7 +14221,7 @@ nav.navbar {
 }
 
     .col-orange .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-deep-orange .navbar .navbar-brand, .col-deep-orange .navbar .navbar-brand:hover, .col-deep-orange .navbar .navbar-brand:active, .col-deep-orange .navbar .navbar-brand:focus {
@@ -14269,7 +14229,7 @@ nav.navbar {
 }
 
 .col-deep-orange .navbar .nav > li > a:hover, .col-deep-orange .navbar .nav > li > a:focus, .col-deep-orange .navbar .nav .open > a, .col-deep-orange .navbar .nav .open > a:hover, .col-deep-orange .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-deep-orange .navbar .nav > li > a {
@@ -14287,7 +14247,7 @@ nav.navbar {
 }
 
     .col-deep-orange .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-brown .navbar .navbar-brand, .col-brown .navbar .navbar-brand:hover, .col-brown .navbar .navbar-brand:active, .col-brown .navbar .navbar-brand:focus {
@@ -14295,7 +14255,7 @@ nav.navbar {
 }
 
 .col-brown .navbar .nav > li > a:hover, .col-brown .navbar .nav > li > a:focus, .col-brown .navbar .nav .open > a, .col-brown .navbar .nav .open > a:hover, .col-brown .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-brown .navbar .nav > li > a {
@@ -14313,7 +14273,7 @@ nav.navbar {
 }
 
     .col-brown .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-grey .navbar .navbar-brand, .col-grey .navbar .navbar-brand:hover, .col-grey .navbar .navbar-brand:active, .col-grey .navbar .navbar-brand:focus {
@@ -14321,7 +14281,7 @@ nav.navbar {
 }
 
 .col-grey .navbar .nav > li > a:hover, .col-grey .navbar .nav > li > a:focus, .col-grey .navbar .nav .open > a, .col-grey .navbar .nav .open > a:hover, .col-grey .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-grey .navbar .nav > li > a {
@@ -14339,7 +14299,7 @@ nav.navbar {
 }
 
     .col-grey .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-blue-grey .navbar .navbar-brand, .col-blue-grey .navbar .navbar-brand:hover, .col-blue-grey .navbar .navbar-brand:active, .col-blue-grey .navbar .navbar-brand:focus {
@@ -14347,7 +14307,7 @@ nav.navbar {
 }
 
 .col-blue-grey .navbar .nav > li > a:hover, .col-blue-grey .navbar .nav > li > a:focus, .col-blue-grey .navbar .nav .open > a, .col-blue-grey .navbar .nav .open > a:hover, .col-blue-grey .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-blue-grey .navbar .nav > li > a {
@@ -14365,7 +14325,7 @@ nav.navbar {
 }
 
     .col-blue-grey .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-black .navbar .navbar-brand, .col-black .navbar .navbar-brand:hover, .col-black .navbar .navbar-brand:active, .col-black .navbar .navbar-brand:focus {
@@ -14373,7 +14333,7 @@ nav.navbar {
 }
 
 .col-black .navbar .nav > li > a:hover, .col-black .navbar .nav > li > a:focus, .col-black .navbar .nav .open > a, .col-black .navbar .nav .open > a:hover, .col-black .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-black .navbar .nav > li > a {
@@ -14391,7 +14351,7 @@ nav.navbar {
 }
 
     .col-black .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-white .navbar .navbar-brand, .col-white .navbar .navbar-brand:hover, .col-white .navbar .navbar-brand:active, .col-white .navbar .navbar-brand:focus {
@@ -14399,7 +14359,7 @@ nav.navbar {
 }
 
 .col-white .navbar .nav > li > a:hover, .col-white .navbar .nav > li > a:focus, .col-white .navbar .nav .open > a, .col-white .navbar .nav .open > a:hover, .col-white .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-white .navbar .nav > li > a {
@@ -14417,7 +14377,7 @@ nav.navbar {
 }
 
     .col-white .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .col-dark-gray .navbar .navbar-brand, .col-dark-gray .navbar .navbar-brand:hover, .col-dark-gray .navbar .navbar-brand:active, .col-dark-gray .navbar .navbar-brand:focus {
@@ -14425,7 +14385,7 @@ nav.navbar {
 }
 
 .col-dark-gray .navbar .nav > li > a:hover, .col-dark-gray .navbar .nav > li > a:focus, .col-dark-gray .navbar .nav .open > a, .col-dark-gray .navbar .nav .open > a:hover, .col-dark-gray .navbar .nav .open > a:focus {
-    background-color: rgba(0, 0, 0, 0.05)
+    background-color: rgba(0,0,0,0.05)
 }
 
 .col-dark-gray .navbar .nav > li > a {
@@ -14443,7 +14403,7 @@ nav.navbar {
 }
 
     .col-dark-gray .navbar .bars:hover {
-        background-color: rgba(0, 0, 0, 0.08)
+        background-color: rgba(0,0,0,0.08)
     }
 
 .side-closed .sidebar {
@@ -14472,7 +14432,7 @@ nav.navbar {
 }
 
 .side-closed.submenu-closed .navbar-header {
-    width: 60px;
+    width: 60px
 }
 
     .side-closed.submenu-closed .navbar-header .navbar-brand {
@@ -14486,9 +14446,7 @@ nav.navbar {
         }
 
 .side-closed section.content {
-    margin-left: 65px;
-    /*Adam added for testing*/
-    margin-left: 60px;
+    margin-left: 65px
 }
 
 .side-closed .navbar-brand {
@@ -14529,9 +14487,7 @@ nav.navbar {
     }
 
 .side-closed.side-closed-hover section.content {
-    margin-left: 276px;
-    /*Adam added for testing. Not sure this helps*/
-    margin-left: 260px;
+    margin-left: 276px
 }
 
 .sidemenu-collapse {
@@ -14770,8 +14726,8 @@ nav.navbar {
 }
 
 .noUi-state-tap .noUi-origin {
-    -webkit-transition: left .25s, top .25s;
-    transition: left .25s, top .25s
+    -webkit-transition: left .25s,top .25s;
+    transition: left .25s,top .25s
 }
 
 .noUi-state-drag * {
@@ -14779,8 +14735,8 @@ nav.navbar {
 }
 
 .noUi-base {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0)
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0)
 }
 
 .noUi-horizontal {
@@ -14812,7 +14768,7 @@ nav.navbar {
 
 .noUi-connect {
     background: #3fb8af;
-    box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45);
+    box-shadow: inset 0 0 3px rgba(51,51,51,0.45);
     -webkit-transition: background 450ms;
     transition: background 450ms
 }
@@ -14824,11 +14780,11 @@ nav.navbar {
 .noUi-target {
     border-radius: 4px;
     border: 1px solid #d3d3d3;
-    box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #BBB
+    box-shadow: inset 0 1px 1px #f0f0f0,0 3px 6px -5px #BBB
 }
 
     .noUi-target.noUi-connect {
-        box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB
+        box-shadow: inset 0 0 3px rgba(51,51,51,0.45),0 3px 6px -5px #BBB
     }
 
 .noUi-dragable {
@@ -14844,11 +14800,11 @@ nav.navbar {
     border-radius: 3px;
     background: #FFF;
     cursor: default;
-    box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #BBB
+    box-shadow: inset 0 0 1px #FFF,inset 0 1px 7px #ebebeb,0 3px 6px -3px #BBB
 }
 
 .noUi-active {
-    box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB
+    box-shadow: inset 0 0 1px #FFF,inset 0 1px 7px #DDD,0 3px 6px -3px #BBB
 }
 
 .noUi-handle:before {
@@ -14934,7 +14890,7 @@ nav.navbar {
     border: 0;
     left: -5px;
     top: -6px;
-    transition: width .2s cubic-bezier(0.215, 0.61, 0.355, 1), height .2s cubic-bezier(0.215, 0.61, 0.355, 1), left .2s cubic-bezier(0.215, 0.61, 0.355, 1), top .2s cubic-bezier(0.215, 0.61, 0.355, 1)
+    transition: width .2s cubic-bezier(0.215,0.61,0.355,1),height .2s cubic-bezier(0.215,0.61,0.355,1),left .2s cubic-bezier(0.215,0.61,0.355,1),top .2s cubic-bezier(0.215,0.61,0.355,1)
 }
 
 .noUi-handle:before, .noUi-handle:after {
@@ -14942,10 +14898,10 @@ nav.navbar {
 }
 
 .noUi-target .noUi-active.noUi-handle {
-    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    -ms-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5)
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -ms-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5)
 }
 
 .noUi-target .range-label {
@@ -14956,14 +14912,14 @@ nav.navbar {
     left: -2px;
     background-color: #26a69a;
     border-radius: 50%;
-    transition: border-radius .25s cubic-bezier(0.215, 0.61, 0.355, 1), transform .25s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: border-radius .25s cubic-bezier(0.215,0.61,0.355,1),transform .25s cubic-bezier(0.215,0.61,0.355,1);
     transform: scale(0.5) rotate(-45deg);
     transform-origin: 50% 100%
 }
 
 .noUi-target .noUi-active .range-label {
     border-radius: 15px 15px 15px 0;
-    transform: rotate(-45deg) translate(23px, -25px)
+    transform: rotate(-45deg) translate(23px,-25px)
 }
 
 .range-label span {
@@ -14976,7 +14932,7 @@ nav.navbar {
     position: absolute;
     top: 7px;
     left: -1px;
-    transition: opacity .25s cubic-bezier(0.215, 0.61, 0.355, 1)
+    transition: opacity .25s cubic-bezier(0.215,0.61,0.355,1)
 }
 
 .noUi-active .range-label span {
@@ -15062,7 +15018,7 @@ nav.navbar {
         list-style: none;
         font-size: 14px;
         background: #fff;
-        border-bottom: 1px dotted rgba(0, 0, 0, 0.2)
+        border-bottom: 1px dotted rgba(0,0,0,0.2)
     }
 
         .to-do-list li p {
@@ -15227,31 +15183,31 @@ nav.navbar {
 }
 
 .label-event-meeting {
-    background: linear-gradient(45deg, #9ce89d, #cdfa7e) !important
+    background: linear-gradient(45deg,#9ce89d,#cdfa7e) !important
 }
 
 .label-event-holiday {
-    background: linear-gradient(45deg, #a890d3, #edbae7) !important
+    background: linear-gradient(45deg,#a890d3,#edbae7) !important
 }
 
 .label-event-birthday {
-    background: linear-gradient(45deg, #fda582, #f7cf68) !important
+    background: linear-gradient(45deg,#fda582,#f7cf68) !important
 }
 
 .label-event-competition {
-    background: linear-gradient(45deg, #72c2ff, #86f0ff) !important
+    background: linear-gradient(45deg,#72c2ff,#86f0ff) !important
 }
 
 .label-event-dinner {
-    background: linear-gradient(45deg, #9ce89d, #cdfa7e) !important
+    background: linear-gradient(45deg,#9ce89d,#cdfa7e) !important
 }
 
 .label-event-party {
-    background: linear-gradient(45deg, #a890d3, #edbae7) !important
+    background: linear-gradient(45deg,#a890d3,#edbae7) !important
 }
 
 .label-event-Untitled {
-    background: linear-gradient(45deg, #fda582, #f7cf68) !important
+    background: linear-gradient(45deg,#fda582,#f7cf68) !important
 }
 
 .fc-content-skeleton thead {
@@ -15276,13 +15232,8 @@ nav.navbar {
     cursor: pointer
 }
 
-.chat-window {
-    /*Adam added for testing*/
-    height: calc(100vh - 105px);
-}
-
-    .chat-app {
-    height: 690px;
+.chat-app {
+    height: 690px
 }
 
     .chat-app .people-list {
@@ -15308,10 +15259,10 @@ nav.navbar {
         text-align: center;
         line-height: 40px;
         display: none;
-        -webkit-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
-        -moz-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
-        -ms-box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
-        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow: 0 10px 25px 0 rgba(0,0,0,0.3);
+        -moz-box-shadow: 0 10px 25px 0 rgba(0,0,0,0.3);
+        -ms-box-shadow: 0 10px 25px 0 rgba(0,0,0,0.3);
+        box-shadow: 0 10px 25px 0 rgba(0,0,0,0.3);
         -webkit-border-radius: 3px;
         -moz-border-radius: 3px;
         -ms-border-radius: 3px;
@@ -15355,10 +15306,10 @@ nav.navbar {
     .people-list img {
         float: left;
         border: 1px solid #fff;
-        -webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-        -ms-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-        box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+        -moz-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+        -ms-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
         -webkit-border-radius: 50%;
         -moz-border-radius: 50%;
         -ms-border-radius: 50%;
@@ -15378,9 +15329,7 @@ nav.navbar {
 .chat .chat-header {
     padding: 20px;
     border-bottom: 1px solid #eee;
-    border-radius: 0 .55rem 0 0;
-    /*Adam added for testing*/
-    border-radius: 0px;
+    border-radius: 0 .55rem 0 0
 }
 
     .chat .chat-header img {
@@ -15403,13 +15352,13 @@ nav.navbar {
     }
 
     .chat .chat-header .chat-num-messages {
-        color: #434651;
+        color: 434651
     }
 
 .chat .chat-history {
     padding: 20px;
     border-bottom: 2px solid #fff;
-    height: 450px;
+    height: 450px
 }
 
     .chat .chat-history ul {
@@ -15421,15 +15370,11 @@ nav.navbar {
         }
 
     .chat .chat-history .message-data {
-        padding-right: 7px;
-        margin-left: -10px;
-        margin-bottom: 3px;
-        font-size: .8em;
-        color: #212529;
+        margin-bottom: 15px
     }
 
         .chat .chat-history .message-data .message-data-name {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 700
         }
 
@@ -15440,33 +15385,31 @@ nav.navbar {
 
     .chat .chat-history .message {
         color: #444;
-        padding: 5px 14px;
-        line-height: 20px;
-        font-size: 14px;
-        -webkit-border-radius: 13px;
-        -moz-border-radius: 13px;
-        -ms-border-radius: 13px;
-        border-radius: 13px;
-        margin-bottom: 13px;
-        max-width: 90%;
-        min-width: 40px;
-        min-height: 30px;
-        position: relative;
+        padding: 18px 20px;
+        line-height: 26px;
+        font-size: 13px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        border-radius: 7px;
+        margin-bottom: 30px;
+        width: 90%;
+        position: relative
     }
 
-    .chat .chat-history .message1:after {
-        bottom: 100%;
-        left: 7%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-bottom-color: #fff;
-        border-width: 10px;
-        margin-left: -10px;
-    }
+        .chat .chat-history .message:after {
+            bottom: 100%;
+            left: 7%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-bottom-color: #fff;
+            border-width: 10px;
+            margin-left: -10px
+        }
 
     .chat .chat-history .my-message {
         background: #e8e8e8
@@ -15503,7 +15446,7 @@ nav.navbar {
         width: 100%;
         border: 0;
         padding: 10px 20px;
-        font: 14px/22px Lato, Arial, sans-serif;
+        font: 14px/22px Lato,Arial,sans-serif;
         margin-bottom: 10px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
@@ -15641,7 +15584,7 @@ nav.navbar {
 }
 
 .profile-header {
-    min-height: 85px;
+    min-height: 80px;
     color: #fff
 }
 
@@ -15657,7 +15600,7 @@ nav.navbar {
     border-radius: 50% 50% 50% 50%;
     max-width: 112px;
     margin-top: -70px;
-    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 25px 0 rgba(0,0,0,0.3);
     margin-bottom: 20px
 }
 
@@ -15739,7 +15682,7 @@ nav.navbar {
 .portfolio-thumb {
     display: block;
     position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     overflow: hidden;
     border-radius: 15px
 }
@@ -15788,7 +15731,7 @@ nav.navbar {
 
     .portfolio-thumb:hover .project-title {
         bottom: 0;
-        transition: bottom .3s ease-out .1s, color .2s ease-out 0s
+        transition: bottom .3s ease-out .1s,color .2s ease-out 0s
     }
 
     .portfolio-thumb .enlarge {
@@ -15816,7 +15759,7 @@ nav.navbar {
         color: #777;
         text-align: center;
         z-index: 2;
-        transition: bottom .4s ease-out, color .2s ease-out
+        transition: bottom .4s ease-out,color .2s ease-out
     }
 
         .portfolio-thumb .project-title:hover {
@@ -15872,7 +15815,7 @@ nav.navbar {
 .scrollimation .portfolio-thumb {
     transform: translateY(100px);
     opacity: 0;
-    transition: opacity .4s ease-out, transform .4s ease-out
+    transition: opacity .4s ease-out,transform .4s ease-out
 }
 
     .scrollimation .portfolio-thumb.in {
@@ -15984,7 +15927,7 @@ nav.navbar {
     margin: 8px;
     background-color: lightgray;
     border-radius: 3px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2)
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2)
 }
 
 .drop-card {
@@ -15995,7 +15938,7 @@ nav.navbar {
     padding: 10px;
     margin: 4px 0;
     border-radius: 3px;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
     cursor: move;
     cursor: grab
 }
@@ -16117,7 +16060,7 @@ nav.navbar {
 }
 
 .b-b {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    border-bottom: 1px solid rgba(0,0,0,0.2)
 }
 
 .mail_listing .mail-option .btn-group {
@@ -16192,7 +16135,7 @@ nav.navbar {
 }
 
 .replyBox {
-    border: 1px solid rgba(120, 130, 140, 0.13);
+    border: 1px solid rgba(120,130,140,0.13);
     padding: 20px
 }
 
@@ -16446,7 +16389,7 @@ nav.navbar {
 
     .tab-all a.active {
         background-color: #e91e63 !important;
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(233, 30, 99, 0.6);
+        box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2),0 13px 24px -11px rgba(233,30,99,0.6);
         color: #fff !important;
         border-radius: 30px
     }
@@ -16561,7 +16504,7 @@ header {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 0 0 0 4px #e6dfdf, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05)
+    box-shadow: 0 0 0 4px #e6dfdf,inset 0 2px 0 rgba(0,0,0,0.08),0 3px 0 4px rgba(0,0,0,0.05)
 }
 
     .cd-timeline-img img {
@@ -17016,10 +16959,10 @@ header {
             .timeline > li > .timeline-badge img {
                 border-radius: 50%;
                 border: 2px solid #fff;
-                -webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-                -ms-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-                box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2)
+                -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+                -moz-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+                -ms-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+                box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2)
             }
 
 .timeline-title {
@@ -17127,7 +17070,7 @@ header {
             }
 
             .left-timeline > li .left-label .map-checkin {
-                border: 5px solid rgba(235, 235, 235, 0.2);
+                border: 5px solid rgba(235,235,235,0.2);
                 box-shadow: 0 0 0 1px #ebebeb;
                 background: #fff !important
             }
@@ -17169,7 +17112,7 @@ header {
             position: absolute;
             color: #fff;
             border-radius: 50%;
-            box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
             text-align: center;
             left: 20%;
             top: 0;
@@ -17379,13 +17322,13 @@ header {
 }
 
 .chart-shadow2 {
-    -webkit-filter: drop-shadow(0 -6px 4px rgba(106, 141, 247, 0.5));
-    filter: drop-shadow(0 -6px 4px rgba(106, 141, 247, 0.5))
+    -webkit-filter: drop-shadow(0 -6px 4px rgba(106,141,247,0.5));
+    filter: drop-shadow(0 -6px 4px rgba(106,141,247,0.5))
 }
 
 .chart-shadow {
-    -webkit-filter: drop-shadow(0 9px 2px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(0 9px 2px rgba(0, 0, 0, 0.3))
+    -webkit-filter: drop-shadow(0 9px 2px rgba(0,0,0,0.3));
+    filter: drop-shadow(0 9px 2px rgba(0,0,0,0.3))
 }
 
 .chartsh {
@@ -17415,7 +17358,7 @@ header {
 
         .axisData .tick:hover {
             opacity: 1;
-            background-color: rgba(255, 255, 255, 0.2)
+            background-color: rgba(255,255,255,0.2)
         }
 
             .axisData .tick:hover .value.productValue {
@@ -17763,11 +17706,11 @@ header {
         }
 
     .wizard .steps .done a {
-        background-color: rgba(0, 150, 136, 0.6)
+        background-color: rgba(0,150,136,0.6)
     }
 
         .wizard .steps .done a:hover, .wizard .steps .done a:active, .wizard .steps .done a:focus {
-            background-color: rgba(0, 150, 136, 0.5)
+            background-color: rgba(0,150,136,0.5)
         }
 
     .wizard .steps .error a {
@@ -17840,7 +17783,7 @@ header {
             padding: 7px 12px;
             margin-right: 5px;
             text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.16),0 2px 10px rgba(0,0,0,0.12);
             -webkit-border-radius: 2px;
             -moz-border-radius: 2px;
             -ms-border-radius: 2px;
@@ -17965,7 +17908,7 @@ header {
 }
 
 .table tbody tr.info td, .table tbody tr.info th {
-    background-color: #117EC3;
+    background-color: #00b0e4;
     color: #fff
 }
 
@@ -18001,10 +17944,10 @@ header {
 .table-img img {
     border-radius: 50%;
     border: 2px solid #fff;
-    -webkit-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-    -ms-box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2)
+    -webkit-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+    -ms-box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2)
 }
 
 .btn-tbl-edit {
@@ -18013,7 +17956,7 @@ header {
     padding: 6px !important;
     height: 28px;
     color: #fff;
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2) !important
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2) !important
 }
 
     .btn-tbl-edit .material-icons {
@@ -18031,7 +17974,7 @@ header {
     padding: 6px !important;
     height: 28px;
     color: #fff;
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2) !important
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2) !important
 }
 
     .btn-tbl-delete .material-icons {
@@ -18084,7 +18027,7 @@ header {
 
 .order-list li img {
     border: 2px solid #fff;
-    box-shadow: 0 2px 10px 0 rgba(107, 111, 130, 0.3)
+    box-shadow: 0 2px 10px 0 rgba(107,111,130,0.3)
 }
 
 .order-list li + li {
@@ -18092,14 +18035,14 @@ header {
 }
 
 .order-list li .badge {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255,255,255,0.8);
     color: #6b6f82;
     margin-bottom: 6px
 }
 
 .buttons-copy {
     background-color: #666 !important;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(233, 30, 99, 0.6);
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2),0 13px 24px -11px rgba(233,30,99,0.6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0 !important;
@@ -18110,7 +18053,7 @@ header {
 
 .buttons-excel {
     background-color: #59bf70 !important;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(233, 30, 99, 0.6);
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2),0 13px 24px -11px rgba(233,30,99,0.6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0 !important;
@@ -18121,7 +18064,7 @@ header {
 
 .buttons-csv {
     background-color: #2ab9d0 !important;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(233, 30, 99, 0.6);
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2),0 13px 24px -11px rgba(233,30,99,0.6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0 !important;
@@ -18132,7 +18075,7 @@ header {
 
 .buttons-pdf {
     background-color: #e91e63 !important;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(233, 30, 99, 0.6);
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2),0 13px 24px -11px rgba(233,30,99,0.6);
     color: #fff !important;
     border-radius: 30px !important;
     border: 0 !important;
@@ -18143,7 +18086,7 @@ header {
 
 .buttons-print {
     background-color: #6563ef !important;
-    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2), 0 13px 24px -11px #6563ef;
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2),0 13px 24px -11px #6563ef;
     color: #fff !important;
     border-radius: 30px !important;
     border: 0 !important;
@@ -18205,10 +18148,10 @@ tr.shown td.details-control {
 }
 
 .product-grid {
-    font-family: Raleway, sans-serif;
+    font-family: Raleway,sans-serif;
     text-align: center;
     padding: 0 0 72px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0,0,0,0.1);
     overflow: hidden;
     position: relative;
     z-index: 1
@@ -18334,7 +18277,7 @@ tr.shown td.details-control {
     }
 
         .product-grid .rating li.disable {
-            color: rgba(0, 0, 0, 0.2)
+            color: rgba(0,0,0,0.2)
         }
 
     .product-grid .product-content {
@@ -18370,7 +18313,7 @@ tr.shown td.details-control {
     .product-grid .price {
         color: #333;
         font-size: 17px;
-        font-family: Montserrat, sans-serif;
+        font-family: Montserrat,sans-serif;
         font-weight: 700;
         letter-spacing: .6px;
         margin-bottom: 8px;
@@ -18444,7 +18387,7 @@ tr.shown td.details-control {
 
     .store-body .product-info {
         width: 60%;
-        border-right: 1px solid rgba(0, 0, 0, 0.125)
+        border-right: 1px solid rgba(0,0,0,0.125)
     }
 
     .store-body .product-payment-details {
@@ -18639,19 +18582,19 @@ table.shoping-cart-table {
     }
 
 .alert-success {
-    background-color: rgba(24, 206, 15, 0.8)
+    background-color: rgba(24,206,15,0.8)
 }
 
 .alert-info {
-    background-color: rgba(44, 168, 255, 0.8)
+    background-color: rgba(44,168,255,0.8)
 }
 
 .alert-warning {
-    background-color: rgba(255, 178, 54, 0.8)
+    background-color: rgba(255,178,54,0.8)
 }
 
 .alert-danger {
-    background-color: rgba(255, 54, 54, 0.8)
+    background-color: rgba(255,54,54,0.8)
 }
 
 .alert-dismissible .close {
@@ -18744,13 +18687,13 @@ table.shoping-cart-table {
     }
 
 .list-group .list-group-item-info {
-    background-color: #117EC3;
+    background-color: #00b0e4;
     border: 0;
     color: #fff
 }
 
     .list-group .list-group-item-info:hover, .list-group .list-group-item-info:focus {
-        background-color: #117EC3;
+        background-color: #00b0e4;
         color: #fff;
         opacity: .8
     }
@@ -19176,7 +19119,7 @@ span.badge {
     padding: 6px !important;
     height: 35px;
     width: 35px;
-    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2) !important
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.2) !important
 }
 
     .btn-circle i {
@@ -19229,7 +19172,7 @@ span.badge {
     }
 
 .btn:not(.btn-link):not(.btn-circle) {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.16),0 2px 10px rgba(0,0,0,0.12);
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
@@ -19306,27 +19249,27 @@ span.badge {
     }
 
 .btn-info {
-    background-color: #117EC3 !important;
+    background-color: #00b0e4 !important;
     color: #fff !important
 }
 
     .btn-info:hover {
-        background-color: #117EC3 !important;
+        background-color: #00b0e4 !important;
         color: #fff !important
     }
 
     .btn-info:active {
-        background-color: #117EC3 !important;
+        background-color: #00b0e4 !important;
         color: #fff !important
     }
 
     .btn-info:focus {
-        background-color: #117EC3 !important;
+        background-color: #00b0e4 !important;
         color: #fff !important
     }
 
     .btn-info:disabled {
-        background-color: #117EC3 !important;
+        background-color: #00b0e4 !important;
         color: #fff !important
     }
 
@@ -19431,14 +19374,14 @@ span.badge {
 
 .btn-outline-info {
     background: 0 0 !important;
-    color: #117EC3 !important;
-    border: 1px solid #117EC3 !important
+    color: #00b0e4 !important;
+    border: 1px solid #00b0e4 !important
 }
 
     .btn-outline-info:hover {
-        background: #117EC3 !important;
+        background: #00b0e4 !important;
         color: #fff !important;
-        border: 1px solid #117EC3 !important
+        border: 1px solid #00b0e4 !important
     }
 
 .btn-outline-warning {
@@ -19466,7 +19409,7 @@ span.badge {
     }
 
 .btn-group, .btn-group-vertical {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 2px 5px rgba(0,0,0,0.16),0 2px 10px rgba(0,0,0,0.12)
 }
 
     .btn-group .btn, .btn-group-vertical .btn {
@@ -19487,7 +19430,7 @@ span.badge {
     }
 
     .btn-group .btn + .dropdown-toggle, .btn-group-vertical .btn + .dropdown-toggle {
-        border-left: 1px solid rgba(0, 0, 0, 0.08) !important
+        border-left: 1px solid rgba(0,0,0,0.08) !important
     }
 
     .btn-group.btn-group-justified {
@@ -19545,83 +19488,83 @@ span.badge {
     }
 
     .btn-hover.color-1 {
-        background-image: linear-gradient(to right, #25aae1, #30dd8a, #30dd8a, #2bb673);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75)
+        background-image: linear-gradient(to right,#25aae1,#30dd8a,#30dd8a,#2bb673);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(49,196,190,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(49,196,190,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(49,196,190,0.75);
+        box-shadow: 0 4px 15px 0 rgba(49,196,190,0.75)
     }
 
     .btn-hover.color-2 {
-        background-image: linear-gradient(to right, #f5ce62, #e43603, #fa7199, #e85a19);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75)
+        background-image: linear-gradient(to right,#f5ce62,#e43603,#fa7199,#e85a19);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(229,66,10,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(229,66,10,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(229,66,10,0.75);
+        box-shadow: 0 4px 15px 0 rgba(229,66,10,0.75)
     }
 
     .btn-hover.color-3 {
-        background-image: linear-gradient(to right, #667eea, #764ba2, #6b8dd6, #8e37d7);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75)
+        background-image: linear-gradient(to right,#667eea,#764ba2,#6b8dd6,#8e37d7);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(116,79,168,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(116,79,168,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(116,79,168,0.75);
+        box-shadow: 0 4px 15px 0 rgba(116,79,168,0.75)
     }
 
     .btn-hover.color-4 {
-        background-image: linear-gradient(to right, #fc6076, #ef9d43, #ef9d43, #e75516);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75)
+        background-image: linear-gradient(to right,#fc6076,#ef9d43,#ef9d43,#e75516);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(252,104,110,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(252,104,110,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(252,104,110,0.75);
+        box-shadow: 0 4px 15px 0 rgba(252,104,110,0.75)
     }
 
     .btn-hover.color-5 {
-        background-image: linear-gradient(to right, #0ba360, #3cba92, #30dd8a, #2bb673);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75)
+        background-image: linear-gradient(to right,#0ba360,#3cba92,#30dd8a,#2bb673);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(23,168,108,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(23,168,108,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(23,168,108,0.75);
+        box-shadow: 0 4px 15px 0 rgba(23,168,108,0.75)
     }
 
     .btn-hover.color-6 {
-        background-image: linear-gradient(to right, #6253e1, #852d91, #a3a1ff, #f24645);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75)
+        background-image: linear-gradient(to right,#6253e1,#852d91,#a3a1ff,#f24645);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(126,52,161,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(126,52,161,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(126,52,161,0.75);
+        box-shadow: 0 4px 15px 0 rgba(126,52,161,0.75)
     }
 
     .btn-hover.color-7 {
-        background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75)
+        background-image: linear-gradient(to right,#29323c,#485563,#2b5876,#4e4376);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(45,54,65,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(45,54,65,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(45,54,65,0.75);
+        box-shadow: 0 4px 15px 0 rgba(45,54,65,0.75)
     }
 
     .btn-hover.color-8 {
-        background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75)
+        background-image: linear-gradient(to right,#25aae1,#4481eb,#04befe,#3f86ed);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(65,132,234,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(65,132,234,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(65,132,234,0.75);
+        box-shadow: 0 4px 15px 0 rgba(65,132,234,0.75)
     }
 
     .btn-hover.color-9 {
-        background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
-        -webkit-box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-        -moz-box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-        -ms-box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
-        box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75)
+        background-image: linear-gradient(to right,#ed6ea0,#ec8c69,#f7186a,#fbb03b);
+        -webkit-box-shadow: 0 4px 15px 0 rgba(236,116,149,0.75);
+        -moz-box-shadow: 0 4px 15px 0 rgba(236,116,149,0.75);
+        -ms-box-shadow: 0 4px 15px 0 rgba(236,116,149,0.75);
+        box-shadow: 0 4px 15px 0 rgba(236,116,149,0.75)
     }
 
     .btn-hover.color-10 {
-        background-image: linear-gradient(to right, #e2373f, #f15e64, #e14e53, #e2373f);
-        -webkit-box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
-        -moz-box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
-        -ms-box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
-        box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4)
+        background-image: linear-gradient(to right,#e2373f,#f15e64,#e14e53,#e2373f);
+        -webkit-box-shadow: 0 5px 15px rgba(242,97,103,0.4);
+        -moz-box-shadow: 0 5px 15px rgba(242,97,103,0.4);
+        -ms-box-shadow: 0 5px 15px rgba(242,97,103,0.4);
+        box-shadow: 0 5px 15px rgba(242,97,103,0.4)
     }
 
 .card {
@@ -19634,12 +19577,7 @@ span.badge {
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
-    border-radius: 10px;
-    /*Adam added for testing*/
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    -ms-border-radius: 0px;
-    border-radius: 0px;
+    border-radius: 10px
 }
 
     .card .card-inside-title {
@@ -19793,9 +19731,9 @@ span.badge {
         }
 
 .plain-card {
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
     padding: 20px;
     padding-right: 35px;
     -webkit-border-radius: 3px;
@@ -19884,7 +19822,7 @@ span.badge {
         }
 
 .modal {
-    background-color: rgba(238, 238, 238, 0.41);
+    background-color: rgba(238,238,238,0.41);
     max-height: 100%;
     width: 100%
 }
@@ -19904,7 +19842,7 @@ span.badge {
         -moz-border-radius: 0;
         -ms-border-radius: 0;
         border-radius: 0;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.31) !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.31) !important;
         border: 0;
         padding: 10px
     }
@@ -19932,7 +19870,7 @@ span.badge {
     }
 
     .modal-col-red .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-red .modal-footer .btn-link {
@@ -19940,7 +19878,7 @@ span.badge {
         }
 
             .modal-col-red .modal-footer .btn-link:hover, .modal-col-red .modal-footer .btn-link:active, .modal-col-red .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-pink {
@@ -19952,7 +19890,7 @@ span.badge {
     }
 
     .modal-col-pink .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-pink .modal-footer .btn-link {
@@ -19960,7 +19898,7 @@ span.badge {
         }
 
             .modal-col-pink .modal-footer .btn-link:hover, .modal-col-pink .modal-footer .btn-link:active, .modal-col-pink .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-purple {
@@ -19972,7 +19910,7 @@ span.badge {
     }
 
     .modal-col-purple .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-purple .modal-footer .btn-link {
@@ -19980,7 +19918,7 @@ span.badge {
         }
 
             .modal-col-purple .modal-footer .btn-link:hover, .modal-col-purple .modal-footer .btn-link:active, .modal-col-purple .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-deep-purple {
@@ -19992,7 +19930,7 @@ span.badge {
     }
 
     .modal-col-deep-purple .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-deep-purple .modal-footer .btn-link {
@@ -20000,7 +19938,7 @@ span.badge {
         }
 
             .modal-col-deep-purple .modal-footer .btn-link:hover, .modal-col-deep-purple .modal-footer .btn-link:active, .modal-col-deep-purple .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-indigo {
@@ -20012,7 +19950,7 @@ span.badge {
     }
 
     .modal-col-indigo .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-indigo .modal-footer .btn-link {
@@ -20020,7 +19958,7 @@ span.badge {
         }
 
             .modal-col-indigo .modal-footer .btn-link:hover, .modal-col-indigo .modal-footer .btn-link:active, .modal-col-indigo .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-blue {
@@ -20032,7 +19970,7 @@ span.badge {
     }
 
     .modal-col-blue .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-blue .modal-footer .btn-link {
@@ -20040,7 +19978,7 @@ span.badge {
         }
 
             .modal-col-blue .modal-footer .btn-link:hover, .modal-col-blue .modal-footer .btn-link:active, .modal-col-blue .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-light-blue {
@@ -20052,7 +19990,7 @@ span.badge {
     }
 
     .modal-col-light-blue .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-light-blue .modal-footer .btn-link {
@@ -20060,7 +19998,7 @@ span.badge {
         }
 
             .modal-col-light-blue .modal-footer .btn-link:hover, .modal-col-light-blue .modal-footer .btn-link:active, .modal-col-light-blue .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-cyan {
@@ -20072,7 +20010,7 @@ span.badge {
     }
 
     .modal-col-cyan .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-cyan .modal-footer .btn-link {
@@ -20080,7 +20018,7 @@ span.badge {
         }
 
             .modal-col-cyan .modal-footer .btn-link:hover, .modal-col-cyan .modal-footer .btn-link:active, .modal-col-cyan .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-teal {
@@ -20092,7 +20030,7 @@ span.badge {
     }
 
     .modal-col-teal .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-teal .modal-footer .btn-link {
@@ -20100,7 +20038,7 @@ span.badge {
         }
 
             .modal-col-teal .modal-footer .btn-link:hover, .modal-col-teal .modal-footer .btn-link:active, .modal-col-teal .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-green {
@@ -20112,7 +20050,7 @@ span.badge {
     }
 
     .modal-col-green .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-green .modal-footer .btn-link {
@@ -20120,7 +20058,7 @@ span.badge {
         }
 
             .modal-col-green .modal-footer .btn-link:hover, .modal-col-green .modal-footer .btn-link:active, .modal-col-green .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-light-green {
@@ -20132,7 +20070,7 @@ span.badge {
     }
 
     .modal-col-light-green .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-light-green .modal-footer .btn-link {
@@ -20140,7 +20078,7 @@ span.badge {
         }
 
             .modal-col-light-green .modal-footer .btn-link:hover, .modal-col-light-green .modal-footer .btn-link:active, .modal-col-light-green .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-lime {
@@ -20152,7 +20090,7 @@ span.badge {
     }
 
     .modal-col-lime .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-lime .modal-footer .btn-link {
@@ -20160,7 +20098,7 @@ span.badge {
         }
 
             .modal-col-lime .modal-footer .btn-link:hover, .modal-col-lime .modal-footer .btn-link:active, .modal-col-lime .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-yellow {
@@ -20172,7 +20110,7 @@ span.badge {
     }
 
     .modal-col-yellow .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-yellow .modal-footer .btn-link {
@@ -20180,7 +20118,7 @@ span.badge {
         }
 
             .modal-col-yellow .modal-footer .btn-link:hover, .modal-col-yellow .modal-footer .btn-link:active, .modal-col-yellow .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-amber {
@@ -20192,7 +20130,7 @@ span.badge {
     }
 
     .modal-col-amber .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-amber .modal-footer .btn-link {
@@ -20200,7 +20138,7 @@ span.badge {
         }
 
             .modal-col-amber .modal-footer .btn-link:hover, .modal-col-amber .modal-footer .btn-link:active, .modal-col-amber .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-orange {
@@ -20212,7 +20150,7 @@ span.badge {
     }
 
     .modal-col-orange .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-orange .modal-footer .btn-link {
@@ -20220,7 +20158,7 @@ span.badge {
         }
 
             .modal-col-orange .modal-footer .btn-link:hover, .modal-col-orange .modal-footer .btn-link:active, .modal-col-orange .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-deep-orange {
@@ -20232,7 +20170,7 @@ span.badge {
     }
 
     .modal-col-deep-orange .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-deep-orange .modal-footer .btn-link {
@@ -20240,7 +20178,7 @@ span.badge {
         }
 
             .modal-col-deep-orange .modal-footer .btn-link:hover, .modal-col-deep-orange .modal-footer .btn-link:active, .modal-col-deep-orange .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-brown {
@@ -20252,7 +20190,7 @@ span.badge {
     }
 
     .modal-col-brown .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-brown .modal-footer .btn-link {
@@ -20260,7 +20198,7 @@ span.badge {
         }
 
             .modal-col-brown .modal-footer .btn-link:hover, .modal-col-brown .modal-footer .btn-link:active, .modal-col-brown .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-grey {
@@ -20272,7 +20210,7 @@ span.badge {
     }
 
     .modal-col-grey .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-grey .modal-footer .btn-link {
@@ -20280,7 +20218,7 @@ span.badge {
         }
 
             .modal-col-grey .modal-footer .btn-link:hover, .modal-col-grey .modal-footer .btn-link:active, .modal-col-grey .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-blue-grey {
@@ -20292,7 +20230,7 @@ span.badge {
     }
 
     .modal-col-blue-grey .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-blue-grey .modal-footer .btn-link {
@@ -20300,7 +20238,7 @@ span.badge {
         }
 
             .modal-col-blue-grey .modal-footer .btn-link:hover, .modal-col-blue-grey .modal-footer .btn-link:active, .modal-col-blue-grey .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-black {
@@ -20312,7 +20250,7 @@ span.badge {
     }
 
     .modal-col-black .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-black .modal-footer .btn-link {
@@ -20320,7 +20258,7 @@ span.badge {
         }
 
             .modal-col-black .modal-footer .btn-link:hover, .modal-col-black .modal-footer .btn-link:active, .modal-col-black .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-white {
@@ -20332,7 +20270,7 @@ span.badge {
     }
 
     .modal-col-white .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-white .modal-footer .btn-link {
@@ -20340,7 +20278,7 @@ span.badge {
         }
 
             .modal-col-white .modal-footer .btn-link:hover, .modal-col-white .modal-footer .btn-link:active, .modal-col-white .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .modal-col-dark-gray {
@@ -20352,7 +20290,7 @@ span.badge {
     }
 
     .modal-col-dark-gray .modal-footer {
-        background-color: rgba(0, 0, 0, 0.12)
+        background-color: rgba(0,0,0,0.12)
     }
 
         .modal-col-dark-gray .modal-footer .btn-link {
@@ -20360,7 +20298,7 @@ span.badge {
         }
 
             .modal-col-dark-gray .modal-footer .btn-link:hover, .modal-col-dark-gray .modal-footer .btn-link:active, .modal-col-dark-gray .modal-footer .btn-link:focus {
-                background-color: rgba(0, 0, 0, 0.12)
+                background-color: rgba(0,0,0,0.12)
             }
 
 .page-loader-wrapper {
@@ -20442,7 +20380,7 @@ span.badge {
             border-color: #ffc107;
             color: #fff;
             border-radius: 50%;
-            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2)
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2)
         }
 
     .pagination li {
@@ -20875,7 +20813,7 @@ span.badge {
         .panel-group .panel-primary .panel-title a {
             color: #757575;
             font-weight: 400;
-            font-size: 16px
+            font-size: 15px
         }
 
 .panel-group .panel-success {
@@ -21192,10 +21130,10 @@ span.badge {
     border-color: #f44336;
     -ms-opacity: 1;
     opacity: 1;
-    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-    -moz-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-    -o-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both
+    -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4,0,0.2,1) infinite both;
+    -moz-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4,0,0.2,1) infinite both;
+    -o-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4,0,0.2,1) infinite both;
+    animation: fill-unfill-rotate 5332ms cubic-bezier(0.4,0,0.2,1) infinite both
 }
 
     .spinner-layer.pl-red {
@@ -21339,10 +21277,10 @@ span.badge {
         -ms-transform: rotate(129deg);
         -o-transform: rotate(129deg);
         transform: rotate(129deg);
-        -webkit-animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-        -moz-animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-        -o-animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-        animation: left-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both
+        -webkit-animation: left-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both;
+        -moz-animation: left-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both;
+        -o-animation: left-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both;
+        animation: left-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both
     }
 
     .circle-clipper.right .circle {
@@ -21353,10 +21291,10 @@ span.badge {
         -ms-transform: rotate(-129deg);
         -o-transform: rotate(-129deg);
         transform: rotate(-129deg);
-        -webkit-animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-        -moz-animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-        -o-animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-        animation: right-spin 1333ms cubic-bezier(0.4, 0, 0.2, 1) infinite both
+        -webkit-animation: right-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both;
+        -moz-animation: right-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both;
+        -o-animation: right-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both;
+        animation: right-spin 1333ms cubic-bezier(0.4,0,0.2,1) infinite both
     }
 
 @-webkit-keyframes container-rotate {
@@ -21607,7 +21545,7 @@ span.badge {
     }
 
     .progress .progress-bar-info {
-        background-color: #117EC3
+        background-color: #00b0e4
     }
 
     .progress .progress-bar-warning {
@@ -21631,9 +21569,9 @@ span.badge {
         top: 0
     }
 
-/*.tooltip {
+.tooltip {
     font-size: 13px
-}*/
+}
 
     .tooltip .tooltip-inner {
         -webkit-border-radius: 0;
@@ -21647,7 +21585,7 @@ span.badge {
     -moz-border-radius: 0;
     -ms-border-radius: 0;
     border-radius: 0;
-    border: 1px solid rgba(0, 0, 0, 0.08)
+    border: 1px solid rgba(0,0,0,0.08)
 }
 
     .popover .popover-title {
@@ -21670,91 +21608,91 @@ span.badge {
     }
 
 .waves-effect.waves-red .waves-ripple {
-    background: rgba(244, 67, 54, 0.5)
+    background: rgba(244,67,54,0.5)
 }
 
 .waves-effect.waves-pink .waves-ripple {
-    background: rgba(233, 30, 99, 0.5)
+    background: rgba(233,30,99,0.5)
 }
 
 .waves-effect.waves-purple .waves-ripple {
-    background: rgba(156, 39, 176, 0.5)
+    background: rgba(156,39,176,0.5)
 }
 
 .waves-effect.waves-deep-purple .waves-ripple {
-    background: rgba(103, 58, 183, 0.5)
+    background: rgba(103,58,183,0.5)
 }
 
 .waves-effect.waves-indigo .waves-ripple {
-    background: rgba(63, 81, 181, 0.5)
+    background: rgba(63,81,181,0.5)
 }
 
 .waves-effect.waves-blue .waves-ripple {
-    background: rgba(33, 150, 243, 0.5)
+    background: rgba(33,150,243,0.5)
 }
 
 .waves-effect.waves-light-blue .waves-ripple {
-    background: rgba(3, 169, 244, 0.5)
+    background: rgba(3,169,244,0.5)
 }
 
 .waves-effect.waves-cyan .waves-ripple {
-    background: rgba(0, 188, 212, 0.5)
+    background: rgba(0,188,212,0.5)
 }
 
 .waves-effect.waves-teal .waves-ripple {
-    background: rgba(0, 150, 136, 0.5)
+    background: rgba(0,150,136,0.5)
 }
 
 .waves-effect.waves-green .waves-ripple {
-    background: rgba(76, 175, 80, 0.5)
+    background: rgba(76,175,80,0.5)
 }
 
 .waves-effect.waves-light-green .waves-ripple {
-    background: rgba(139, 195, 74, 0.5)
+    background: rgba(139,195,74,0.5)
 }
 
 .waves-effect.waves-lime .waves-ripple {
-    background: rgba(205, 220, 57, 0.5)
+    background: rgba(205,220,57,0.5)
 }
 
 .waves-effect.waves-yellow .waves-ripple {
-    background: rgba(255, 232, 33, 0.5)
+    background: rgba(255,232,33,0.5)
 }
 
 .waves-effect.waves-amber .waves-ripple {
-    background: rgba(255, 193, 7, 0.5)
+    background: rgba(255,193,7,0.5)
 }
 
 .waves-effect.waves-orange .waves-ripple {
-    background: rgba(255, 152, 0, 0.5)
+    background: rgba(255,152,0,0.5)
 }
 
 .waves-effect.waves-deep-orange .waves-ripple {
-    background: rgba(255, 87, 34, 0.5)
+    background: rgba(255,87,34,0.5)
 }
 
 .waves-effect.waves-brown .waves-ripple {
-    background: rgba(121, 85, 72, 0.5)
+    background: rgba(121,85,72,0.5)
 }
 
 .waves-effect.waves-grey .waves-ripple {
-    background: rgba(158, 158, 158, 0.5)
+    background: rgba(158,158,158,0.5)
 }
 
 .waves-effect.waves-blue-grey .waves-ripple {
-    background: rgba(96, 125, 139, 0.5)
+    background: rgba(96,125,139,0.5)
 }
 
 .waves-effect.waves-black .waves-ripple {
-    background: rgba(0, 0, 0, 0.5)
+    background: rgba(0,0,0,0.5)
 }
 
 .waves-effect.waves-white .waves-ripple {
-    background: rgba(255, 255, 255, 0.5)
+    background: rgba(255,255,255,0.5)
 }
 
 .waves-effect.waves-dark-gray .waves-ripple {
-    background: rgba(136, 136, 136, 0.5)
+    background: rgba(136,136,136,0.5)
 }
 
 html.ie10 .sidebar .menu .list li {
@@ -21802,89 +21740,98 @@ html.ie11 .dropdown-menu ul.menu li a {
 html.ie11 .bs-searchbox .form-control {
     width: 90%
 }
+
 .input-group-addon-custom {
     position: absolute;
     top: 5px;
     right: 2px;
-    cursor:pointer;
+    cursor: pointer;
 }
-.character-left{
-    color:#999;
+
+.character-left {
+    color: #999;
 }
+
 .pointer {
     cursor: pointer;
 }
+
 select {
     border: 0 !important;
     border-bottom: 1px solid #9e9e9e !important;
     height: 3rem !important;
-    border-radius:0 !important;
+    border-radius: 0 !important;
 }
-select:focus {
-    border-bottom: 1px solid #26a69a !important;
-    -webkit-box-shadow: 0 1px 0 0 #26a69a !important;
-    box-shadow: 0 1px 0 0 #26a69a !important;
-}
+
+    select:focus {
+        border-bottom: 1px solid #26a69a !important;
+        -webkit-box-shadow: 0 1px 0 0 #26a69a !important;
+        box-shadow: 0 1px 0 0 #26a69a !important;
+    }
 
 .tooltip-custom {
     position: relative;
     display: inline-block;
 }
 
-.tooltip-custom .tooltiptext {
-    visibility: hidden;
-    width: 150px;
-    background-color: #1C2631;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 10px;
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-}
+    .tooltip-custom .tooltiptext {
+        visibility: hidden;
+        width: 150px;
+        background-color: #1C2631;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 10px;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+    }
 
-.tooltip-custom:hover .tooltiptext {
-    visibility: visible;
-}
+    .tooltip-custom:hover .tooltiptext {
+        visibility: visible;
+    }
 
 .company-info {
     text-align: center;
     margin-top: 40px;
 }
-.company-info .active-did{
-    margin:0
-}
+
+    .company-info .active-did {
+        margin: 0
+    }
+
 .user-info {
     list-style: none;
     text-align: center;
     margin-top: 30px;
 }
-.user-info li {
-    padding: 10px 40px;
-    border: 1px solid #e0e0e0;
-    margin: 5px 40px;
-    box-shadow: 0px 0px 8px #00000029;
-    font-size: 14px;
-}
-.user-info li a {
-    color: #212529
-}
+
+    .user-info li {
+        padding: 10px 40px;
+        border: 1px solid #e0e0e0;
+        margin: 5px 40px;
+        box-shadow: 0px 0px 8px #00000029;
+        font-size: 14px;
+    }
+
+        .user-info li a {
+            color: #212529
+        }
 
 .radio-custom input {
     visibility: hidden;
 }
 
-.radio-custom  input[type="radio"]:checked + span {
-    background: #117EC3;
-    color: white;
-    padding-left: 5px;
-    height: 27px;
-}
+    .radio-custom input[type="radio"]:checked + span {
+        background: #117EC3;
+        color: white;
+        padding-left: 5px;
+        height: 27px;
+    }
 
-.radio-custom  input[type="radio"]:not(:checked) + span {
-    padding-left: 5px;
-}
+    .radio-custom input[type="radio"]:not(:checked) + span {
+        padding-left: 5px;
+    }
 
 .radio-custom span::before {
     visibility: hidden;

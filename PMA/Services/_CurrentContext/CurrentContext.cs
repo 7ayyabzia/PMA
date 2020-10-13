@@ -68,9 +68,10 @@ namespace PMA.Services._CurrentContext
                 Name = user.FirstName + " " + user.LastName,
                 AccountName = _dbContext.Accounts.Find(user.AccountId).AccountName,
                 Project = user.UserProjects.SingleOrDefault(s => s.IsActive == true).Project.ProjectName,
-                AssignedProjects = user.UserProjects.Where(s => s.IsActive == false).ToList(),
+                //AssignedProjects = user.UserProjects.Where(s => s.IsActive == false).ToList(),
                 Role = userRoles
             };
+            //userInfo.AssignedProjects.ToList().ForEach(s => s.Project.UserProjects = null);
             return userInfo;
         }
     }

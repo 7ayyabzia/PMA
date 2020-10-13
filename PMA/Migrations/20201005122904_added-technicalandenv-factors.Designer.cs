@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PMA.Data;
 
 namespace PMA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201005122904_added-technicalandenv-factors")]
+    partial class addedtechnicalandenvfactors
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -350,55 +352,6 @@ namespace PMA.Migrations
                     b.ToTable("EnvironmentalFactors");
                 });
 
-            modelBuilder.Entity("PMA.Models.Extension", b =>
-                {
-                    b.Property<int>("ExtensionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ExtensionSolutions")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Number")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UseCaseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ExtensionId");
-
-                    b.HasIndex("UseCaseId");
-
-                    b.ToTable("Extensions");
-                });
-
-            modelBuilder.Entity("PMA.Models.MainSuccessScenario", b =>
-                {
-                    b.Property<int>("MainSuccessScenarioId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Number")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UseCaseId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MainSuccessScenarioId");
-
-                    b.HasIndex("UseCaseId");
-
-                    b.ToTable("MainSuccessScenarios");
-                });
-
             modelBuilder.Entity("PMA.Models.PDM", b =>
                 {
                     b.Property<int>("PDMId")
@@ -485,7 +438,13 @@ namespace PMA.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Extensions")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Level")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MainSuccessScenario")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OpenIssues")
@@ -692,24 +651,6 @@ namespace PMA.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("PMA.Models.Extension", b =>
-                {
-                    b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("Extensions")
-                        .HasForeignKey("UseCaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PMA.Models.MainSuccessScenario", b =>
-                {
-                    b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("MainSuccessScenario")
-                        .HasForeignKey("UseCaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("PMA.Models.PDM", b =>
                 {
                     b.HasOne("PMA.Models.UseCase", "UseCase")
@@ -746,7 +687,7 @@ namespace PMA.Migrations
                         .IsRequired();
 
                     b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("EnvironmentalFactors")
+                        .WithMany()
                         .HasForeignKey("UseCaseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -770,7 +711,7 @@ namespace PMA.Migrations
                         .IsRequired();
 
                     b.HasOne("PMA.Models.UseCase", "UseCase")
-                        .WithMany("TechnicalFactors")
+                        .WithMany()
                         .HasForeignKey("UseCaseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

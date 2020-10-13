@@ -45,5 +45,11 @@ namespace PMA.Controllers
             var usecase = JsonConvert.DeserializeObject<UseCase>(Request.Form["usecase"]);
             await _useCaseService.UpdateUseCase(usecase);
         }
+
+        public async Task<JsonResult> GetFactors()
+        {
+            var factors = await _useCaseService.GetFactors();
+            return Json(factors);
+        }
     }
 }

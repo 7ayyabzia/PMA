@@ -1,0 +1,28 @@
+﻿.concepts {
+    width: 200px;
+    margin: 50px;
+    display: inline-block;
+}
+
+    .concepts .class-head {
+        border-top: 1px solid #757575;
+        border-right: 1px solid #757575;
+        border-left: 1px solid #757575;
+        min-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 3px;
+    }
+
+    .concepts .class-attr {
+        border: 1px solid #757575;
+        min-height: 100px;
+    }
+
+.dialogue-concept-list {
+    border-bottom: 1px solid #757575;
+}
+
+    .dialogue-concept-list .col-10 {
+        padding-top: 7px;
+    }

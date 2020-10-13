@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Domain Model";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/assets/css/custom/DomainModel.css" rel="stylesheet" />
+}
+@section angular{
+    <script src="~/Angular/DomainModel/DomainModel.js"></script>
+}
+
+<div class="container-fluid" ng-controller="PDMCtrl">
+    <div class="card">
+        <div class="header" ng-init="getUsecases()">
+            <h2>
+                <strong>Partial Domain Models</strong>
+                <button class="btn btn-primary float-right" ng-click="chooseUsecase()">Add New PDM</button>
+            </h2>
+        </div>
+        <div class="body" ng-init="getPDMs()">
+            <div class="panel-group" id="accordion_1" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-primary" ng-repeat="pdm in pdms">
+                    <div class="panel-heading pointer" role="tab" id="heading-{{usecase.useCaseId}}">
+                        <h4 class="panel-title">
+                            <a role="button" ng-click="showPDM($index)">
+                                PDM-{{pdm.useCase.useCaseNumber}} - {{pdm.useCase.title}}
+                                <i class="material-icons float-right" ng-click="createConceptsDialogue(pdm)">refresh</i>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="{{$index}}" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="heading-{{$index}}">
+                        <div class="panel-body">
+                            <div class="concepts-grid text-center">
+                                <section class="concepts" ng-repeat="concept in pdm.conceptualClasses">
+                                    <div class="class-head">{{concept.className}}</div>
+                                    <div class="class-attr">{{concept.attributes}}</div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/assets/js/form.min.js"></script>
+    <script src="~/assets/js/pages/ui/collapse.js"></script>
+}
+
+
