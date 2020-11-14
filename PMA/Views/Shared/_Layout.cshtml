@@ -21,7 +21,7 @@
     @RenderSection("css", false)
 
     <!--Angular Scripts-->
-    @*<script src="~/assets/js/bundles/angular/angular.js"></script>*@
+    
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
     <script>
@@ -39,11 +39,13 @@
                 }
             };
         });
-        App.controller("UserInfoCtrl", function ($scope) {
+    </script>
+    <script src="~/Angular/_Services/UserService.js"></script>
+    <script>
+        App.controller("LayoutCtrl", function ($scope, $user) {
 
             $scope.getUserInfo = function () {
-                JsonCall("Account", "GetCurrentUserInfo");
-                $scope.user = list;
+                $scope.user = $user.getUserInfo();
             }
             $scope.toggleMenu = function (li) {
                 $('.' + li).slideToggle();
@@ -54,9 +56,13 @@
                     $('.' + $(this).data('name')).slideToggle();
                 })
             })
-            $scope.getProject
-            $scope.activateProject = function(projectId, uid) {
-                JsonCallParam("Account", "ActivateProject", { id: projectId, userid: uid });
+            $scope.getProjects = function () {
+                $scope.projectsToActivate = $user.getProjectsToActivate();
+                let activeProjectIndex = $scope.projectsToActivate.findIndex(s => s.isActive === true);
+                $scope.activeProject = $scope.projectsToActivate[activeProjectIndex].project;
+            }
+            $scope.activateProject = function (projectId) {
+                $user.activateProject(projectId);
                 window.location.reload();
             }
         });
@@ -70,244 +76,285 @@
             overflow-y: hidden;
             width: 100%;
         }
+
         .menu-header {
             padding: 0px 0px 0px 0px;
             width: 180px;
             margin: 20px 0 15px 30px;
             font-weight: 600;
             font-size: 15px;
-            cursor:pointer;
+            cursor: pointer;
+        }
+        .right-sidebar .menu {
+            width: 190px;
+            margin: auto
+        }
+
+            .right-sidebar .menu ul {
+                list-style-type: none
+            }
+
+            .right-sidebar .menu li {
+                width: 100%
+            }
+
+                .right-sidebar .menu li a {
+                    padding: 5px 10px;
+                    font-size: 14px;
+                    display: block;
+                    overflow: hidden;
+                    line-height: 2rem;
+                    border-radius: 3rem;
+                    text-decoration: none;
+                    -moz-transition: .5s;
+                    -o-transition: .5s;
+                    -webkit-transition: .5s;
+                    transition: .5s;
+                    width: 100%;
+                    color: #258ABE;
+                }
+
+                    .right-sidebar .menu li a i {
+                        padding-right: 12px;
+                    }
+
+        .right-sidebar .dropdown-menu.show {
+            position: relative !important;
+            top: 40px !important;
+            left: 8px !important;
         }
     </style>
 </head>
 <body class="light menu-light theme-black" ng-app="PMA">
-    <!-- Page Loader -->
-    <div class="customMenuBG page-loader-wrapper">
-        <div class="loader">
-            <div class="m-t--10">
-                <h3>PMA - USA</h3>
-                @*<img src="~/assets/images/logo.png" alt="Please wait" width="200" height="70" />*@
+    <div ng-controller="LayoutCtrl">
+        <!-- Page Loader -->
+        <div class="page-loader-wrapper">
+            <div class="loader">
+                <div class="m-t--10">
+                    <h3>PMA - USA</h3>
+                    @*<img src="~/assets/images/logo.png" alt="Please wait" width="200" height="70" />*@
+                </div>
+                <p class="text-white">Loading please wait...</p>
             </div>
-            <p class="text-white">Loading please wait...</p>
         </div>
-    </div>
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
-    <!-- Top Bar -->
-    <nav class="navbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
-                   aria-expanded="false"></a>
-                <a href="#" onClick="return false;" class="bars"></a>
-                <a class="navbar-brand ml-0" href="~/Conversations">                   
-                    <img src="~/assets/images/logo.png" alt="" width="120" height="40" />
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <div>
-                    <ul class="nav navbar-nav pull-left">
-                        <li class="dropdown user_profile">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                Requirement <i class="fas fa-caret-down font-14 p-l-5"></i>
-                            </a>
-                            <ul class="dropdown-menu pullDown">
-                                <li class="body">
-                                    <ul class="user_dw_menu">
-                                        <li>
-                                            <a href="~/Account/UpdateProfile">
-                                                Requiements
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/Auth/ChangePassword">
-                                                Management
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="dropdown user_profile">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                CiboVilla <i class="fas fa-caret-down font-14 p-l-5"></i>
-                            </a>
-                            <ul class="dropdown-menu pullDown">
-                                <li class="body">
-                                    <ul class="user_dw_menu">
-                                        <li>
-                                            <a href="~/Account/UpdateProfile">
-                                                Final Year Project
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/Auth/ChangePassword">
-                                                CiboVilla
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/Auth/ChangePassword">
-                                                One40Connect
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
+        <!-- #END# Page Loader -->
+        <!-- Overlay For Sidebars -->
+        <div class="overlay"></div>
+        <!-- #END# Overlay For Sidebars -->
+        <!-- Top Bar -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                       aria-expanded="false"></a>
+                    <a href="#" onClick="return false;" class="bars"></a>
+                    <a class="navbar-brand ml-0" href="~/Dashboard">
+                        <img src="~/assets/images/logo.png" alt="" width="120" height="40" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <div>
+                        <ul class="nav navbar-nav pull-left" ng-init="getProjects()">
+                            <li class="dropdown user_profile">
+                                <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                    {{activeProject.projectName}} <i class="fas fa-caret-down font-14 p-l-5"></i>
+                                </a>
+                                <ul class="dropdown-menu pullDown">
+                                    <li class="body">
+                                        <ul class="user_dw_menu">
+                                            <li ng-repeat="pro in projectsToActivate">
+                                                <a role="button" ng-click="activateProject(pro.project.projectId)">
+                                                    {{pro.project.projectName}}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown user_profile">
+                                <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                    Requirement <i class="fas fa-caret-down font-14 p-l-5"></i>
+                                </a>
+                                <ul class="dropdown-menu pullDown">
+                                    <li class="body">
+                                        <ul class="user_dw_menu">
+                                            <li>
+                                                <a href="~/Auth/ChangePassword">
+                                                    Requirement
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Auth/ChangePassword">
+                                                    Management
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
 
-                        <li>
-                            <a href="javascript:;" class="fullscreen-btn">
-                                <i class="fas fa-expand"></i>
+                            <li>
+                                <a href="javascript:;" class="fullscreen-btn">
+                                    <i class="fas fa-expand"></i>
+                                </a>
+                            </li>
+                            <li class="dropdown user_profile">
+                                <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                                    <i class="fa fa-user-alt"></i>
+                                </a>
+                                <ul class="dropdown-menu pullDown">
+                                    <li class="body">
+                                        <ul class="user_dw_menu">
+                                            <li>
+                                                <a href="~/Account/UpdateProfile">
+                                                    <i class="material-icons">person</i>Profile
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Auth/ChangePassword">
+                                                    <i class="fas fa-eye-slash"></i>Change Password
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="~/Auth/Logout">
+                                                    <i class="material-icons">power_settings_new</i>Logout
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" onClick="return false;" class="js-right-sidebar" data-close="true">
+                                    <i class="fas fa-cog"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- #Top Bar -->
+        <div>
+            <!-- Left Sidebar -->
+            <aside id="leftsidebar" class="sidebar">
+                <!-- Menu -->
+                <div class="text-center m-t-20" ng-init="getUserInfo()">
+                    <h6>{{user.accountName}}</h6>
+                    <p>{{user.name}}</p>
+                </div>
+                <div class="menu">
+
+                    <ul class="list m-t-10 p-b-100">
+                        @*<li class="menu-header mt-0" data-name="General">
+                            General
+                            <i class="fas fa-caret-down float-right"></i>
+                        </li>*@
+                        <li class="active General">
+                            <a href="~/Home">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="dropdown user_profile">
-                            <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                                <i class="fa fa-user-alt"></i>
+                        <li class="General">
+                            <a href="~/Projects">
+                                <i class="fa fa-tasks"></i>
+                                <span>Projects</span>
                             </a>
-                            <ul class="dropdown-menu pullDown">
-                                <li class="body">
-                                    <ul class="user_dw_menu">
-                                        <li>
-                                            <a href="~/Account/UpdateProfile">
-                                                <i class="material-icons">person</i>Profile
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/Auth/ChangePassword">
-                                                <i class="fas fa-eye-slash"></i>Change Password
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="~/Auth/Logout">
-                                                <i class="material-icons">power_settings_new</i>Logout
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
                         </li>
-                        <li>
-                            <a href="#" onClick="return false;" class="js-right-sidebar" data-close="true">
-                                <i class="fas fa-cog"></i>
+                        @*<li class="General">
+                            <a href="~/Account/UpdateProfile">
+                                <i class="fas fa-user-alt"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li class="General">
+                            <a href="~/Account/Update">
+                                <i class="fas fa fa-industry"></i>
+                                <span>Company</span>
+                            </a>
+                        </li>*@
+                        <li class="menu-header" data-name="Requirement">
+                            Requirement
+                            <i class="fas fa-caret-down float-right"></i>
+                        </li>
+                        <li class="Requirement">
+                            <a href="~/UseCases">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Use Cases</span>
+                            </a>
+                        </li>
+                        <li class="Requirement">
+                            <a href="~/DomainModel">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Domain Model</span>
+                            </a>
+                        </li>
+                        <li class="Requirement">
+                            <a href="~/Projects/Estimations">
+                                <i class="fas fa-calculator"></i>
+                                <span>Estimation</span>
+                            </a>
+                        </li>
+                        <li class="menu-header" data-name="Management">
+                            Management
+                            <i class="fas fa-caret-down float-right"></i>
+                        </li>
+                        <li class="Management">
+                            <a href="~/Backlog/Issues">
+                                <i class="fas fa-boxes"></i>
+                                <span>Backlog</span>
+                            </a>
+                        </li>
+                        <li class="Management">
+                            <a href="~/Backlog/ActiveSprint">
+                                <i class="fas fa-stream"></i>
+                                <span>Active Sprints</span>
+                            </a>
+                        </li>
+                        <li class="Management">
+                            <a href="~/Backlog/CompletedSprints">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Completed Sprints</span>
                             </a>
                         </li>
                     </ul>
                 </div>
-            </div>
+                <!-- #Menu -->
+            </aside>
+            <!-- #END# Left Sidebar -->
+            <!-- Right Sidebar -->
+            <aside id="rightsidebar" class="right-sidebar">
+                <div class="company-info">
+                    <h3 class="company-name">{{user.accountName}}</h3>
+                    <a href="#" onclick="return false;" style="color: #258ABE; font-weight:600" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">
+                        <i class="fas fa-phone-square p-r-5"></i> {{user.activeProject}} <i class="fas fa-caret-down p-l-5" style="font-size:13px"></i>
+                    </a>
+                    @*<ul ng-init="getDIDs()" class="dropdown-menu pull-right more-options" x-placement="bottom-start">
+                        <li ng-repeat="did in didsToActivate">
+                            <a ng-click="activateDID(did.didId)" role="button" onclick="return false;">{{did.did.title}} - {{did.did.phonenumber}}</a>
+                        </li>
+                    </ul>*@
+                    <p class="m-0 p-t-10">{{user.name}}</p>
+                    <p class="m-0">{{user.role}}</p>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="~/Account/Update"><i class="fas fa-sliders-h"></i>Account Settings</a></li>
+                        <li><a href="~/Account/DID"><i class="fas fa-phone-square"></i>DID Settings</a></li>
+                        <li><a href="#"><i class="fa fa-industry"></i>Reporting</a></li>
+                        <li><a href="~/Account/UpdateProfile"><i class="fas fa-user-alt"></i>Profile</a></li>
+                        <li><a href="~/Auth/ChangePassword"><i class="fas fa-eye-slash"></i>Change Password</a></li>
+                        <li><a href="~/Auth/Logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- #END# Right Sidebar -->
         </div>
-    </nav>
-    <!-- #Top Bar -->
-    <div ng-controller="UserInfoCtrl">
-        <!-- Left Sidebar -->
-        <aside id="leftsidebar" class="sidebar">
-            <!-- Menu -->
-            <div class="text-center m-t-20" ng-init="getUserInfo()">
-                <h6>{{user.accountName}}</h6>
-                <p>{{user.name}}</p>
-            </div>
-            <div class="menu">
-
-                <ul class="list m-t-10 p-b-100">
-                    <li class="menu-header mt-0" data-name="General">
-                        General
-                        <i class="fas fa-caret-down float-right"></i>
-                    </li>
-                    <li class="active General">
-                        <a href="~/Home">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="General">
-                        <a href="~/Projects">
-                            <i class="fa fa-tasks"></i>
-                            <span>Projects</span>
-                        </a>
-                    </li>
-                    <li class="General">
-                        <a href="~/Account/UpdateProfile">
-                            <i class="fas fa-user-alt"></i>
-                            <span>My Profile</span>
-                        </a>
-                    </li>
-                    <li class="General">
-                        <a href="~/Account/Update">
-                            <i class="fas fa fa-industry"></i>
-                            <span>Company</span>
-                        </a>
-                    </li>
-                    <li class="menu-header" data-name="Requirement">
-                        Requirement
-                        <i class="fas fa-caret-down float-right"></i>
-                    </li>
-                    <li class="Requirement">
-                        <a href="~/UseCases">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Use Cases</span>
-                        </a>
-                    </li>
-                    <li class="Requirement">
-                        <a href="~/DomainModel">
-                            <i class="fas fa-project-diagram"></i>
-                            <span>Domain Model</span>
-                        </a>
-                    </li>
-                    <li class="Requirement">
-                        <a href="~/Projects/Estimations">
-                            <i class="fas fa-calculator"></i>
-                            <span>Estimation</span>
-                        </a>
-                    </li>
-                    <li class="Requirement">
-                        <a href="~/DomainModel">
-                            <i class="fas fa-key"></i>
-                            <span>Features</span>
-                        </a>
-                    </li>
-                    <li class="menu-header" data-name="Management">
-                        Management
-                        <i class="fas fa-caret-down float-right"></i>
-                    </li>
-                    <li class="Management">
-                        <a href="~/DomainModel">
-                            <i class="fas fa-boxes"></i>
-                            <span>Backlog</span>
-                        </a>
-                    </li>
-                    <li class="Management">
-                        <a href="~/DomainModel">
-                            <i class="fas fa-stream"></i>
-                            <span>Active Sprints</span>
-                        </a>
-                    </li>
-                    <li class="Management">
-                        <a href="~/DomainModel">
-                            <i class="fas fa-file-invoice"></i>
-                            <span>Reports</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- #Menu -->
-        </aside>
-        <!-- #END# Left Sidebar -->
-        <!-- Right Sidebar -->
-        <aside id="rightsidebar" class="right-sidebar">
-            <div class="company-info">
-                <h3 class="company-name">{{user.accountName}}</h3>
-                <p class="active-did">{{user.project}}</p>
-            </div>
-            <ul class="user-info">
-                <li><a href="~/Account/UpdateProfile">{{user.name}}</a></li>
-                <li>{{user.role}}</li>
-            </ul>
-        </aside>
-        <!-- #END# Right Sidebar -->
     </div>
+    
     <section class="content">
         <div id="containerNoScroll">
             @RenderBody()

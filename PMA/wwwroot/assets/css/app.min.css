@@ -27719,7 +27719,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
     display: block;
     position: relative;
     margin: 0;
-    padding: 0;
+    padding-bottom: 10px;
     min-height: 20px;
     font-size: 13px;
     line-height: 20px
@@ -27727,24 +27727,20 @@ div.table-responsive > div.dataTables_wrapper > div.row {
 
 .dd-handle {
     display: block;
-    height: 30px;
-    margin: 5px 0;
-    padding: 5px 10px;
+    min-height:150px;
+    margin: 0;
+    padding: 0;
     cursor: move;
-    color: #979898;
+    /*color: #979898;*/
     text-decoration: none;
     font-weight: bold;
-    border: 1px solid #e5e5e5;
+    /*border: 1px solid #e5e5e5;
     background: #fafafa;
-    -webkit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;*/
     box-sizing: border-box;
     -moz-box-sizing: border-box
 }
 
-    .dd-handle:hover {
-        color: #317eeb;
-        background: #fff
-    }
 
 .dd-item > button {
     display: block;

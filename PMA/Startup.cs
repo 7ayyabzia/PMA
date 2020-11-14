@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using PMA.Data;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +13,8 @@ using PMA.Models.ApplicationUser;
 using PMA.Services.ProjectService;
 using PMA.Services.UseCaseService;
 using PMA.Services.DomainModelService;
+using PMA.Services.BacklogService;
+using PMA.Extensions;
 
 namespace PMA
 {
@@ -37,7 +33,9 @@ namespace PMA
             services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.User.RequireUniqueEmail = true;
-            }).AddEntityFrameworkStores<AppDbContext>();
+            })
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddClaimsPrincipalFactory<MyUserClaimsPrincipalFactory>();
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
@@ -60,6 +58,7 @@ namespace PMA
             services.AddTransient<IProjectService, ProjectService>();
             services.AddTransient<IUseCaseService, UseCaseService>();
             services.AddTransient<IDomainModelService, DomainModelService>();
+            services.AddTransient<IBacklogService, BacklogService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

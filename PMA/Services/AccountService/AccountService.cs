@@ -16,7 +16,7 @@ namespace PMA.Services.AccountService
         Task<bool> IsCodeExist(string code);
         Task UpdateAccount(Account account);
         Task<Account> GetAccount(int id);
-        Task<int> GetCurrentAccountId();
+        int GetCurrentAccountId();
         Task ActivateProject(string userId, int ProjectToActiveId);
     }
     public class AccountService : IAccountService
@@ -44,9 +44,9 @@ namespace PMA.Services.AccountService
             return account;
         }
 
-        public async Task<int> GetCurrentAccountId()
+        public int GetCurrentAccountId()
         {
-            return await _currentContext.GetCurrentAccountId();
+            return _currentContext.GetCurrentAccountId();
         }
 
         public async Task<int> IsAccountValid(string code, string key)

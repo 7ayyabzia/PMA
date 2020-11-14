@@ -28,12 +28,12 @@ namespace PMA.Controllers
         public async Task AddProject()
         {
             var project = JsonConvert.DeserializeObject<Project>(Request.Form["Project"]);
-            project.AccountId = await _currentContext.GetCurrentAccountId();
+            project.AccountId = _currentContext.GetCurrentAccountId();
             await _projectService.AddProject(project);
             await _projectService.AssignResources(new UserProject
             {
                 ProjectId = project.ProjectId,
-                Id = await _currentContext.GetUserId()
+                Id = _currentContext.GetUserId()
             });
         }
 
@@ -46,6 +46,12 @@ namespace PMA.Controllers
         public IActionResult Estimations()
         {
             return View();
+        }
+        public async Task<JsonResult> GetUserProjects()
+        {
+            var projects = await _projectService.GetUserProjects();
+            projects.ToList().ForEach(s => { s.Project.UserProjects = null; });
+            return Json(projects);
         }
     }
 }

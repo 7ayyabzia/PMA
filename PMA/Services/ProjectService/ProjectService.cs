@@ -18,6 +18,7 @@ namespace PMA.Services.ProjectService
         Task DeleteProject(int id);
         Task AssignResources(UserProject userProject);
         Task UnAssignUser(int id);
+        Task<IEnumerable<UserProject>> GetUserProjects();
     }
     public class ProjectService : IProjectService
     {
@@ -39,7 +40,7 @@ namespace PMA.Services.ProjectService
 
         public async Task<IEnumerable<Project>> GetProjects()
         {
-            var accountId = await _currentContext.GetCurrentAccountId();
+            var accountId = _currentContext.GetCurrentAccountId();
             var projects = await _dbcontext.Projects.Where(s=>s.AccountId == accountId).ToListAsync();
             return projects;
         }
@@ -77,5 +78,12 @@ namespace PMA.Services.ProjectService
             await _dbcontext.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<UserProject>> GetUserProjects()
+        {
+            var userId = _currentContext.GetUserId();
+            var userProjects = await _dbcontext.UserProjects.Include(s=>s.Project)
+                .Where(s => s.Id == userId).ToListAsync();
+            return userProjects;
+        }
     }
 }

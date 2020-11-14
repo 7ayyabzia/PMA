@@ -1,0 +1,65 @@
+﻿@model IEnumerable<PMA.Models.Sprint>
+
+@{
+    ViewData["Title"] = "Completed Sprints";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{ 
+    <style>
+        .no-sorting:before{
+            display:none !important;
+        }
+        .no-sorting:after {
+            display: none !important;
+        }
+    </style>
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="header">
+            <h2>
+                <strong>Completed Sprints</strong>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                            <thead>
+                                <tr>
+                                    <th>SprintName</th>
+                                    <th>StartDate</th>
+                                    <th>EstimatedEndDate</th>
+                                    <th>EndDate</th>
+                                    <th class="text-center no-sorting">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var sprint in Model)
+                                {
+                                    <tr>
+                                        <td>@sprint.SprintName</td>
+                                        <td>@sprint.StartDate</td>
+                                        <td>@sprint.EstimatedEndDate</td>
+                                        <td>@sprint.EndDate</td>
+                                        <td class="text-center">
+                                            <a href="~/Backlog/SprintReport/@sprint.SprintId" target="_blank" class="btn tblActnBtn">
+                                                <i class="material-icons" style="font-size:25px !important">assignment</i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/assets/js/table.min.js"></script>
+    <script src="~/assets/js/pages/tables/jquery-datatable.js"></script>
+}

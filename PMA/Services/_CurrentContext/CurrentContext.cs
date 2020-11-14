@@ -24,42 +24,36 @@ namespace PMA.Services._CurrentContext
             _dbContext = dbContext;
         }
 
-        public async Task<AppUser> GetUser()
+        public string GetUserId()
         {
-            var User = _context.HttpContext.User;
-            var user = await _userManager.GetUserAsync(User);
-            return user;
+            var userId = _context.HttpContext.User.FindFirst("UserId").Value;
+            return userId;
         }
 
-        public async Task<string> GetUserId()
+        public int GetCurrentAccountId()
         {
-            var user = await GetUser();
-            return user.Id;
+            var accountId = Convert.ToInt32(_context.HttpContext.User.FindFirst("AccountId").Value);
+            return accountId;
         }
 
-        public async Task<int> GetCurrentAccountId()
+        public int GetActiveProjectId()
         {
-            var user = await GetUser();
-            return user.AccountId;
-        }
-
-        public async Task<int> GetActiveProjectId()
-        {
-            var user = await GetUserId();
-            var project = await _dbContext.UserProjects.SingleOrDefaultAsync(s => s.Id == user && s.IsActive == true);
+            var user = GetUserId();
+            var project = _dbContext.UserProjects.SingleOrDefault(s => s.Id == user && s.IsActive == true);
             return project.ProjectId;
         }
 
-        public async Task<int> GetActiveUserProjectId()
+        public string GetCurrentProjectProp(string propName)
         {
-            var user = await GetUserId();
-            var project = await _dbContext.UserProjects.SingleOrDefaultAsync(s => s.Id == user && s.IsActive == true);
-            return project.UserProjectId;
+            var userProject = _dbContext.UserProjects.Include(s=>s.Project).SingleOrDefault(s => s.IsActive == true && s.Id == GetUserId());
+            var project = userProject.Project;
+            var result = project.GetType().GetProperty(propName).GetValue(project, null) as string;
+            return result;
         }
 
         public async Task<UserInfo> GetCurrentUserInfo()
         {
-            var id = await GetUserId();
+            var id = GetUserId();
             var user = await _userManager.Users.Include(s=>s.UserProjects).ThenInclude(s=>s.Project).SingleOrDefaultAsync(s => s.Id == id);
             var roles = await _userManager.GetRolesAsync(user);
             var userRoles = string.Join(',', roles.ToArray());

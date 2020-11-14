@@ -1,0 +1,246 @@
+﻿@model PMA.Dto.Sprint.SprintDto
+@{
+    ViewData["Title"] = "ActiveSprint";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/assets/css/custom/ActiveSprint.css" rel="stylesheet" />
+}
+@section angular{
+    <script src="~/Angular/_Services/BacklogService.js"></script>
+}
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="header">
+            <h2> <strong>Active Sprints</strong> </h2>
+        </div>
+        @if (Model != null)
+        {
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <label class="search-label">
+                        Search:
+                        <input type="search" id="search-issue" class="form-control form-control-sm" placeholder="">
+                    </label>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-md-right">
+                    <button class="btn btn-primary complete-sprint" data-id="@Model.Sprint.SprintId">Complete <i class="fa fa-plus"></i> </button>
+                </div>
+            </div>
+        }
+        <div class="body">
+                <div class="row">
+                    @if (Model == null)
+                    {
+                        <div class="col-12">
+                            <p class="text-info">@ViewBag.Error</p>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-4 p-10">
+                            <div class="task-col">
+                                <div class="header text-center">
+                                    <h2> <strong>To Do</strong> </h2>
+                                </div>
+                                <div class="body">
+                                    <div class="clearfix m-b-20">
+                                        <div class="dd todo">
+                                            <ol class="dd-list" id="todo-items">
+                                                <li class="dd-item task-head-item">
+                                                    <div class="dd-handle"> </div>
+                                                </li>
+                                                @foreach (var issue in Model.BacklogIssues.Where(s => s.Status == "TODO"))
+                                                {
+                                                    <li class="dd-item" data-id="@issue.BacklogIssueId">
+                                                        <div class="dd-handle">
+                                                            <div class="task-body">
+                                                                <div class="header">
+                                                                    <span class='task-name'>@issue.Summary</span>
+                                                                </div>
+                                                                <span class="task-desc font-weight-normal">@issue.Description</span>
+                                                            </div>
+                                                            <div class="task-footer">
+                                                                <div class="task-info-left">
+                                                                    @if (issue.IssueType == "BUG")
+                                                                    {
+                                                                        <i class="fas fa-bug text-danger"></i>
+                                                                    }
+                                                                    else if (issue.IssueType == "FEATURE")
+                                                                    {
+                                                                        <i class="fas fa-tasks text-success"></i>
+                                                                    }
+                                                                    else if (issue.IssueType == "CHANGE")
+                                                                    {
+                                                                        <i class="fas fa-exchange-alt text-warning"></i>
+                                                                    }
+
+                                                                    @if (issue.Priority == "HIGH")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-danger"></i>
+                                                                    }
+                                                                    else if (issue.Priority == "MEDIUM")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-warning"></i>
+                                                                    }
+                                                                    else if (issue.Priority == "LOW")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-success"></i>
+                                                                    }
+                                                                </div>
+                                                                <div class="task-info-right">
+                                                                    <div class="task-code">@issue.IssueCode</div>
+                                                                    <div class="task-assignee">@issue.User.FirstName[0].ToString().ToUpper()@issue.User.LastName[0].ToString().ToUpper()</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 p-10">
+                            <div class="task-col">
+                                <div class="header text-center">
+                                    <h2>
+                                        <strong>In Progress</strong>
+                                    </h2>
+                                </div>
+                                <div class="body">
+                                    <div class="clearfix m-b-20">
+                                        <div class="dd inprogress">
+                                            <ol class="dd-list" id="inprogress-items">
+                                                <li class="dd-item task-head-item">
+                                                    <div class="dd-handle"></div>
+                                                </li>
+                                                @foreach (var issue in Model.BacklogIssues.Where(s => s.Status == "IN PROGRESS"))
+                                                {
+                                                    <li class="dd-item" data-id="@issue.BacklogIssueId">
+                                                        <div class="dd-handle">
+                                                            <div class="task-body">
+                                                                <div class="header">
+                                                                    <span class='task-name'>@issue.Summary</span>
+                                                                </div>
+                                                                <span class="task-desc font-weight-normal">@issue.Description</span>
+                                                            </div>
+                                                            <div class="task-footer">
+                                                                <div class="task-info-left">
+                                                                    @if (issue.IssueType == "BUG")
+                                                                    {
+                                                                        <i class="fas fa-bug text-danger"></i>
+                                                                    }
+                                                                    else if (issue.IssueType == "FEATURE")
+                                                                    {
+                                                                        <i class="fas fa-tasks text-success"></i>
+                                                                    }
+                                                                    else if (issue.IssueType == "CHANGE")
+                                                                    {
+                                                                        <i class="fas fa-exchange-alt text-warning"></i>
+                                                                    }
+
+                                                                    @if (issue.Priority == "HIGH")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-danger"></i>
+                                                                    }
+                                                                    else if (issue.Priority == "MEDIUM")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-warning"></i>
+                                                                    }
+                                                                    else if (issue.Priority == "LOW")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-success"></i>
+                                                                    }
+                                                                </div>
+                                                                <div class="task-info-right">
+                                                                    <div class="task-code">@issue.IssueCode</div>
+                                                                    <div class="task-assignee">@issue.User.FirstName[0].ToString().ToUpper()@issue.User.LastName[0].ToString().ToUpper()</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 p-10">
+                            <div class="task-col">
+                                <div class="header text-center">
+                                    <h2>
+                                        <strong>Done</strong>
+                                    </h2>
+                                </div>
+                                <div class="body">
+                                    <div class="clearfix m-b-20">
+                                        <div class="dd done">
+                                            <ol class="dd-list" id="done-items">
+                                                <li class="dd-item task-head-item">
+                                                    <div class="dd-handle"></div>
+                                                </li>
+                                                @foreach (var issue in Model.BacklogIssues.Where(s => s.Status == "DONE"))
+                                                {
+                                                    <li class="dd-item" data-id="@issue.BacklogIssueId">
+                                                        <div class="dd-handle">
+                                                            <div class="task-body">
+                                                                <div class="header">
+                                                                    <span class='task-name'>@issue.Summary</span>
+                                                                </div>
+                                                                <span class="task-desc font-weight-normal">@issue.Description</span>
+                                                            </div>
+                                                            <div class="task-footer">
+                                                                <div class="task-info-left">
+                                                                    @if (issue.IssueType == "BUG")
+                                                                    {
+                                                                        <i class="fas fa-bug text-danger"></i>
+                                                                    }
+                                                                    else if (issue.IssueType == "FEATURE")
+                                                                    {
+                                                                        <i class="fas fa-tasks text-success"></i>
+                                                                    }
+                                                                    else if (issue.IssueType == "CHANGE")
+                                                                    {
+                                                                        <i class="fas fa-exchange-alt text-warning"></i>
+                                                                    }
+
+                                                                    @if (issue.Priority == "HIGH")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-danger"></i>
+                                                                    }
+                                                                    else if (issue.Priority == "MEDIUM")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-warning"></i>
+                                                                    }
+                                                                    else if (issue.Priority == "LOW")
+                                                                    {
+                                                                        <i class="fas fa-arrow-up text-success"></i>
+                                                                    }
+                                                                </div>
+                                                                <div class="task-info-right">
+                                                                    <div class="task-code">@issue.IssueCode</div>
+                                                                    <div class="task-assignee">@issue.User.FirstName[0].ToString().ToUpper()@issue.User.LastName[0].ToString().ToUpper()</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Angular/Backlog/Sprint.js"></script>
+}

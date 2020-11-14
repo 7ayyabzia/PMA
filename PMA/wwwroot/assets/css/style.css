@@ -17837,13 +17837,11 @@ header {
     padding: 10px 0
 }
 
-.dd-handle {
+/*.dd-handle {
     background-color: #f9f9f9 !important
-}
+}*/
 
-    .dd-handle:hover {
-        color: #2196f3
-    }
+  
 
 .nestable-dark-theme .dd-handle {
     background: #ccc !important;
@@ -21839,4 +21837,7 @@ select {
 
 .radio-custom span::after {
     visibility: hidden;
+}
+button i{
+    font-size:15px !important;
 }

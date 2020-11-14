@@ -1,0 +1,67 @@
+﻿<div class="modal fade" id="issueDialogue" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header br-btm">
+                <h5 class="modal-title">Issue</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body br-btm">
+                <form name="issueForm">
+                    <div class="row">
+                        <div class="col-12">
+                            <label>Summary</label>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Internal Chat Feature" name="summary" ng-model="issue.summary" required />
+                                <span ng-show="issueForm.summary.$touched && issueForm.summary.$error.required" class="text-danger pt-2">* Summary is necessary </span>
+                            </div>
+                        </div>
+                        <div class="col-12 m-b-20">
+                            <label>Description</label>
+                            <div class="">
+                                <textarea class="form-control" placeholder="Internal Chat feature allows..." ng-model="issue.description"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label>Issue Type</label>
+                            <div class="form-group">
+                                <select class="form-control" name="issueType" ng-model="issue.issueType">
+                                    <option value="BUG">Bug</option>
+                                    <option value="CHANGE">Change</option>
+                                    <option value="FEATURE">Feature</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label>Priority</label>
+                            <div class="form-group">
+                                <select class="form-control" name="priority" ng-model="issue.priority">
+                                    <option value="HIGH">High</option>
+                                    <option value="MEDIUM">Medium</option>
+                                    <option value="LOW">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label>Assign To</label>
+                            <div class="form-group">
+                                <select class="form-control" name="assignedTo" ng-model="issue.assignedTo" required>
+                                    <option value="" hidden>Assign To</option>
+                                    <option ng-repeat="user in users" value="{{user.id}}">{{user.firstName}} {{user.lastName}}</option>
+                                </select>
+                                <span ng-show="issueForm.assignedTo.$touched && issue.assignedTo === ''" class="text-danger pt-2">
+                                    *Assignee is necessary
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-right pt-5">
+                        <button class="btn btn-primary" ng-disabled="issueForm.$invalid" ng-click="saveIssue()">Save</button>
+                        <button class="btn btn-danger" data-dismiss="modal" aria-label="Close">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

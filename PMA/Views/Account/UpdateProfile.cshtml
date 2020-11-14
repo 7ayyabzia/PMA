@@ -73,7 +73,7 @@
 @section scripts{
     <script>
         function activateProject(projectId, uid) {
-            JsonCallParam("Account", "ActivateProject", { id: projectId, userid: uid });
+            JsonCallParam("Account", "ActivateProject", { id: projectId });
             window.location.reload();
         }
     </script>

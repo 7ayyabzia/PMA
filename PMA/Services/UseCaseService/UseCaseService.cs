@@ -33,14 +33,14 @@ namespace PMA.Services.UseCaseService
         #region "Format"
         public async Task<UseCaseFormat> GetFormat()
         {
-            var projectId = await _currentContext.GetActiveProjectId();
+            var projectId = _currentContext.GetActiveProjectId();
             var format = await _dbContext.UseCaseFormats.SingleOrDefaultAsync(s => s.ProjectId == projectId);
             return format;
         }
 
         public async Task AddOrUpdateFormat(string format)
         {
-            var projectId = await _currentContext.GetActiveProjectId();
+            var projectId = _currentContext.GetActiveProjectId();
 
             var _format = await GetFormat();
             if(_format == null)
@@ -63,7 +63,7 @@ namespace PMA.Services.UseCaseService
 
         private async Task<int> GetFormatId()
         {
-            var projectId = await _currentContext.GetActiveProjectId();
+            var projectId = _currentContext.GetActiveProjectId();
             var format = await _dbContext.UseCaseFormats
                 .Select(s=> new {s.UseCaseFormatId, s.ProjectId }).SingleOrDefaultAsync(s => s.ProjectId == projectId);
             return format.UseCaseFormatId;

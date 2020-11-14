@@ -27,5 +27,7 @@ namespace PMA.Data
         public DbSet<EnvironmentalFactor> EnvironmentalFactors { get; set; }
         public DbSet<UseCaseTechnicalFactor> UseCaseTechnicalFactors { get; set; }
         public DbSet<UseCaseEnvironmentalFactor> UseCaseEnvironmentalFactors { get; set; }
+        public DbSet<BacklogIssue> BacklogIssues { get; set; }
+        public DbSet<Sprint> Sprints { get; set; }
     }
 }

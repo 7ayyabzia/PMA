@@ -29,7 +29,7 @@ namespace PMA.Services.DomainModelService
         }
         public async Task<IEnumerable<PDM>> GetPDMs()
         {
-            var projectId = await _currentContext.GetActiveProjectId();
+            var projectId = _currentContext.GetActiveProjectId();
             var pdms = await _dbcontext.PDMs
                 .Include(s=>s.ConceptualClasses).Include(s=>s.UseCase)
                 .Where(s => s.UseCase.UseCaseFormat.ProjectId == projectId).ToListAsync();
@@ -53,7 +53,7 @@ namespace PMA.Services.DomainModelService
 
         public async Task<DomainModel> GetDomainModel()
         {
-            var projectId = await _currentContext.GetActiveProjectId();
+            var projectId = _currentContext.GetActiveProjectId();
             var dm = await _dbcontext.DomainModels.Include(s => s.DomainModelConcepts).SingleOrDefaultAsync(s => s.ProjectId == projectId);
             if(dm == null)
             {
@@ -68,7 +68,7 @@ namespace PMA.Services.DomainModelService
 
         public async Task UpdateDomainModel()
         {
-            var projectId = await _currentContext.GetActiveProjectId();
+            var projectId = _currentContext.GetActiveProjectId();
             var pdms = await _dbcontext.PDMs.Include(s => s.ConceptualClasses)
                 .Where(s => s.UseCase.UseCaseFormat.ProjectId == projectId).ToListAsync();
 

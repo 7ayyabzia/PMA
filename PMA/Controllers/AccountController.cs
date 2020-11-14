@@ -58,7 +58,7 @@ namespace PMA.Controllers
 
         public async Task<JsonResult> GetAccount()
         {
-            var accountId = await _currentContext.GetCurrentAccountId();
+            var accountId = _currentContext.GetCurrentAccountId();
             var account = await _accountService.GetAccount(accountId);
             return Json(account);
         }
@@ -70,7 +70,7 @@ namespace PMA.Controllers
         [Authorize]
         public async Task<IActionResult> UpdateProfile()
         {
-            var userId = await _currentContext.GetUserId();
+            var userId = _currentContext.GetUserId();
             var user = await _userManager.Users.Include(s => s.UserProjects)
                 .ThenInclude(s => s.Project).SingleOrDefaultAsync(s => s.Id == userId);
 
@@ -132,7 +132,7 @@ namespace PMA.Controllers
                     FirstName = registerDto.FirstName,
                     LastName = registerDto.LastName,
                     MobileNumber = registerDto.MobileNumber,
-                    AccountId = await _currentContext.GetCurrentAccountId()
+                    AccountId = _currentContext.GetCurrentAccountId()
                 };
 
 
@@ -184,16 +184,17 @@ namespace PMA.Controllers
         }
         public async Task<JsonResult> GetAccountUsers()
         {
-            var accountId = await _currentContext.GetCurrentAccountId();
-            var userId = await _currentContext.GetUserId();
+            var accountId = _currentContext.GetCurrentAccountId();
+            var userId = _currentContext.GetUserId();
             var users = await _userManager.Users.Where(s => s.AccountId == accountId && s.Deleted == false && s.Id != userId).Include(s => s.UserProjects)
                 .ThenInclude(s => s.Project).ToListAsync();
 
             users.ForEach(s => s.UserProjects.ToList().ForEach(a => { a.User = null; a.Project.UserProjects = null; }));
             return Json(users);
         }
-        public async Task ActivateProject(int id, string userid)
+        public async Task ActivateProject(int id)
         {
+            var userid = _currentContext.GetUserId();
             await _accountService.ActivateProject(userid, id);
         }
         public async Task AddUserProject()

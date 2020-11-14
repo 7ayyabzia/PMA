@@ -1,0 +1,78 @@
+﻿@model PMA.Dto.Sprint.SprintDto
+@{
+    ViewData["Title"] = "SprintReport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="card">
+                <div class="body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="white-box">
+                                <h4 class="text-center p-t-10">
+                                    <b>@Model.Sprint.SprintName</b>
+                                </h4>
+                                <div class="row p-t-20">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <label>Sprint Goal</label>
+                                        <p>@Model.Sprint.SprintGoal</p>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="m-t-30 text-right">
+                                            <p class="m-t-30">
+                                                <b>Start Date :</b>
+                                                <i class="fa fa-calendar"></i> @Model.Sprint.StartDate.ToShortDateString()
+                                            </p>
+                                            <p>
+                                                <b>Estimated End Date :</b>
+                                                <i class="fa fa-calendar"></i> @Model.Sprint.EstimatedEndDate.ToShortDateString()
+                                            </p>
+                                            <p>
+                                                <b>End Date :</b>
+                                                <i class="fa fa-calendar"></i> @Convert.ToDateTime(Model.Sprint.EndDate).ToShortDateString()
+                                            </p>
+                                            <p>
+                                                <b>Status :</b>
+                                                <span class="label label-success">Success</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="table-responsive m-t-40">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-left">Task</th>
+                                                        <th class="text-center">Code</th>
+                                                        <th class="text-center">Type</th>
+                                                        <th class="text-right">Assigned To</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    @foreach (var issue in Model.BacklogIssues)
+                                                    {
+                                                        <tr>
+                                                            <td class="text-left">@issue.Summary</td>
+                                                            <td class="text-center">@issue.IssueCode</td>
+                                                            <td class="text-center">@issue.IssueType</td>
+                                                            <td class="text-right">@issue.User.FirstName @issue.User.LastName</td>
+                                                        </tr>
+                                                    }
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

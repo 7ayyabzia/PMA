@@ -1,4 +1,4 @@
-﻿function JsonCallParam(Controller, Action, Parameters) {
+﻿async function JsonCallParam(Controller, Action, Parameters) {
     $.ajax({
         type: "POST",
         traditional: true,
@@ -17,7 +17,7 @@
         }
     });
 }
-function JsonCall(Controller, Action) {
+async function JsonCall(Controller, Action) {
     $.ajax({
         type: "POST",
         traditional: true,

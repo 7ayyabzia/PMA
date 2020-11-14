@@ -1,0 +1,50 @@
+﻿.issues{
+    list-style:none;
+}
+.issues li {
+    width: 100%;
+    color: #757575;
+    font-weight: 400;
+    font-size: 15px;
+    background-color: #f5f5f5;
+    margin-top: 6px;
+    padding: 10px;
+    height: 45px;
+    cursor:pointer;
+}
+.issues li .issue-icon {
+    width: 5%;
+    float:left;
+}
+.issues li .issue-title {
+    width: 60%;
+    float: left;
+    font-weight:600;
+}
+.issues li .issue-actions {
+    width: 35%;
+    float: left;
+    text-align:right;
+}
+
+.search-label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 12px;
+}
+
+.search-label input {
+    margin-left: .5em;
+    display: inline-block;
+    width: 200px !important;
+}
+.selected-row {
+    background: #DEEBFF !important;
+}
+#sprintDialogue .form-group{
+    margin-bottom:0 !important;
+}
+.issue-details button:hover{
+    color:black !important;
+}

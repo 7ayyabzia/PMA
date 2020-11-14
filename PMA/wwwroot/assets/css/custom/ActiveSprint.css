@@ -1,0 +1,76 @@
+﻿.task-col {
+    background: #F4F5F7;
+}
+.task-body {
+    padding: 10px;
+    height: 105px;
+    color: #555;
+}
+.task-body .header{
+    font-size:17px;
+    padding:0 0 5px 0;
+}
+.task-footer {
+   border-top: 1px solid rgba(0,0,0,0.125);
+    padding: 10px 10px;
+}
+.task-info-left{
+    width:50%;
+    float:left;
+}
+.task-info-right {
+    width: 50%;
+    float: right;
+    text-align:right;
+}
+.task-code {
+    float: right;
+    font-size: 15px;
+}
+.task-desc {
+    height: 60px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+.task-assignee {
+    border-radius: 50%;
+    background: red;
+    width: 22px;
+    height: 22px;
+    color: white;
+    text-align: center;
+    padding-top: 2px;
+    font-size: 12px;
+    margin-right: 10px;
+    float: right
+}
+.dd-handle {
+    background:#fff;
+}
+.dd-list {
+    padding-bottom:20px;
+    min-height:400px;
+}
+.search-label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 12px;
+}
+
+    .search-label input {
+        margin-left: .5em;
+        display: inline-block;
+        width: 200px !important;
+    }
+.task-head-item {
+    padding-bottom: 0 !important;
+    min-height: 5px !important;
+    height: 5px;
+}
+.task-head-item .dd-handle {
+    display:none;
+    pointer-events:none;
+}

@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Isses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link href="~/assets/css/custom/Issues.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/js/bundles/angularjs-datetime-picker/angularjs-datetime-picker.css" />
+}
+@section angular{
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js"></script>
+    <script src="~/assets/js/bundles/angularjs-datetime-picker/angularjs-datetime-picker.js"></script>
+    <script src="~/Angular/_Services/BacklogService.js"></script>
+    <script src="~/Angular/_Services/UserService.js"></script>
+    <script src="~/Angular/Backlog/Issues.js"></script>
+}
+
+<div class="container-fluid" ng-controller="BacklogIssuesCtrl">
+    <div class="card">
+        <div class="header">
+            <h2> <strong>Backlog Issues</strong> </h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <label class="search-label">
+                    Search:
+                    <input type="search" id="search-issue" class="form-control form-control-sm" placeholder="">
+                </label>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-md-right">
+                <button class="btn btn-primary" ng-click="addUpdateIssue()">Issue <i class="fa fa-plus"></i> </button>
+                <button id="newSprintBtn" style="display:none" class="btn bg-green" ng-click="addSprint()">Sprint <i class="fa fa-plus"></i> </button>
+            </div>
+        </div>
+        <div class="body" ng-init="getIssues()">
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 all-issues p-l-0 p-r-0">
+                    <div class="header">
+                        <h2> <strong>Active Issues</strong> </h2>
+                    </div>
+                    <p ng-if="sprintIssues.length === 0" class="text-info p-l-20">No Active issue</p>
+                    <ul class="issues">
+                        <li ng-repeat="issue in sprintIssues" ng-click="showIssueDetails(issue, false)">
+                            <div class="issue-icon">
+                                <span class="issue-type" ng-bind-html="issue.issueType | issueType"></span>
+                            </div>
+                            <div class="issue-title"> {{issue.summary}} </div>
+                            <div class="issue-actions">
+                                <span class="issue-code p-r-10" ng-bind-html="issue.status | issueStatus"></span>
+                                <span class="issue-code p-r-10">{{issue.issueCode}}</span>
+                                <span class="issue-priority p-r-10" ng-bind-html="issue.priority | issuePriority"></span>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+                    <div class="header">
+                        <h2> <strong>Backlog</strong> </h2>
+                    </div>
+                    <p ng-if="backlogIssues.length === 0" class="text-info p-l-20">No Issue listed in backlog</p>
+                    <ul class="issues">
+                        <li ng-repeat="issue in backlogIssues" ng-click="showIssueDetails(issue, true)" ng-class="{'selected-row': issue.selected}">
+                            <div class="issue-icon">
+                                <span class="issue-type" ng-bind-html="issue.issueType | issueType"></span>
+                            </div>
+                            <div class="issue-title"> {{issue.summary}} </div>
+                            <div class="issue-actions">
+                                <span class="issue-code p-r-10" ng-bind-html="issue.status | issueStatus"></span>
+                                <span class="issue-code p-r-10">{{issue.issueCode}}</span>
+                                <span class="issue-priority p-r-10" ng-bind-html="issue.priority | issuePriority"></span>
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+                    <div class="header">
+                        <h2> <strong>Completed Issues</strong> </h2>
+                    </div>
+                    <p ng-if="completedIssues.length === 0" class="text-info p-l-20">No Issue Completed Yet</p>
+                    <ul class="issues">
+                        <li ng-repeat="issue in completedIssues" ng-click="showIssueDetails(issue, false)">
+                            <div class="issue-icon">
+                                <span class="issue-type" ng-bind-html="issue.issueType | issueType"></span>
+                            </div>
+                            <div class="issue-title"> {{issue.summary}} </div>
+                            <div class="issue-actions">
+                                <span class="issue-code p-r-10" ng-bind-html="issue.status | issueStatus"></span>
+                                <span class="issue-code p-r-10">{{issue.issueCode}}</span>
+                                <span class="issue-priority p-r-10" ng-bind-html="issue.priority | issuePriority"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 issue-details" style="display:none">
+                    <div class="card body" style="padding-top:2px">
+                        <div class="bg-dark text-white p-10">
+                            {{selectedIssue.summary}}
+                            <button type="button" class="btn tblActnBtn float-right h-auto text-white" ng-click="hideIssueDetails()">
+                                <i class="material-icons p-t-5">close</i>
+                            </button>
+                            <button ng-if="!selectedIssue.isCompleted" type="button" class="btn tblActnBtn float-right p-r-5 h-auto text-white" ng-click="addUpdateIssue(selectedIssue)">
+                                <i class="material-icons p-t-5">edit</i>
+                            </button>
+                        </div>
+                        <div class="p-t-10">
+                            <label>Description </label> <br />
+                            {{selectedIssue.description}}
+                        </div>
+                        <div class="row p-t-10">
+                            <div class="col-4 p-b-5"><label>Code</label></div>
+                            <div class="col-8 p-b-5">{{selectedIssue.issueCode}}</div>
+
+                            <div class="col-4 p-b-5"><label>Type</label></div>
+                            <div class="col-8 p-b-5">
+                                <span class="issue-type" ng-bind-html="selectedIssue.issueType | issueType"></span> {{selectedIssue.issueType}}
+                            </div>
+
+                            <div class="col-4 p-b-5"><label>Status</label></div>
+                            <div class="col-8 p-b-5">
+                                <span class="issue-status" ng-bind-html="selectedIssue.status | issueStatus"></span>
+                            </div>
+
+                            <div class="col-4 p-b-5"><label>Priority</label></div>
+                            <div class="col-8 p-b-5">
+                                <span class="issue-priority" ng-bind-html="selectedIssue.priority | issuePriority"></span> {{selectedIssue.priority}}
+                            </div>
+
+                            <div class="col-4 p-b-5"><label>Assignee</label></div>
+                            <div class="col-8 p-b-5">{{selectedIssue.user.firstName}} {{selectedIssue.user.lastName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
